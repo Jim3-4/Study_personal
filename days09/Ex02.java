@@ -1,3 +1,18 @@
+package day09;
+
+/**
+ * @author 지민
+ * @date 2022. 2. 25. - 오전 9:29:16
+ * @subject 
+ * @content 
+ * 
+ */
+public class Ex02 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
 		// 윤년 - 그레고리오력( 치윤법 )  1)+2)+3)  수식
 		// 팩토리얼( factorial )
 		
@@ -61,11 +76,10 @@
 //		if( n == 1 )  return n;
 //		else            return n  * recursiveFactorial(n-1);
 		
-		if( n > 1 )  return n*recursiveFactorial(n-1);
-		else if( n == 1 ) return n;
-		else if( n == 0) return 1;
-		else                   return -1;
-		
+		if(n>1) return  n* recursiveFactorial(n-1);
+		else if (n==1) return 1;
+		else if (n==0 ) return 1;//0!은 1이니까 
+		else return -1; 
 		
 		 /*  5
 		  if(n==1) return n;
@@ -86,3 +100,4 @@
 		}
 	    return result;
 	}
+}
