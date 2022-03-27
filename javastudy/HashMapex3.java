@@ -1,5 +1,6 @@
 package hash;
 
+import java.lang.Character.Subset;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -13,52 +14,35 @@ import java.util.Set;
  * 
  */
 public class HashMapex3 {
-	static HashMap phoneBook=new HashMap();
+
 public static void main(String[] args) {
-	addPhoneNo("친구","이자바","010-111-11111");
-	addPhoneNo("친구","김자바	","2");
-	addPhoneNo("친구","김자바","010-3-");
-	addPhoneNo("회사","이과장","010-3");
-	addPhoneNo("회사","김대리","010-4");
-	addPhoneNo("회사","박대리","010-6");
-	addPhoneNo("회사","김대리","010-5");
-	addPhoneNo("세탁","010-8");
-	
-	printList();
-}//main
-static void addPhoneNo(String groupName, String name, String tel) {
-	addGroup(groupName);
-	HashMap group=(HashMap)phoneBook.get(groupName);
-	group.put(tel, group);
-}
 
-private static void addGroup(String groupName) {
-	// TODO Auto-generated method stub
-	if(!phoneBook.containsKey(groupName)) {
-			phoneBook.put(groupName, new HashMap());
-	}
-}
-static void addPhoneNo(String name, String tel) {
-	addPhoneNo("기타", name, tel);
-	
-}
-static void printList() {
-	Set set=phoneBook.entrySet();
-	Iterator it=set.iterator();
-	
-	while (it.hasNext()) {
-		Map.Entry e =( Map.Entry) it.next();
-		Set subSet=((HashMap)e.getValue()).entrySet();
-		Iterator subIt=subSet.iterator();
-		while (subIt.hasNext()) {
-			Map.Entry subE = (Map.Entry) subIt.next();
-			String telNo= (String)subE.getKey();
-			String name=(String)subE.getValue();
-			System.out.println(name+" "+telNo);
+	String[] data= {"a","k", "a","k","d","k","a", "k","k","z","d"};
+	HashMap map=new HashMap();
+	for (int i = 0; i < data.length; i++) {
+		if(map.containsKey(data[i])) {
+			Integer value=(Integer)map.get(data[i]);
+			map.put(data[i], new Integer(value.intValue()+1));
+		}else {
+			map.put(data[i], new Integer(1));
 		}
-		System.out.println();
+		
 	}
-}
+	Iterator it=map.entrySet().iterator();
+	while (it.hasNext()) {
+		Map.Entry entry=(Map.Entry) it.next();
+		int  value=((Integer)entry.getValue()).intValue();
+		System.out.println(entry.getKey()+":"+printBar('#', value)+""+value);
+	}
 	
+	
+}//main
 
+private static String printBar(char c, int value) {
+	char[] bar=new char[value];
+	for (int i = 0; i < bar.length; i++) {
+		bar[i]=c;
+	}
+	return new String(bar);
+}
 }//class
