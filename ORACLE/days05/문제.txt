@@ -1,0 +1,98 @@
+1. 오류 메시지에 대해서 설명하세요 .
+ ㄱ. ORA-01438: value larger than specified precision allowed for this column
+ ㄴ. ORA-00001: unique constraint (SCOTT.PK_DEPT) violated
+ ㄷ. ORA-00923: FROM keyword not found where expected 
+ ㄹ. ORA-02292: integrity constraint (SCOTT.FK_DEPTNO) violated - child record found
+ ㅁ. ORA-00923: FROM keyword not found where expected
+ 
+2. RR과  YY의 차이점에 대해서 설명하세요 .
+
+3. JAVA :  5 % 2  코딩을 오라클로 나머지 구해서 출력하는 쿼리를 작성하세요.
+
+4. dept 테이블을 사용해서 각 DML문의 형식을 적고, 쿼리 작성하고 실행하세요. 
+ ㄱ. 새로운 부서를 추가(insert)하는 쿼리 작성 및 확인 
+    1) (  50, QC, SEOUL )
+    2) (  60, T100%, SEOUL )
+    3) (  70, T100T, BUSAN )
+ ㄴ. 60번 부서의 부서명,  지역명을 수정 
+     ( 원래 부서명 뒤에 'X' 문자열 추가해서 수정, 지역명은 DAEGU 로 수정 )    
+ ㄷ. LIKE 연산자를 사용해서 부서명에 '%' 문자가 포함된 부서 정보 조회하는 쿼리 작성
+ ㄹ. REGEXP_LIKE() 함수를 사용해서 부서명에 '%' 문자가 포함된 부서 정보 조회하는 쿼리 작성
+ ㅁ. 부서번호 50, 60, 70번 부서 삭제
+ 
+5. 한글 한 문자와 알파벳 한 문자가 몇 바이트인지 출력하는 쿼리 작성
+
+6. insa 테이블에서 남자는 'X', 여자는 'O' 로 성별(gender) 출력하는 쿼리 작성
+
+    NAME                 SSN            GENDER
+    -------------------- -------------- ------
+    홍길동               771212-1022432    X
+    이순신               801007-1544236    X
+    이순애               770922-2312547    O
+    김정훈               790304-1788896    X
+    한석봉               811112-1566789    X
+
+7. insa 테이블에서 2000년 이후 입사자 정보 조회하는 쿼리 작성
+
+    NAME                 IBSADATE
+    -------------------- --------
+    이미성               00/04/07
+    심심해               00/05/05
+    권영미               00/06/04
+    유관순               00/07/07
+    
+8-1. Oracle의 날짜를 나타내는 자료형 2가지를 적으세요.
+   ㄱ.
+   ㄴ. 
+   
+8-2. 현재 시스템의 날짜/시간 정보를 출력하는 쿼리를 작성하세요.
+
+SELECT (ㄱ), (ㄴ), (ㄷ)
+FROM dual;
+
+9. HR 계정으로 접속해서 
+   SELECT * FROM scott.dept;
+   위의 쿼리를 실행하면 ORA-00942: table or view does not exist 오류가 발생한다.
+   그래서
+   HR 계정에서도 scott.dept 테이블을 SELECT할 수 있도록 권한부여 및 arirang 이란 이름으로 
+   시노님( SYNONYM )을 생성해서
+   HR 계정에서도 SELECT * FROM arirang 쿼리를 사용할 수 있도록 설정하고 테스트하는 
+   모든 쿼리를 순서대로 작성하세요. 
+   
+10. emp 테이블에서 사원명(ename)에 'e'문자를 포함한 사원을 검색해서 아래와 같이 출력.
+
+    ENAME   SEARCH_ENAME
+    --------------------
+    ALLEN	ALL[E]N
+    JONES	JON[E]S
+    BLAKE	BLAK[E]
+    TURNER	TURN[E]R
+    JAMES	JAM[E]S
+    MILLER	MILL[E]R
+
+11.   UPDATE 문에 WHERE 조건절이 없는 경우는 어떻게 되나 ? 
+11-2. DELETE 문에 WHERE 조건절이 없는 경우는 어떻게 되나 ? 
+
+12. DML( INSERT, UPDATE, DELETE ) 문 실행 후 반드시 무엇을 해 주어야 하나 ? 
+
+13. insa 테이블에서 
+   ㄱ. 출신지역(city)가 인천인 사원의 정보(name,city,buseo)를 조회하고
+   ㄴ. 부서(buseo)가 개발부인 사원의 정보(name,city,buseo)를 조회해서
+   두 결과물의 합집합(UNION)을 출력하는 쿼리를 작성하세요. 
+   ( 조건 : SET(집합) 연산자 사용 )
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
