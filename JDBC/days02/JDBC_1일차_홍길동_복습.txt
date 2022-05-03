@@ -1,0 +1,106 @@
+ -- 10:00 까지 "개인 카톡"으로 제출해 주세요 . -- 
+ 
+ 1. 동적 쿼리를 사용하는 저장 프로시저 작성하세요.  ( 5분 )
+     ㄱ. 커서변수 사용
+     ㄴ. open ~ for 문 사용
+     ㄷ. 프로시저 안에서  출력까지 하세요.
+     ㄹ. deptno 를 파라미터로 해서 emp 테이블의
+         deptno, ename, hiredate 를 출력하는 저장 프로시저 작성.
+ 
+CREATE OR REPLACE PROCEDURE up_emp
+(
+    pdeptno emp.deptno%TYPE
+)
+IS
+    vsql varchar2(2000);
+    vempCursor SYS_REFCURSOR;
+    vdeptno emp.deptno%TYPE;
+    vename emp.ename%TYPE;
+    vhiredate emp.hiredate%TYPE;
+BEGIN
+    vsql := 'SELECT deptno, ename, hiredate ';
+    vsql := vsql || 'FROM emp ';
+    vsql := vsql || 'WHERE deptno = :deptno ';
+    
+    OPEN vempCursor FOR vsql USING pdeptno;
+    LOOP
+        FETCH vempCursor INTO vdeptno, vename, vhiredate;
+        EXIT WHEN vempCursor%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE( vdeptno || ', ' || vename || ', ' || vhiredate );
+    END LOOP;
+    CLOSE vempCursor;
+--EXCEPTION
+END;
+
+EXEC up_emp(20);         
+         
+ 
+ 2-1. JDBC 설명하세요.                                         ( 5분 )
+      - J D B C
+      -  자바 표준 인터페이스  : 추상메서드, 상수 + s메, d메
+      - 자바 + DB 연동 기술
+      
+ 2-2. JDBC Driver 설명하세요.
+        DBMS(오/M)    연동하기 위해   JDBC를 구현한   라이브러리(드라이버)
+        Oralce :  JDBC Driver 벤더(회사) 다운  ojdbc6.jar  == > Oracle 11g xe
+        
+         
+ 2-3. JDBC Driver [종류] 설명하세요.
+    Type1     ODBC 브릿지 X
+    Type2    Native API    C/C++ X
+    Type3   미들웨어 서버 X
+    *** Type4  순수 자바 , 가장 많이 사용한다.   thin
+ 
+ 3. JDBC를 사용해서 DB에 연결( Connect ) 하는 순서에 대해 설명하세요.  ( 5분 )
+ 
+     1) JDBC 드라이버 로딩           :   Class.forName()
+     2) Connecion 객체 얻어오기 :   DriverManager.getConnection ()
+     3) 필요한 조작 ( CRUD )
+     4) Close
+    
+ 4. 위의 순서에 맞춰서 오라클서버에 scott/tiger 로 DB에 연결하는             ( 15분 )
+      전체 코딩을 main() 메서드에 하시고, 연결된 Connection 객체 정보
+      를  출력하고  Connection 객체 연결 상태를 true, false로 출력하는 코딩을 하세요. 
+    
+    import java.sql.Connection;  
+      
+    main(){
+       
+       Connection conn = null;
+       
+       String className = "oracle.jdbc.driver.OracleDriver";
+       String url = "jdbc:oracle:thin:@localhost:1521:xe";  // SID   xe
+       String user = "scott";
+       String password = "tiger";
+       
+       Class.forName(className);
+       conn = DriverManager.getConnection (url, user, password);
+       Syso( conn );
+       Syso( conn.is상태 );
+       
+       conn.close();
+        
+        // ClassNotFoundException
+        // SQLException
+       
+    }      
+
+ [5]. 부서번호를 입력받아서 해당 부서의 모든 사원 정보를 출력                         ( 15분 )
+   ( 조건 :
+      ㄱ. 모든 컬럼 출력
+      ㄴ. 이름 순으로 오름차순정렬 
+   )     
+   
+
+
+
+
+
+
+
+
+
+
+
+   
+    
