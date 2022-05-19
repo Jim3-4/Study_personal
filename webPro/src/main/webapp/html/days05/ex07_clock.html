@@ -1,0 +1,32 @@
+
+<!doctype html public "-//w3c//dtd html 4.01 transitional//en">
+<html lang="ko">
+<head>
+<title>Trio 홈페이지 - 시간 표시 예제 - Javascript 예제</title>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=EUC-KR">
+<script language="Javascript">
+
+function show(){
+  var now=new Date();
+  var dy=now.getDate();
+  var mt=now.getMonth()+1;
+  var hr=now.getHours();
+  var mn=now.getMinutes();
+  var sc=now.getSeconds();
+  var ampm="<sup>오전</sup>";
+  if (hr>=12) ampm="<sub>오후</sub>";
+  if (hr>12) hr=hr-12;
+  if (hr==0) hr=12;
+//  if (hr<=9) hr="0"+hr;
+  if (mn<=9) mn="0"+mn;
+  if (sc<=9) sc="0"+sc;
+  clock.innerHTML=" <b>"+mt+"</b>/<b>"+dy+"</b> "+ampm+" "+hr+":"+mn+":" +sc;
+  setTimeout("show()",1000);
+}
+
+</script>
+</head>
+<body onload="show()" style="margin:0;padding:0">
+<div id="clock" align=center style="margin:0;padding:1px;font-size:9pt;width:9em;color:00f;background-color:cfc;"></div>
+</body>
+</html>

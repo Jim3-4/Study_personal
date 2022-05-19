@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+XML 형식의 벡터기반 그래픽을 정의
+벡터 기반 ? 확장 가능한 벡터 그래픽 -확대를 아무리해도 해상도가 깨지지 않는다. 
+컨테이너 역할 - 텍스트, 이미지, 원, 박스, 경로 등등
+<hr>
+
+<!-- <img id="" src="../images/SiSt.ico"alt=""> -->
+<!-- 원 -->
+<svg width="100"height="100">
+<circle cx="50" cy="50" r="40" stroke="green"stroke-width="4"fill="yellow"/></svg>
+<hr>
+<!-- 사각형 -->
+<svg width="400" height="100">
+    <rect width="400" height="100"
+          style="stroke:rgb(0,0,0);fill:rgb(0,0,255); stroke-width:10;"></rect>
+</svg>
+<hr>
+<svg width="300" height="200">
+  <polygon points="100,10 40,198 190,78 10,78 160,198"
+  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+</svg>
+<hr>
+<svg height="130" width="500">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+  Sorry, your browser does not support inline SVG.
+</svg>
+
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h3>ex06.html 미디어</h3>
+웹에서 멀티미디어- 사운드, 음악, [비디오], 영화 ,애니메이션 
+1. 웹 상에서의 멀티미디어는 사운드, 음악, 비디오, 영화 및 애니메이션. <br>
+2. 일반적인 비디오 형식 : .mpg , mpeg, .avi, .wmv, .mov, .swf, .webm, .mp4 등등<br>
+   ( *** html 표준: mp4, ogg, .webm 만 지원한다. *** )<br>
+   ( YouTube에서는 mp4 형식을 권장한다. ) <br>
+3. 일반적인 오디오 형식 : .wav, .ogg, .mp3, .wma 등등<br>
+   ( *** html 표준: mp3, ogg, .wav 만 지원한다. *** )   <br>
+   
+  <h3>비디오</h3>
+  1.video 태그 사용<hr>
+  2.width height 속성을 설정하지 않으면 동영상이 로드되는 동안 페이지 깜빡일 수 있다. <br>
+  3.재생, 일시정지, 볼륨 등등 비디오 컨트롤하기 위해서 controls 속성을 추가 <br>
+<!--   <video src="movie.mp4" width="320"height="240" controls="controls"></video> -->
+  
+<video width="320"height="240" controls="controls" autoplay="autoplay" muted="muted">
+    <source  src="movie.mp4" type="video/mp4" >
+    <source  src="movie.ogg"  type="video/ogg ">
+    현재브라우저는 지원하지 않습니다.
+    </video>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<img id="scream"alt="the screem" src="../images/img_the_scream.jpg" >
+<p><button onclick="drawing();">캔버스</button></p>
+<canvas id="myCanvas" width="240" height="300" style="border:1px solid black"></canvas>
+
+<script type="text/javascript">
+function drawing(){
+
+var c=document.getElementById("myCanvas"); // 도화지를 얻어옴 
+var ctx=c.getContet("2d"); //그릴수 잇는 도구 
+var screamImg=document.getElementById("scream"); // 이미지 가져옴 
+ctx.drawImage(screamImg, 10, 10);// (10,10) 위치에 그리겠다 .
+}
+</script>
+</body>
+</html>

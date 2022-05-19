@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+</head>
+<body>
+
+1. a 태그의 스타일 설정하는 코딩을 하세요. 
+  ㄱ. a 태그에 마우스를 올리기 전에 글자색은 검정색, 밑줄은 없애고
+  ㄴ. a 태그에 마우스를 올리면 글자색은 빨강색, 밑줄은 보이도록  
+  ㄷ. a 태그의 글자크기는 15px 로 지정. 
+<style>
+a{ 
+color: black;
+text-decoration: none;
+font-size: 15px;
+}
+a:hover{
+		color: red;
+		text-decoration: underline overline  line-through;
+	/*이렇게하면 줄이 세개가 생김 */	
+	}
+</style> 
+
+2. html 이미지맵에 대해서 설명과 사용되는 태그 및 속성에 대해서 설명하세요.
+
+- 맵(map)을 사용하여 이미지에 클릭 가능한 영역을 만들 수 있다. 
+이미지의 일부를 지정하여 링크를 거는 것 
+
+- map 태그 -이미지맵 
+    area 태그 - 클릭 가능한 영역  (shape 와 coords 속성 포함 )
+
+3. html 이미지 플로팅(float)에 대한 설명과 예제 코딩을 하세요.
+img 태그 안에 style="float: ;" 이미지를 어디에 띄울것인지 , 
+<img src="../images/mac.jpg" style="float:left;"> 
+ 
+4-1. html Picture 태그에 대한 설명과 필요한 태그 및 속성 관련 설명을 하세요.
+   -- 반응형 웹
+   650   a.jpg    media 속성 / source 태그 / picture 태그 / img 태그
+   450   b.jpg
+   이하  c.jpg
+
+
+웹개발자에게 이미지의 유연성을 제공 .반응형 웹만들때 
+450보다 작으면 c, b는 450이상 650미만 650부터는 a 
+<source media="(min-width:650px)" srcset="./images/a.jpg">
+<source media="(min-width:450px)" srcset="./images/b.jpg">
+ <img src="./images/c.jpg" alt="" >
+
+5. html 파비콘(favicon)에 대해서 설명하고 코딩을 하세요.
+
+브라우저 탭의 페이지 제목 옆에 표시되는 작은 아이콘
+   <link rel="shortcut icon" type="image/x-icon" href="https://www.naver.com/favicon.ico?1"/>
+
+
+
+
+6. <style> 태그를 사용해서 아래 스타일을 설정하는 코딩을 하세요.
+   <p>
+   문단을 나누는 p 태그를 사용하여 
+   ㄱ. 배경이미지를 설정
+   ㄴ. p 태그의 너비, 높이 설정
+   ㄷ. 테두리 설정
+   ㄹ. 글자크기 설정
+   ㅁ. 안쪽여백 설정
+   ㅂ. 가운데 정렬
+   하는 코딩을 하세요.
+   </p>
+   
+<style>
+p{
+	background-image: url("../images/mac.jpg");
+	border: 1px solid gray;
+	width: 400px;
+	height: 500px;
+	padding: 3px;
+	margin:  0 auto;
+	font-size: 15px;
+}
+
+7.  결과 이미지를 보고 <style> 태그를 작성하세요. 
+<h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>
+------------------------------
+<style>
+table,th,td{
+	border: 1px solid gray;
+	border-collapse: collapse;
+	text-align: left;
+	padding:8px;
+}
+tr:nth-child(even) {
+	background-color: #ddd;
+}
+</style>
+
+8. 결과 이미지를 보고  <style> 태그를 작성하세요.
+<h2>HTML Table</h2>
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+    <td>80</td>
+  </tr>
+</table>   
+--------------------------------
+<style>
+table{width: 100%}
+ td,th {
+border: 1px solid skyblue;
+border-radius: 10px;
+}
+</style>
+
+9. 위의 테이블의 너비를 100%로 설정하고
+    , 첫 번째 열의 너비를 테이블의 70%로 설정하고
+    , 두 번째 행의 높이를 100px로 설정하는 코딩을 하세요.
+<table style="width: 100%">
+  <tr>
+    <th style="width: 70%">Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr style="height: 100px">
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+
+10. 결과 이미지가 나오도록 코딩하세요.
+    ㄱ. 여러 열에 걸쳐 있는 헤더 처리 ( 헤더 병합 )
+<style>
+table{width: 100%;}
+table,th,td{
+border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<table style="border-collapse: collapse;">
+<thead>
+<tr>
+<th colspan="3">Name</th>
+<th>Age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jill</td>
+<td colspan="2"> Smith</td>
+<td> 50 </td>
+</tr>
+<tr>
+<td>Eve</td>
+<td colspan="2"> Jackson</td>
+<td> 94 </td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
+
+11-1. html 테이블의 셀 간격을 10px로 설정하는 코딩을 적으세요.
+<table cellspacing="10px">
+table{
+border-spacing:10px;
+}
+11-2. td의 셀(cell) 가장자리와 셀(cell) 내용 사이의 공간(간격)을 5px로 설정하는 코딩을 적으세요.
+1)cellpadding 속성사용 
+2)td{padding:5px}
+
+12. 결과 이미지가 나오도록 코딩하세요.
+   ㄱ. 여러 행 또는 열에 걸쳐 있는 셀 처리
+        ( 행 병합 또는 열 병합 )
+
+<style>
+table,th,td{
+border: 1px solid black;
+border-collapse: collapse;
+width:100%;
+}
+
+</style>
+</head>
+<body>
+<h2>HTML Table</h2>
+<table style="border-collapse: collapse;">
+<thead>
+<tr>
+<th colspan="3">2022년</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d</td>
+<td>d</td>
+<td>d</td>
+</tr>
+<tr>
+<td colspan="2" rowspan="2">축제 </td>
+<td>d</td>
+</tr>
+<tr>
+<td>d</td>
+</tr>
+<tr>
+<td>d</td>
+<td>d</td>
+<td>d</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
+
+13. 결과 이미지가 나오도록 코딩하세요.
+    ㄱ.  다른 모든 행과 다른 모든 열에 줄무늬 처리
+    ㄴ. 투명한 색상을 사용하면 겹치는 효과를 얻을 수 있다. ( rgba() 투명도 지정)
+tr:nth-child(even){background-color: skyblue;}
+td:nth-child(even){background-color: rgba(120,220,202,0.3)}
+
+<style>
+table{
+border:1px solid black;
+border-collapse: collapse;
+}
+th,td{
+border:1px solid black;
+}
+
+tr:nth-child(even) {
+	background-color: rgba(150,210,222,0.3);
+}
+th:nth-child(even) ,td:nth-child(even) {
+	background-color: rgba(150,210,222,0.3);
+}
+</style>
+</head>
+<body>
+<h2>HTML Table</h2>
+<table>
+<thead>
+<tr>
+<th>mon</th>
+<th>tue</th>
+<th>wed</th>
+<th>thur</th>
+<th>fri</th>
+<th>sat</th>
+<th>sun</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+</tr>
+<tr>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+</tr>
+<tr>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+</tr>
+<tr>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+<td> d</td>
+</tr>
+</tbody>
+</table>
+
+14. 결과 이미지가 나오도록 코딩하세요.
+   ㄱ. 각 표 행의 맨 아래에만 테두리를 지정하면 가로 구분선이 있는 표
+   ㄴ. tr(행)에  마우스 오버 시 테이블 행을 강조 표시 ( :hover 사용 )
+   <style>
+table{width:100%;
+border-collapse: collapse;
+}
+th,td{
+border-collapse:collapse;
+border-bottom: 1px solid gray;
+padding: 5px;
+text-align: left;
+
+}
+
+tbody tr:hover{background-color:aqua;}
+
+</style>
+</head>
+<body>
+<h2>Hoverable Table</h2>
+<table>
+<thead>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody >
+<tr >
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</body>
+
+
+tr:hover:not(tr:first-child){
+background-color:aqua;
+}
+/* tbody tr:hover{background-color:aqua;} */
+15. 위의 테이블(14)의 첫 번째, 두 번째 열의 스타일(배경색 빨강)을 지정는 코딩을 하세요.    
+
+
+
+
+
+
+
+  
+</body>
+</html>

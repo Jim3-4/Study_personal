@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<form>
+<!-- action 속성값을 form 태그에 안적으니, 자기 자신 주소를 다시 서버에 요청해서 응답받음  -->
+name: <input type="text" autofocus="autofocus"><br>
+title: <input type="text"  autofocus="autofocus" required="required"><br>
+<input list="deptlist">
+<!-- datalist는 option태그가 꼭와야한다.  -->
+<datalist id="deptlist">
+<option value="ACCOUNTING"></option>
+<option  value="RESEARCH"></option>
+<option  value="SALES"></option>
+<option  value="OPERATIONS"></option>
+</datalist>
+
+<input list="deptlist2">
+<!-- datalist는 option태그가 꼭와야한다.  -->
+<datalist id="deptlist2">
+<option value="ACCOUNTING">10</option>
+<option  value="RESEARCH">20</option>
+<option  value="SALES">30</option>
+<option  value="OPERATIONS">40</option>
+</datalist>
+submit 기능을 하는 버튼: 
+<input type="image" src="../images/img_submit.gif"width="48"height="48">
+</form>
+</body>
+</html>

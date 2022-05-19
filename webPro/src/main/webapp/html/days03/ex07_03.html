@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<style>
+    
+   table, td, th{
+      border: 1px solid black;
+       border-collapse: collapse;  /* 컬렙스: 셀이 겹쳐짐(붕괴) (선이 합쳐짐) */
+   } 
+   
+   th,td{
+      padding: 10px;
+   }
+   
+   table{
+      /* width: 100%; */
+       width: 400px; 
+       /* border-spacing : 셀과 셀 사이의 간격을 지정 */
+       border-spacing: 15px;
+       /* 근데 만약에  border-collapse랑 같이 쓰면 spacing 아무리 줘도 안먹음*/
+   }
+ 
+  
+   tr{ /* tr에는 테두리 속성 설정이 안된다 (기억) */
+      border: 1px solid black;
+   }   
+   td{ /* 칸마다 박스쳐짐, 근데 굳이 따로 만들지말고 콤마로 위에 넣어버리자 */
+      border: 1px solid black;
+   } 
+</style>
+<style>
+   tfoot button{
+      background-color: white;
+      color:black;
+      width:50px;
+      border:1px solid gray; 
+   }
+</style>
+</head>
+<body>
+10   ACCOUNTING   NEW YORK   <br>
+20   RESEARCH   DALLAS<br>
+30   SALES   CHICAGO<br>
+40   OPERATIONS   BOSTON<br>
+<hr>
+
+   
+<!--    <table border ="1"> 이거랑 위에 style준거랑 똑같은 결과 -->
+   <table >
+   
+      <!-- tr == [t]able [r]ow -->
+            
+         <!-- td == cell within table (텍스트, 이미지, 목록, 표(table)등이 들어갈 수 있다.) -->
+
+         <thead>
+         <tr>
+         <td> <input type="checkbox"></td>
+         <th>DEPTNO</th> <!-- th : 테이블의 헤더(머릿글) (글자 굵게되고 가운데 정렬됨) -->
+         <th>DNAME</th>
+         <th>LOC</th>
+      </tr>
+      </thead>
+      
+      <tbody>
+      <tr>
+      <td> <input type="checkbox"></td>
+         <td>10</td>
+         <td>ACCOUNTING</td>
+         <td>NEW YORK</td>
+      </tr>
+      
+      <tr>
+         <td> <input type="checkbox" checked="checked"></td>
+         <td>20</td>
+         <td>RESEARCH</td>
+         <td>DALLAS</td>
+      </tr>
+      
+      <tr>
+      <td> <input type="checkbox"></td>
+         <td>30</td>
+         <td>SALES</td>
+         <td>CHICAGO</td>
+      </tr>
+      
+      <tr>
+      <td> <input type="checkbox"></td>
+         <td>40</td>
+         <td>   OPERATIONS</td>
+         <td>BOSTON</td>
+      </tr>
+      </tbody>
+   <tfoot>
+      <td colspan="4" align="center">
+         <button>추가</button>
+         <button>수정</button>
+         <button>삭제</button>
+      </td>   
+   </tfoot>
+   </table>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SS15 2021. 11. 26. - 오후 3:46:33</title>
+<link rel="icon" href="../images/SiSt.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+}
+
+#footer {
+    background-color: #777;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+</style>
+
+<style>
+#nav {
+    background-color: #ccc;
+    width: 30%;
+    height: 300px;
+    padding: 20px;
+    float:left;
+}
+
+#nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#article {
+    background-color: #f1f1f1;
+    width: 70%;
+    min-height: 300px;
+    padding: 20px;
+    float: left;
+}
+
+#section:after {
+    content: "";
+    display: table;
+    clear: both;
+    
+}
+</style>
+<style>
+@media (max-width:600px) {
+    #nav, #article {
+        width: 100%;
+        height: auto;
+    }
+}
+</style>
+</head>
+<body>
+
+    <h2>CSS + Layout (배치) Float</h2>
+
+
+
+    <div id="header">
+        <h2>Cities</h2>
+    </div>
+
+    <div id="section">
+        <div id="nav">
+            <ul>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Seoul</a></li>
+            </ul>
+        </div>
+        <!-- nav -->
+        <div id="article">
+            <h1>London</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cumque consequatur odio eos nesciunt facere ullam molestiae porro
+                deserunt aliquid delectus aut reiciendis. Incidunt adipisci
+                temporibus soluta doloribus magnam provident consequuntur.</p>
+            <p>Omnis dolores consectetur ut id velit eligendi sed iste
+                officiis ipsam odit laudantium totam rem aliquid quas quam aut magni
+                nulla consequuntur repellat odio nam sequi beatae eius aperiam
+                facere!</p>
+            <h1>Paris</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cumque consequatur odio eos nesciunt facere ullam molestiae porro
+                deserunt aliquid delectus aut reiciendis. Incidunt adipisci
+                temporibus soluta doloribus magnam provident consequuntur.</p>
+            <p>Omnis dolores consectetur ut id velit eligendi sed iste
+                officiis ipsam odit laudantium totam rem aliquid quas quam aut magni
+                nulla consequuntur repellat odio nam sequi beatae eius aperiam
+                facere!</p>
+            <h1>Seoul</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cumque consequatur odio eos nesciunt facere ullam molestiae porro
+                deserunt aliquid delectus aut reiciendis. Incidunt adipisci
+                temporibus soluta doloribus magnam provident consequuntur.</p>
+            <p>Omnis dolores consectetur ut id velit eligendi sed iste
+                officiis ipsam odit laudantium totam rem aliquid quas quam aut magni
+                nulla consequuntur repellat odio nam sequi beatae eius aperiam
+                facere!</p>
+        </div>
+        <!-- section -->
+    </div>
+
+    <div id="footer">
+        <p>Footer</p>
+    </div>
+    <!-- footer -->
+</body>
+</html>
