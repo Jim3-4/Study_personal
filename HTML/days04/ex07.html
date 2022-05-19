@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script>
+function span_hidden(){
+	//window.alert("버튼클릭이벤트확인!! ");
+//	document.getElementById('myDiv').style.display = "none";
+var spans=document.getElementsByTagName("span");
+alert(spans.length);
+}
+function span_show(){
+	//window.alert("버튼클릭이벤트확인!! ");
+	document.getElementById('myDiv').style.display = "block";
+}
+</script>
+</head>
+<body>
+
+
+<h3>div태그요소</h3>
+1.웹페이지의 배치 <br>
+2.블록모드
+3.일반적으로 컨테이너의 종류 중의 하나 <br>
+
+<hr>
+
+함세강 안시은 김지민 김서영  박재영 박민주 이동원
+<button onclick="span_hidden()">숨김</button>
+<button onclick="span_show()">보이기 </button>
+<br><br>
+ <div id="myDiv">
+ <span>함세강</span>
+<span> 안시은</span>
+<span>김지민 </span>
+<span> 김서영</span>
+<span>  박재영 </span>
+<span> 박민주 </span>
+<span> 이동원</span>
+ </div>
+</body>
+</html>
