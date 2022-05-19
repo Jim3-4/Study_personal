@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+h1{
+color:blue;
+}
+*{
+font-family: arial,verdana;
+color:black;
+}
+p{
+color:red;
+border: 1px solid gray;
+
+}
+p:nth-of-type(2){
+background-color: #e5e5e5;
+text-align:center;
+}
+</style>
+</head>
+<body>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nobis praesentium commodi error laudantium aliquid explicabo. Labore provident iste rerum blanditiis dolorem veritatis dolorum architecto eaque minima nesciunt aspernatur cum.</p>
+<p class="second">Eius voluptas perferendis dolores eveniet id aliquid quisquam dicta suscipit ex cum labore cumque dignissimos cupiditate natus asperiores adipisci earum hic illum obcaecati similique rem molestiae aspernatur molestias alias voluptatem!</p>
+<p>Consequatur nostrum laborum rerum ipsam velit. Ullam voluptate repudiandae repellendus nulla totam excepturi eveniet facilis amet in saepe error consequuntur quibusdam laudantium ipsam non est pariatur corrupti debitis alias aliquam.</p>
+<p>Earum voluptas tempore maiores facilis corporis perspiciatis officiis nisi eaque aliquam non explicabo asperiores nulla. Quidem quam unde qui voluptatibus beatae provident quis temporibus facilis repudiandae eius optio quaerat consectetur.</p>
+<p>Earum nobis maxime doloribus molestiae minima quisquam aliquam quidem ea voluptates soluta eveniet enim aperiam ex eum eligendi fugiat repellat animi ducimus itaque vero tenetur id quibusdam sint numquam consequatur.</p>
+
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis praesentium ducimus neque iste temporibus a ratione facere distinctio odit perspiciatis consequuntur esse possimus tempora explicabo voluptatibus similique asperiores ullam sed.</div>
+<div class="second">Dolorem explicabo reprehenderit numquam reiciendis architecto exercitationem eveniet illum tenetur debitis commodi necessitatibus totam quis cum possimus nemo odit asperiores atque itaque accusantium iusto deleniti molestiae eos nihil quibusdam quaerat.</div>
+<div class="">Atque corrupti ullam id minus voluptate aut excepturi consequuntur odio omnis itaque sint eligendi dicta nihil deleniti facilis natus porro illum labore voluptatem totam veritatis animi ab sed quas ex.</div>
+<div>Doloremque laborum alias dolores qui unde molestias tempora voluptatibus labore perferendis omnis excepturi sed nisi laboriosam asperiores ab enim placeat iusto veritatis sequi totam fugit eum dicta quia nesciunt at.</div>
+<div>Rem cumque suscipit facere sed deserunt ea id quaerat laboriosam vel dolorem velit aliquam sapiente totam perspiciatis soluta recusandae provident ex consequuntur beatae aliquid modi reprehenderit distinctio inventore nobis vero!</div>
+
+<h1 style="color:green">hello Word</h1>
+<h2>hello Word</h2>
+<h3>hello Word</h3>
+<h4>hello Word</h4>
+<h5>hello Word</h5>
+<h6>hello Word</h6>
+</body>
+</html>
