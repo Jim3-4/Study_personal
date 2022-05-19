@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+
+<style>
+div{
+background-color: black;
+color:white;
+}
+</style>
+
+</head>
+
+
+
+<body>
+<script>
+
+function hidden(){
+	//alert 나 console쓰기 
+	//console.log('숨기기버튼이 클릭됨');
+	var mydiv=document.getElementById("myDiv");
+	mydiv.style.display = "none";
+}
+function show(){
+	var mydiv=document.getElementById("myDiv");
+	mydiv.style.display ="block";
+}
+</script>
+<button onclick="hidden()">숨기기</button>
+<button onclick="show()">보이기</button>
+<div id="myDiv">
+<font style="font-size: 20px ; font-weight: bold;" >London</font>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam omnis modi distinctio perspiciatis pariatur laborum explicabo accusamus aspernatur alias corrupti temporibus enim nesciunt iusto quis ut dolores rerum iste libero.</p>
+<p>Sunt tempora doloremque mollitia dicta ab ipsam corporis debitis vel nam officiis beatae blanditiis unde fugit dolor velit quidem veniam doloribus sapiente voluptas iusto cupiditate corrupti sint suscipit nobis quis.</p>
+
+</body>
+</html>

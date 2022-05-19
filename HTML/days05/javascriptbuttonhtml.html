@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<style>
+
+  div{
+  
+    background-color: black;
+    color: white;
+    padding: 20px;
+  
+  }
+  
+  p:hover {
+  
+   color: red;
+  
+  }
+  
+  
+
+</style>
+</head>
+<body>
+
+<!-- http://guny.kr/stuff/klorem/ 무작위로 한글 채우는 사이트 -->
+
+
+<button onclick="div_hide()">숨기기</button>
+<button onclick="div_show()">보이기</button>
+
+<script>
+
+  function div_hide() {
+   
+   // console.log("숨기기 버튼 클릭됨.");  
+   
+   var demo = document.getElementById("demo");  
+   demo.style.display = "none";
+  }
+  
+  
+  function div_show() {
+      
+   // console.log("숨기기 버튼 클릭됨.");  
+      
+   var demo = document.getElementById("demo");  
+   demo.style.display = "block";
+   }
+
+
+</script>
+
+<div id = "demo">
+  <h2>Lorem.</h2>
+  
+  <!-- p*2>lorem -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis distinctio aliquid ut dolores tempora tempore rem dolorum saepe nam porro ipsum libero doloremque soluta quia exercitationem non temporibus laudantium modi!</p>
+  <p>Fugit modi soluta laboriosam animi laborum excepturi ipsum. Ipsam sint quibusdam reiciendis ipsum id consectetur ipsa adipisci fugiat officiis facilis iusto accusantium expedita quaerat praesentium sed assumenda laborum delectus animi!</p>
+  
+</div>
+
+
+
+</body>
+</html>html>
