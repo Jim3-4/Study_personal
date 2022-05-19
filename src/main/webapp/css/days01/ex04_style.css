@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+
+
+p{
+	background-color: lightblue;
+}
+
+p{
+	background-color: lightpink;	
+}
+.second{
+	background-color: gray;
+}p.second{
+background-color: aqua;	
+}
+
+#box3{
+	background-color: lime;
+}
+
+
+div#box3{
+	background-color: maroon;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="init()">
+autocomplete="on" 사용자 이전에 입력한 값을 기반으로 자동완성 속성
+<form action="ex02_ok.jsp" method="get"autocomplete="on">
+비밀번호:<input type="password" name="passwd"maxlength="8" style="text-align:center;">
+
+<!-- <input type="image" src="../images/SiSt.ico">
+<image alt=""src="../images/SiSt.ico"> -->
+브라우저 지원에 따라 색상 선택이 다르다. 
+<input type="color" id="favcolor"name="favcolor">
+<br>
+<input type="date" id="birth">
+<button type="button" onclick="btn_date()">선택한 날짜 확인</button>
+<script>
+//window 객체는 모든 객체의 최상위 부모이고 생략가능 
+//모든 input 태그들의 입력값, 선택값은 value 속성값으로 설정, 가져오기도 한다. 
+
+function btn_date(){
+
+	var birth=document.getElementById("birth").value;
+	alert(birth);
+}
+</script>
+
+설문투표기간:
+<input type="date" min="2022-05-18" max="2022-05-25">
+
+<input type="datetime-local">
+<input type="datetime">
+
+email: <input type="email">
+<input type="month">
+
+<input type="text" value="홍길동"readonly="readonly">
+<br>
+<input type="text" value="홍길동"disabled="disabled">
+<input type="text"size="50">
+<br>
+<hr>
+전화번호:<input type="tel" pattern="[0-9]{3}-\d{4}-\d{4}">
+<input type="number" min="10" max="90" value="30" step="10">
+<br>
+<input type="range" id="volumn"name="volumn"min="0"max="100" value="10"  oninput="volum_change()">
+<div id="demo"></div>
+<br>
+검색: <input type="search">
+<br>
+url만 입력 유효성 검사까지: <input type="url">
+<br>
+연도와 주 선택: <input type="week">
+<br>
+우편번호: <input type="text"  pattern="\d{5}|\d{3}-[0-9]{3}">
+<br>
+시간: <input type="time">
+<input type="submit">
+</form>
+<script>
+function init(){
+	//alert("로딩");
+	var v=document.getElementById("volumn");
+	var d=document.getElementById("demo");
+	
+	d.innerText=v.value;
+}
+function volum_change(){
+	var v=document.getElementById("volumn");
+	var d=document.getElementById("demo");
+	
+	d.innerText=v.value;
+}
+</script>
+</body>
+</html>

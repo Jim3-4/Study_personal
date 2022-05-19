@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="../images/SiSt.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+}
+
+footer {
+    background-color: #777;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+</style>
+
+<style>
+nav {
+    background-color: #ccc;
+    width: 30%;
+    height: 300px;
+    padding: 20px;
+    float:left;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+article {
+    background-color: #f1f1f1;
+    width: 70%;
+    min-height: 300px;
+    padding: 20px;
+    float: left;
+}
+
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+    
+}
+</style>
+<style>
+@media (max-width:800px) {
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+</style>
+</head>
+<body>
+
+    <h2>CSS + Layout (배치) Float</h2>
+
+  <header>
+        <h2>Cities</h2>
+</header>
+
+<section>
+      <nav>
+            <ul>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Seoul</a></li>
+            </ul>
+
+      </nav>
+<article>
+            <h1>London</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cumque consequatur odio eos nesciunt facere ullam molestiae porro
+                deserunt aliquid delectus aut reiciendis. Incidunt adipisci
+                temporibus soluta doloribus magnam provident consequuntur.</p>
+            <p>Omnis dolores consectetur ut id velit eligendi sed iste
+                officiis ipsam odit laudantium totam rem aliquid quas quam aut magni
+                nulla consequuntur repellat odio nam sequi beatae eius aperiam
+                facere!</p>
+            <h1>Paris</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cumque consequatur odio eos nesciunt facere ullam molestiae porro
+                deserunt aliquid delectus aut reiciendis. Incidunt adipisci
+                temporibus soluta doloribus magnam provident consequuntur.</p>
+            <p>Omnis dolores consectetur ut id velit eligendi sed iste
+                officiis ipsam odit laudantium totam rem aliquid quas quam aut magni
+                nulla consequuntur repellat odio nam sequi beatae eius aperiam
+                facere!</p>
+            <h1>Seoul</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cumque consequatur odio eos nesciunt facere ullam molestiae porro
+                deserunt aliquid delectus aut reiciendis. Incidunt adipisci
+                temporibus soluta doloribus magnam provident consequuntur.</p>
+            <p>Omnis dolores consectetur ut id velit eligendi sed iste
+                officiis ipsam odit laudantium totam rem aliquid quas quam aut magni
+                nulla consequuntur repellat odio nam sequi beatae eius aperiam
+                facere!</p>
+        </article>
+</section>
+  <footer>
+        <p>Footer</p>
+
+  </footer>
+</body>
+</html>
+
+<!-- 
+html 레이아웃 배치방법 : 
+1.css float 
+2. css 프레임워크- 부트 스트랩
+ 3.css flexbox
+ 4.css 그리드 레이아웃 
+ 
+ 시맨틱 태그= 의미가 있는 태그 ->대상(개발자, 브라우저 )
+ form ,table,  
+ 의미가 없는 태그 div ,span
+ 시멘틱 태그 ? 의미가 있는 태그(요소)
+브라우저와 개발자에게 의미가 있는 태그
+의미가 없는 요소 - div, span
+의미가 있는 요소 - form, table, article 등등.
+시멘틱 태그
+header - 소개 내용이나 탐색 링크의 집합에 대한 컨테이너
+section - 문서의 섹션 (제목이 있는 주제별 컨텐츠 그룹) 을 정의하는 태그
+장
+소개
+뉴스항목
+연락처 정보
+article - 기사 (그 자체로 의미), 독립적인 자체에 포함된 내용을 지정하는 태그
+웹 페이지의 나머지 부분과 독립적으로 배포할 수 있어야 한다.
+신문 기사들
+제품 카드
+사용자 의견
+블로그 게시물
+포럼 게시물
+footer - 바닥글, 문서나 구역의 바닥글을 정의하는 태그
+저작권 정보
+연락처 정보
+사이트 맵
+맵 위로 링크
+관련된 문서
+nav - 탐색 링크의 집합을 정의하는 태그
+문서의 모든 탐색 링크들이 nav 태그안에 있어야 하는 것은 아니다.
+주요 링크
+aside - 어떤 주의의 내용과 관련된 어떤 콘텐츠를 정의하는 태그
+figure /figcation - 그림, 도표, 사진, 코드 목록내용을 정의하는 태그
++++ section 태그 안에 article 태그 중첩되어져 사용..
+
+article 태그 안에 section 태그 중첩되어져 사용..
+
+<figure>
+ 
+  -->

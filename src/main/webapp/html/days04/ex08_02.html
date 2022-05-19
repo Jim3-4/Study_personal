@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+</head>
+<body>
+h3>{ex08_02}
+<h3>ex08_02</h3>
+ul>li*5>a
+<ul>
+	<li><a href=""></a></li>
+	<li><a href=""></a></li>
+	<li><a href=""></a></li>
+	<li><a href=""></a></li>
+	<li><a href=""></a></li>
+</ul>
+
+<div>설명목록: dl dt dd</div>
+div>dl>(dt+dd)*5
+<div>
+	<dl>
+		<dt></dt>
+		<dd></dd>
+		<dt></dt>
+		<dd></dd>
+		<dt></dt>
+		<dd></dd>
+		<dt></dt>
+		<dd></dd>
+		<dt></dt>
+		<dd></dd>
+	</dl>
+</div>
+div[속성명='속성값']
+태그이름 [속성명=속성값]
+태그이름 [속성명='속성값']
+태그이름 [속성명="속성값"]
+
+div[id='box1']
+<div id="box1"></div>
+
+id속성일 경우에는 #아이디명
+div#box1
+<div id="box1"></div>
+
+#box1
+<div id="box1"></div>
+
+p.ss16
+<p class="ss16"></p>
+p[class='ss16']
+<p class="ss16"></p>
+
+p[class='ss16 box cls']
+<p class="ss16 box cls"></p>
+p.ss16.box.cls
+<p class="ss16 box cls"></p>
+
+속성을 여러개 추가 
+a[href='http://www.sist.co.kr' class='ss16']
+<a href="http://www.sist.co.kr" class="ss16"></a>
+
+a[href='http://www.sist.co.kr' class='ss16']{쌍교센}
+<a href="http://www.sist.co.kr" class="ss16">쌍교센</a>
+
+항목 번호 매기기 :$ 
+ul>li*5>{홍길동-$}
+<ul>
+	<li>홍길동-1</li>
+	<li>홍길동-2</li>
+	<li>홍길동-3</li>
+	<li>홍길동-4</li>
+	<li>홍길동-5</li>
+</ul>
+
+ul>li[class=item]*5>{홍길동-$}
+<ul>
+	<li class="item">홍길동-1</li>
+	<li class="item">홍길동-2</li>
+	<li class="item">홍길동-3</li>
+	<li class="item">홍길동-4</li>
+	<li class="item">홍길동-5</li>
+</ul>
+ul>li.item*5>{홍길동-$}
+<ul>
+	<li class="item">홍길동-1</li>
+	<li class="item">홍길동-2</li>
+	<li class="item">홍길동-3</li>
+	<li class="item">홍길동-4</li>
+	<li class="item">홍길동-5</li>
+</ul>
+ul>li.item$*5>{홍길동-$}
+<ul>
+	<li class="item1">홍길동-1</li>
+	<li class="item2">홍길동-2</li>
+	<li class="item3">홍길동-3</li>
+	<li class="item4">홍길동-4</li>
+	<li class="item5">홍길동-5</li>
+</ul>
+
+ul>li.item$@-*5>{홍길동-$}
+<ul>
+	<li class="item5">홍길동-1</li>
+	<li class="item4">홍길동-2</li>
+	<li class="item3">홍길동-3</li>
+	<li class="item2">홍길동-4</li>
+	<li class="item1">홍길동-5</li>
+</ul>
+
+
+ul>li.item$@+*5>{홍길동-$}
+<ul>
+	<li class="item1">홍길동-1</li>
+	<li class="item2">홍길동-2</li>
+	<li class="item3">홍길동-3</li>
+	<li class="item4">홍길동-4</li>
+	<li class="item5">홍길동-5</li>
+</ul>
+
+ul>li*5>{홍길동 -$@11}
+<ul>
+	<li>홍길동 -11</li>
+	<li>홍길동 -12</li>
+	<li>홍길동 -13</li>
+	<li>홍길동 -14</li>
+	<li>홍길동 -15</li>
+</ul>
+
+ul>li*5>{홍길동 -$@-11}
+<ul>
+	<li>홍길동 -15</li>
+	<li>홍길동 -14</li>
+	<li>홍길동 -13</li>
+	<li>홍길동 -12</li>
+	<li>홍길동 -11</li>
+</ul>
+</body>
+</html>
