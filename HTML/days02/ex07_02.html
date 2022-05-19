@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<pre>
+package days03;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import com.util.DBconn;
+
+/**
+ * @author k≡n¡k
+ * @date 2022. 5. 4. - 오후 2:54:29
+ * @subject   
+ * @content        (  월요일 시험 문제 1번 )
+ */
+public class Ex05_03 {
+
+	public static void main(String[] args) { 
+		String sql =   "SELECT  grade ,    losal ,   hisal  , COUNT(*) cnt "
+				+ "FROM salgrade s JOIN emp e ON  sal BETWEEN losal AND hisal "
+				+ "GROUP BY grade ,    losal ,   hisal "
+				+ "ORDER BY grade ASC";
+		
+		String empSql = "SELECT   d.deptno, dname,  empno, ename,  sal "
+				+ "        , grade "
+				+ "FROM dept d RIGHT JOIN emp e ON d.deptno = e.deptno "
+				+ "            JOIN salgrade s ON sal BETWEEN losal AND hisal "
+				+ "WHERE grade = ? ";
+		
+		PreparedStatement pstmt = null, empPstmt = null;
+		ResultSet rs = null, empRs = null;
+		Connection conn = null;
+		
+		LinkedHashMap<SalgradeDTO, ArrayList<DeptEmpSalgradeDTO>> map = null;
+		SalgradeDTO dto = null;   // key
+		ArrayList<DeptEmpSalgradeDTO> list = null;  // value
+		
+		DeptEmpSalgradeDTO empDto = null;
+		
+		conn = DBconn.getConnection();
+		try {
+			// Map 객체 생성
+			map = new LinkedHashMap<>();
+			
+			pstmt =  conn.prepareStatement(sql); 
+			rs = pstmt.executeQuery();
+
+			if( rs.next() ) {
+				list = new ArrayList<>();
+				do { 
+					int grade = rs.getInt("grade");
+					int losal = rs.getInt("losal");
+					int hisal = rs.getInt("hisal");
+					int cnt = rs.getInt("cnt");
+
+					dto =  new SalgradeDTO(grade, losal, hisal, cnt); // key
+					
+
+					// [START] 
+					empPstmt = conn.prepareStatement(empSql);
+					// ?
+					empPstmt.setInt(1, grade);
+					empRs =  empPstmt.executeQuery();
+					
+					if ( empRs.next() ) {
+						
+						list = new ArrayList<DeptEmpSalgradeDTO>();
+						
+						do {
+							// d.deptno, dname,  empno, ename,  sal
+							int deptno = empRs.getInt(1);
+							String dname = empRs.getString(2);
+							int empno = empRs.getInt(3);
+							String ename = empRs.getString(4);
+							double sal = empRs.getDouble(5);
+							
+							empDto = new DeptEmpSalgradeDTO();
+							empDto.setDeptno(deptno);
+							empDto.setDname(dname);
+							empDto.setEmpno(empno);
+							empDto.setEname(ename);
+							empDto.setSal(sal);
+							
+							list.add(empDto);
+							
+						} while (empRs.next());
+					} else {
+						System.out.println("\t\t 사원 존재 X ");
+					}
+					
+					empPstmt.close();
+					empRs.close();
+					
+					map.put(dto, list);  // 
+					
+					// [END]
+				} while (rs.next());
+			} // if
+
+		} catch (SQLException e) { 
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+			} catch (SQLException e) { 
+				e.printStackTrace();
+			}
+		}
+
+		DBconn.close();
+
+		 printSalgradeEmp( map  );
+
+		System.out.println( " - END - ");
+
+	} // main
+
+	private static void printSalgradeEmp(LinkedHashMap<SalgradeDTO, ArrayList<DeptEmpSalgradeDTO>> map) {
+		
+		Set<Entry<SalgradeDTO, ArrayList<DeptEmpSalgradeDTO>>>  es= map.entrySet();
+		Iterator<Entry<SalgradeDTO, ArrayList<DeptEmpSalgradeDTO>>> ir = es.iterator();
+		
+		while (ir.hasNext()) {
+			Entry<SalgradeDTO, ArrayList<DeptEmpSalgradeDTO>> entry = 	ir.next();
+			System.out.println(entry.getKey());
+			// 
+			ArrayList<DeptEmpSalgradeDTO>  list = entry.getValue();
+			// 20	RESEARCH	7369	SMITH	800.00
+			Iterator<DeptEmpSalgradeDTO>  vir = list.iterator();
+			
+			while (vir.hasNext()) {
+				DeptEmpSalgradeDTO dto =  vir.next();
+				
+				System.out.printf("\t\t%d\t%s\t%d\t%s\t%.2f\n"
+						, dto.getDeptno(), dto.getDname(), dto.getEmpno(), dto.getEname(), dto.getSal() );
+			} // while
+			
+		} // while
+		
+	} // 
+
+	 
+
+} // class
+
+/*   
+ *   days26.Ex01.java  ~
+LinkHashMap< SalgradeDTO, ArrayList<DeptEmpSalgradeDTO> >
+[실행결과]
+1등급	(   700 ~ 1200 ) - 2명                                         SalgradeDTO(KEY)
+		20	RESEARCH	7369	SMITH	800.00               ArrayList<DeptEmpSalgradeDTO> list  ( VALUE)
+		30	SALES	7900	JAMES	950.00
+2등급	(   1201 ~ 1400 ) - 3명
+		10	ACCOUNTING	7934	MILLER	1300.00
+		30	SALES	7654	MARTIN	1250.00
+		30	SALES	7521	WARD	1250.00
+3등급	(   1401 ~ 2000 ) - 2명
+		30	SALES	7844	TURNER	1500.00
+		30	SALES	7499	ALLEN	1600.00
+4등급	(   2001 ~ 3000 ) - 4명
+		10	ACCOUNTING	7782	CLARK	2450.00
+		20	RESEARCH	7902	FORD	3000.00
+		20	RESEARCH	7566	JONES	2975.00
+		30	SALES	7698	BLAKE	2850.00
+5등급	(   3001 ~ 9999 ) - 1명
+		0	null	7839	KING	5000.00
+ - END - 
+
+ */
+ </pre>
+</body>
+</html>
