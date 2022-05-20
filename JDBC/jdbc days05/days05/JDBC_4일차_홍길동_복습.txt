@@ -1,0 +1,64 @@
+
+1. 게시판 글쓰기   처리과정( 시퀀스 다이어 그램 )에 대해서 설명하세요.        5분
+  ( 업무 프로세서 )
+
+   [게시판 목록]
+       [글쓰기] 버튼 -> 클릭 -> [새 게시글 작성]
+                                               작성자
+                                               이메일
+                                               제목
+                                               내용
+                                               비밀번호
+                                               등등
+                                               [저장] 버튼 ->            저장여부  알림 --
+                                               
+            <----------------------------------------------                                   
+   
+
+  
+2. [게시판 글수정 구현]하세요.                                                    15분
+   ( 구체적으로 클래스명, 메서드명 호출 순서 등등 자세히 설명 )
+   
+   days04.Ex01.java                     BoardController.java                                                                             BoardService.java                                                        BoardDAOImple  ( BoardDAO 인터페이스 구현 )
+   main(){}                  -> 메뉴선택(); _ 4 엔터 -> 메뉴처리()
+    while(){                                                             switch(){                                                                         BoardDTO    viewService(3){                                            int update( BoardDTO dto ){
+                                                                                                                                                                                                                                                                                        ? ? ? ? 
+                                                                                                                                                                             																											psmt.executeUpdate();
+       메뉴출력();                                                                                                                                                 }                                                                                       }
+       메뉴선택(); _ 4 엔터                                               case 4 : // 수정
+                                                                                         수정하기();
+       메뉴처리();																break;						 	
+    }                                                                        }
+    
+                                                                             수정하기(){
+                                                                                  1. 수정할 게시글 번호 입력   seq = 3
+                                                                                  2-1. 3 게시글 정보 출력
+                                                                                      dto = service.viewService(3)
+                                                                                      출력 코딩.                                                                                  
+                                                                                  2-2. email, title, content 수정
+                                                                                         dto 생성
+                                                                                    int rowCount =     service.updateService( dto )      int    updateService( dto){
+                                                                                    1 == rowCount
+                                                                                        수정 여부 출력                                                                        int rowCount =   dao.update( dto );
+                                                                                                                                                                                return rowCount;                                                                                        
+                                                                                  3. 일시정지()                                                                       }
+                                                                             }
+    
+  
+-- 10:11 수업 시작~~    
+    [ 페이징 처리 ]
+3. tbl_cstvsboard 테이블에 345 개의 게시글을 추가하는 익명 프로시저를 만들어서 추가하세요.  5분
+   
+ 
+ UML - 8가지 종류
+[참고] 시퀀스 다이어그램(sequence diagram)은
+ - 시계열(시간 순서)로 정렬된 객체 상호작용을 보여준다. 
+ - 시나리오 기능을 수행하는데 필수적인 객체들 간에 교환되는 일련의 메시지들과 시나리오에 수반되는 객체와 클래스를 표현한다. 
+ - 시퀀스 다이어그램은 일반적으로 개발 중인 시스템의 논리적 뷰의 유즈 케이스 실현화와 관련된다. 
+ - 시퀀스 다이어그램은 이벤트 다이어그램, 이벤트 시나리오라고도 부른다. 
+ - 예) https://search.naver.com/search.naver?where=image&sm=tab_jum&query=%EC%8B%9C%ED%80%80%EC%8A%A4+%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8#imgId=image_sas%3Ablog146246491%7C1%7C222521219991_1170966256
+ -     https://blog.naver.com/sindongyj/220197250010	     
+	      
+
+
+ 	     
