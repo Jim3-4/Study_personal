@@ -1,0 +1,40 @@
+[4조 - 수자 문자열과 영단어]
+
+class Solution {
+
+	public int solution(String s) {
+	
+		String [] numArray = {"zero","one","two","three","four","five","six","seven","eight","nine"};
+		
+		StringBuffer sb = new StringBuffer(s);
+		int startIdx, endIdx;
+		
+		for (int i = 0; i < numArray.length; i++) {
+			
+			if((startIdx = sb.indexOf(numArray[i])) != -1) {
+			
+				endIdx = startIdx + numArray[i].length();
+				sb.replace(startIdx , endIdx ,(i--)+"");;
+			
+			} // if
+			
+		} // for i
+		       
+		return Integer.parseInt(sb.toString());
+	
+	} // solution ()
+
+} // class Solution
+
+
+ 
+
+public static String solution(String s) {
+		// 성능(속도)    [ <  가독성( 유지,보수) ]
+		// repalceAll()	
+		
+		String [] numArray = {"zero","one","two","three","four","five","six","seven","eight","nine"};
+		String [] nums = {"0", "1","2","3","4","5","6","7","8","9"};		 
+		for (int i = 0; i < nums.length; i++)  s = s.replaceAll(numArray[i], nums[i]);
+		return s;
+	}
