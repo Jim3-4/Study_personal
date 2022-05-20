@@ -1,9 +1,3 @@
 <h1>개인스터디</h1> <br>
 💖🥰😝❤️
-
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=applejam)](https://github.com/applejam/github-readme-stats)
-
-<img src="http://mazandi.herokuapp.com/api?handle={김지민}&theme=cold"/>
-
-![mazandi profile](http://mazandi.herokuapp.com/api?handle={kimjm0304}&theme=cold)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Jim3-4)](https://github.com/Jim3-4/github-readme-stats)
