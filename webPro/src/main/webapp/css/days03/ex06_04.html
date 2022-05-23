@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+#panel, .flip{
+font-size:16px;
+padding:10px;
+background-color: #4acf50;
+color:white;
+text-align: center;
+margin:auto;
+border:1px solid #a6d8a8;
+}
+#panel{
+display:none;
+}
+</style>
+</head>
+<body>
+<!-- p.filp>{Click to show panel }^#panel>p*3>lorem -->
+<p class="flip">Click to show panel </p>
+<div id="panel">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ipsam necessitatibus dignissimos culpa quibusdam placeat quas officiis aspernatur dolore laudantium aperiam doloremque magni. Eaque beatae vero fugit? Architecto in ea.</p>
+	<p>Amet et omnis iste nulla beatae possimus voluptate facilis ipsum sint ducimus eius ad harum eaque neque deleniti quasi tempora voluptas eum accusantium suscipit in laborum ullam inventore! Iusto ipsum!</p>
+	<p>Nihil totam temporibus architecto mollitia earum maiores reiciendis quaerat quis sequi laudantium fugit ducimus quod soluta quo cum suscipit inventore incidunt quasi quia ab. Iure esse eveniet saepe perspiciatis error.</p>
+</div>
+<script type="text/javascript">
+/* 1번째방법  */
+/* $("p.flip").click(function(event){
+	console.log($("#panel").css("display"));
+	if($("#panel").css("display")=="none"){
+		$("#panel").css("display","block");
+	}else{
+ 		$("#panel").css("display","none"); 
+		$("#panel").hide();
+	}
+});
+ */
+$("p.flip").click(function(event){
+	$("#panel").slideToggle();
+/* $("#panel").toggle(); */
+});
+
+</script>
+</body>
+</html>

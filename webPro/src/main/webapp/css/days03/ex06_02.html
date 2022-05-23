@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+.imgbox{
+width:120px;
+border:1px solid gray;
+padding:6px;
+text-align: center;
+float:left;
+}
+.imgbox img, .imgbox button{
+width:100%;
+}
+/* #imgbox1{
+display:none;
+}
+#imgbox2{
+visibility: hidden;
+/* 영억 차지(유지)+숨김 
+} */
+
+</style>
+</head>
+<body>
+<!-- #imgbox1.imgbox*3>{Box$}+img+button -->
+<div id="imgbox1" class="imgbox">Box1<img src="../images/img_5terre.jpg" alt="" /><button onclick="remove()">Remove</button></div>
+<div id="imgbox1" class="imgbox">Box2<img src="../images/img_5terre.jpg" alt="" /><button>hide</button>
+<!-- <script type="text/javascript">
+<button id="btn_hide()" >Hide</button>
+document.getElementById("btnHide").onclick=function(){
+	document.getElementById("imgbox2").style.visibility="hidden";
+}
+
+제이쿼리로 하면 
+document.querySelector("#imgbox2 button").onclick=function(){
+	document.getElementById("imgbox2").style.visibility="hidden";
+}
+</script> -->
+</div>
+<div id="imgbox1" class="imgbox">Box3<img src="../images/img_5terre.jpg" alt="" /><button>Box3</button>
+<script type="text/javascript">
+document.querySelector("#imgbox3 button").onclick=function(){
+	document.getElementById("imgbox1").style.display="block";
+	document.querySelector("#imgbox2").style.visibility="visible";
+}
+</script>
+</div>
+<script type="text/javascript">
+function remove(){
+	document.getElementById("imgbox1").style.display="none"; //이 뒷부부은 무조건 문자열형태 
+	
+}
+
+</script>
+</body>
+</html>
