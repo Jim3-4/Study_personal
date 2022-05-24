@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 5. 24 - 오후 3:46:00</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    /* 텍스트가 없는 요소 */
+   /*  
+   :empty{
+      width:100%;
+      height:20px;
+      background-color: red;
+   }
+    */
+    
+    /* 비활성화된 요소 */
+    /* 
+    input[type='text']:disabled{
+       background-color: #ddd;
+    }
+     */
+     
+     /*  포커스가 주어진 요소
+     input:focus{
+         background-color: yellow;
+     }
+      */
+      
+      /* 체크된 상태의 라디오버튼, 체크박스 */
+      input[type='radio']:checked, input[type='checkbox']:checked{
+         height:50px;
+         width:50px;
+      }
+</style>
+</head>
+<body>
+
+<h3>ex08_05.html - :의사클래스</h3>
+<pre>
+  1.  :active                    ***           a:active{}
+  2. :enabled
+  3. :in-range
+  4. :invalid
+  5. :lang(language)
+  6. :not(selector)       ***
+  7. :only-child,         :only-of-type
+  8. :optional
+  9. :required
+  10.   :out-of-range
+  11.  :root
+  12. :target
+  13. :valid 
+</pre>
+
+<!-- 4:00 수업 시작 -->
+<div></div>
+<p></p>
+<p>Maxime illum provident.</p>
+<p>Nobis quaerat a.</p>
+
+<form action="">
+	<input type="radio" checked="checked" name="gender">male
+	<input type="radio"  name="gender">female
+	<br>
+	<input type="checkbox"  value="bike" checked="checked" />bike
+	<input type="checkbox"  value="car" />bike
+	<br>
+	first name = <input type="text" name="fname"
+	 autofocus="autofocus" autocomplete="none"  required="required" /><br>
+	last name =  <input type="text" name="lname" /><br>
+	<!-- 비활성화  -->
+	address =  <input type="text" name="addr" disabled="disabled" /><br>
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

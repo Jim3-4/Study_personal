@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 5. 24 - 오후 4:25:46</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+   body{
+       /* int section = 0   사용할 변수 선언 + 초기화 */
+       counter-reset:section;  
+   }
+   
+   div::before{
+     /* section++ */
+     counter-increment:section;
+     content:counter(section);
+     
+     background-color: black;
+     color:white;
+     padding:1px 10px;
+     margin-right: 16px;
+     border-radius: 50%;
+     
+   }
+</style>
+
+</head>
+<body>
+
+<h3>ex09_03.html</h3>
+
+<pre>
+  1. css 카운터 
+     - 자동 번호 매기기
+     - 변수
+     - [속성]
+        counter-reset            카운터 생성 또는 재설정
+        counter-increment    카원터 값 증가
+        content                        생성된 콘텐츠 삽압
+        counter()/counters() 요소에 카운터값 추가
+</pre>
+
+<div>Java</div>
+<div>Oracle</div>
+<div>JDBC</div>
+<div>html5</div>
+<div>css3</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 5. 24 - 오후 2:26:15</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+   h3, p{
+      border: 1px solid red;
+   }
+   /* 직계 + 후손    div 공백 p */
+   /* div p{ */
+   
+    /* 직계 자식 p */
+    div > p{
+     background-color: red;
+   }
+   
+   /* div 태그 [바로 뒤에  + 형제]   p */
+   div + p{
+     background-color: green;
+   }
+   
+   /* div 요소에서 인접하지 않아도 되는 뒤에 따라오는 모든 형제 레벨 p 요소 */
+   div ~ p{
+     background-color: blue;
+   }
+</style>
+</head>
+<body>
+
+<h3>ex07.html - css 4가지 결합자</h3>
+<pre>
+    1.   공백         div p {}              모든 자식+후손   p
+    2.   >                                        직계자식 p
+    3.  +                                        바로 뒤에 인접한 p
+    4.  ~                                       
+</pre>
+
+<p>Lorem ipsum dolor sit amet.</p>
+
+<!-- div 태그의 직계 자손 p + 후손 p -->
+<div>
+   <p>Lorem.</p>
+   <p>Eligendi.</p>
+   <section>
+     <p>Lorem ipsum dolor sit amet.</p>
+   </section>
+</div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+
+<section>
+  section
+</section>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
