@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 5. 25 - 오후 4:49:29</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    body{
+      transition:0.5s   ease;
+    }
+    div#main{
+       padding: 16px;
+       
+       transition:0.5s   ease;
+    }
+    .sidenav{
+       background-color: #111;
+       position: fixed;
+       left:0;
+       top:0;
+       height: 100%;
+       
+       /* 250px -> 0 */
+       width: 0;
+       overflow-x:hidden;
+       
+       transition:0.5s   ease;
+    }    
+    .sidenav a{
+       display: block;
+       text-decoration: none;
+       font-size: 25px;
+       padding:8px 8px 8px 32px;
+       color:#818181;
+       
+       transition:0.3s   ease;
+    }    
+    .sidenav a:hover{
+        color:#f1f1f1;
+    }
+ </style> 
+</head>
+<body>
+<!-- <h3>days05/ex01.html - 탐색 모음 : nav 메뉴바 ( 수평, [ 수직 ])</h3> -->
+<!-- 9:35 수업 시작~ --> 
+
+<!-- #mySidenav.sidenav>a[href="#"]*5 -->
+<div id="mySidenav" class="sidenav">
+	<a href="#" class="closebtn">&times;</a>
+	<a href="#">About</a>
+	<a href="#">Services</a>
+	<a href="#">Clients</a>
+	<a href="#">Contact</a>
+</div>
+
+<!-- #main>h2>lorem3^p>lorem20^span -->
+<div id="main">
+	<h2>Lorem ipsum dolor.</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus inventore aspernatur laudantium neque autem esse ipsam nostrum repellat ad iure?</p>
+	<span style="cursor: pointer;font-size: 30px;" onclick="openNav()">&#9776;</span>
+</div>
+
+<script>
+  function openNav(){
+	  //                                                                                     반드시 단위 붙인다.
+	  document.getElementById("mySidenav").style.width = "250px"; 
+	  document.getElementById("main").style.marginLeft = "250px"; 
+	  document.body.style.backgroundColor = "rgba(0,0,0,   0.4)";
+  }
+  
+  // jquery 사용해서  x 닫기 버튼을 클릭할때 250px -> 0 
+  $("#mySidenav .closebtn").click( function (event){
+	  // alert("xx");  이벤트 확인~ 
+	   $("#mySidenav").css("width", "0");
+	   $("#main").css("margin-left", "0"); 
+	  /* $(this).parents("div")  .css("width", "0"); */
+	  
+	  // body 배경색을 흰색을 설정
+	  $("body").css("background-color", "white");
+  } );
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

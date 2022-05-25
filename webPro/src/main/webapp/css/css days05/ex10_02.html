@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 5. 25 - 오후 3:10:04</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+  *{    /* 0점 */
+     box-sizing: border-box;
+  }
+  
+  body{
+     font-family: Arial;
+     border:1px solid red;
+     padding:20px;
+     
+     max-width: 800px;
+     margin: 0 auto;
+     height: 100%;
+  }
+  
+  /* ::의사요소 */
+  .row::after{
+      content:"";
+      clear:both;
+      display: table;
+  }
+  
+  .side{
+     float: left;
+     width:15%;
+     margin-top:10px;
+  }
+  .middle{
+     float: left;
+     width:70%;
+     margin-top:10px;
+  }
+  
+  .middle .bar-container{
+     width: 100%;
+     background-color: #f1f1f1; 
+     text-align: center;
+     color:white;
+  }
+  
+  .right{
+     text-align: right;
+  }
+  
+  /* 막패 그래프  */
+  /* <div class="bar-1"></div> */
+  .bar-1 {
+     background-color: #f44336; 
+     height: 18px;
+     width: 20%; 
+  }
+  .bar-2{
+     background-color: #3296F3; 
+     height: 18px;
+     width: 15%; 
+  }
+  .bar-3 {
+     background-color: #00BCD4; 
+     height: 18px;
+     width: 75%; 
+  }
+  .bar-4 {
+     background-color: #FF9800; 
+     height: 18px;
+     width: 86%; 
+  }
+  .bar-5 {
+     background-color: #4caf50; 
+     height: 18px;
+     width: 40%; 
+  }
+  
+</style>
+
+<style>
+  @media (max-width:400px){
+    .side,  .middle{
+      width:100%;
+    }
+    .right{
+      display: none;
+    }
+  }  
+</style>
+
+
+</head>
+<body>
+<h3>ex10_02.html  - 막대 그래프</h3>
+
+<div class="row">
+   
+   <!-- bar start -->
+   <div class="side">
+   	<div>1 star</div>
+   </div> 
+   <!-- 막대그래프  -->
+   <div class="middle">   
+   	<div class="bar-container">   
+   		<div class="bar-1"></div>
+   	</div>
+   </div> 
+   <div class="side right">
+   	<div>20</div>
+   </div>
+   <!-- bar end -->
+   
+   <!-- bar start -->
+   <div class="side">
+   	<div>2 star</div>
+   </div> 
+   <!-- 막대그래프  -->
+   <div class="middle">   
+   	<div class="bar-container">   
+   		<div class="bar-2"></div>
+   	</div>
+   </div> 
+   <div class="side right">
+   	<div>15</div>
+   </div>
+   <!-- bar end -->
+   
+   <!-- bar start -->
+   <div class="side">
+   	<div>3 star</div>
+   </div> 
+   <!-- 막대그래프  -->
+   <div class="middle">   
+   	<div class="bar-container">   
+   		<div class="bar-3"></div>
+   	</div>
+   </div> 
+   <div class="side right">
+   	<div>75</div>
+   </div>
+   <!-- bar end -->
+   
+   <!-- bar start -->
+   <div class="side">
+   	<div>4 star</div>
+   </div> 
+   <!-- 막대그래프  -->
+   <div class="middle">   
+   	<div class="bar-container">   
+   		<div class="bar-4"></div>
+   	</div>
+   </div> 
+   <div class="side right">
+   	<div>86</div>
+   </div>
+   <!-- bar end -->
+   
+   <!-- bar start -->
+   <div class="side">
+   	<div>5 star</div>
+   </div> 
+   <!-- 막대그래프  -->
+   <div class="middle">   
+   	<div class="bar-container">   
+   		<div class="bar-5"></div>
+   	</div>
+   </div> 
+   <div class="side right">
+   	<div>40</div>
+   </div>
+   <!-- bar end -->
+   
+</div>
+
+</body>
+</html>

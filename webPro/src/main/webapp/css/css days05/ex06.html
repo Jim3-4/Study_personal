@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 5. 25 - 오후 12:39:00</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+   /* type속성이 있으면 어떤 스타일 지정 */
+   /* 속성값 X */
+   /* [type]{ */
+   
+   /* type 속성을 가지고 있으면서 text 속성값을 가진 선택자 */
+   [type='text']{
+     width:200px;
+     border: 1px solid red;
+     margin:10px;
+     padding:5px;
+   }
+   
+   /* type='text' */
+</style>
+
+<style>
+   [href]{
+      /*    */
+   }
+   
+   /* where title = 'flower' */
+   /* a[title='flower']{} */
+   
+   
+   /* where title like '%flower%' */
+   a[title*='flower']{   }
+   
+   /* where title  like 'flower%' */
+   a[title^='flower']{   }
+   
+   /* where title  like '%flower' */
+   a[title$='flower']{   }
+   
+   /* 단어 */
+   a[title~='flower']{
+      text-decoration: none;
+      color:red;
+   }
+ </style>
+</head>
+<body>
+
+	<h3>ex06.html - *** css 속성 selector(선택자)</h3>
+	
+	<pre>
+	   [css 속성 selector(선택자) ]
+	   	   
+	   1. [속성명]
+	       [type]{
+	       }
+	   2. [속성명=속성값]
+	       [type='text']{
+	       }
+	    
+	    2:00 수업시작~~~    
+	   3. [속성명^=속성값]
+	   4. [속성명$=속성값]
+	   5. [속성명*=속성값]
+	            like % 속성값 %
+	    
+	   6. [속성명~=속성값]    flower 단어가 포함된 title 속성값을 가진 요소 .. 
+	   7. [속성명|=속성값]   X
+	   
+	</pre>
+	
+
+	<a href="#" title="klematis flower">naver</a>	<br>
+	<a href="#" title="flower">daum</a>	<br>
+	<a href="#" title="kbsflower">sist</a>	<br>
+	<a href="#" title="kbs-flower">sist</a>	<br>
+	<a href="#" title="flowers">sist</a>	<br>
+
+	<hr>
+	<input>	<br>
+	<input>	<br>
+	<input type="text">	<br>
+	<input type="text">	<br>
+	<input type="text">	<br>
+	<input type="submit">	<br>
+	<input type="reset">	<br>
+
+
+
+</body>
+</html>
