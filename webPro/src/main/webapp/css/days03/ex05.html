@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+table{
+width:100%;
+border-collapse: collapse;
+}
+caption{
+	font-weight:bold;
+	text-transform: uppercase;
+	caption-side:bottom;
+}
+td,th{
+border-bottom: 1px dotted red;
+}
+th{
+width:100px;
+height: 70px;
+}
+td{
+height: 30px;
+text-align: cneter;
+vertical-align: middle;
+}
+tr:nth-child(even){
+background-color: #f2f2f2;
+}
+tr:hover:not(:first-child){
+background-color: #4caf50;
+}
+</style>
+</head>
+<body>
+<!-- table>caption+(tr*3>td*4) -->
+<table>
+	<caption>table sample</caption>
+	<tr>
+<th>칼럼명1</th>
+<th>칼럼명2</th>
+<th>칼럼명3</th>
+<th>칼럼명4</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>6</td>
+		<td>7</td>
+		<td>8</td>
+	</tr>
+		<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>6</td>
+		<td>7</td>
+		<td>8</td>
+	</tr>
+		<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>6</td>
+		<td>7</td>
+		<td>8</td>
+	</tr>
+</table>
+</body>
+</html>

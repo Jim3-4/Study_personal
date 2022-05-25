@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+.container{
+position: relative;
+border:1px solid black;
+}
+.red-box{
+background-color: red;
+height: 100px;
+margin: 30px;
+
+position:relative;
+}
+.green-box{
+background-color: green;
+position:absolute;
+height: 60px;
+width: 70px;
+left:50px;
+top:50px;
+z-index:100;
+}
+.blue-box{
+background-color: blue;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="red-box">red-box</div>
+<div class="green-box">green-box</div>
+<div class="blue-box">blue-box</div>
+</div>
+</body>
+</html>

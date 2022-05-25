@@ -1,0 +1,349 @@
+.group_title{
+    overflow: hidden;
+    padding-bottom: 17px;
+}
+.title {
+    font-size: 14px;
+    color: black;
+}
+.title_area{float:left;}
+.dsc {
+	font-size: 12px;
+    margin-left: 8px;
+    color: grey;
+}
+.info_area {
+	 font-size: 12px;
+	 color: #808080;
+	 float:right;
+}
+#interest_setting{
+	font-size: 12px;
+	color: #505050;
+}
+
+#setting_button{
+  position: absolute;
+        clip:rect(281px,914px,308px,884px);
+	 display: inline-block; 
+/*      width: 11px;
+    height: 11px; */
+    background-position: -444px -168px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    content: '';
+    margin-right: 4px;
+    vertical-align: -1px;
+    opacity: .7;
+	
+}
+ .btn_set{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background-position: -444px -168px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    content: '';
+    margin-right: 4px;
+    vertical-align: -1px;
+    opacity: .7;
+
+	 }
+
+ .vibe_ btn, .btn_set{
+	   background-image: url('https://s.pstatic.net/static/www/img/uit/sp_main_dba1af.png');
+-webkit-background-size: 457px 434px;
+    background-size: 457px 434px;
+    background-repeat: no-repeat; 
+   
+	 }
+div{display: block;}
+
+.contents_ul {
+/*     font-size: 0;
+    line-height: 0; */
+    white-space: nowrap;
+    width: 100%;
+}
+.contents_ul li{
+cursor:pointer;
+  float:left;  
+    border: 1px solid #dae1e6;
+    font-size: 13px;
+    line-height: 49px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    width:12.5%;
+    z-index: 1;
+    vertical-align: top;
+   
+}
+
+.contents_ul li:first-child{
+background-color: #e65da0;
+color:white;
+}
+/* 메뉴바밑에 */
+img {
+    vertical-align: top;
+}
+
+/*common*/
+*{
+	box-sizing: border-box;
+}
+
+
+body{
+    margin: 0; 
+    padding: 0; 
+    font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic",
+    "맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+}
+
+#wrap{
+    overflow: hidden;
+}
+
+.ico_navi,.ico{
+    background-image: url(../images/sp_main_dba1af.png);
+    background-size: 457px 434px;
+}
+
+ul{
+   list-style: none;
+   overflow: hidden;
+   margin: 0; 
+padding: 0; 
+}
+li{
+    display: inline-block;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+input{
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+            outline: none;
+            box-shadow: none;
+}
+button{
+    margin: 0; padding: 0;
+    border: 0;
+}
+
+#container {
+    position: relative;
+    width: 1130px;
+    padding: 20px 30px;
+    margin: 0 auto;
+    letter-spacing: -.2px;
+}
+/*전체 레이아웃*/
+ .container__inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 30px;
+    width: 1130px;
+    margin: 0 auto;
+/*     background-color: crimson; */
+}
+
+.container__inner__left{
+    width: 750px;
+/*    background-color: rgb(255, 131, 156); */
+}
+
+.container__inner__right{
+    float: right;
+    width: 350px;
+/*     background-color: rgb(255, 191, 204); */
+}
+
+
+
+
+/*--header--*/
+
+.header__inner__box{
+    display: flex;
+    width: 1130px;
+    height: 160px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+
+/*서비스navi*/
+.header__inner__box{
+    display: flex;
+    flex-direction: column;
+}
+.header__inner__box .box__navi{
+    margin-left: auto;
+    padding:10px 0 15px 0;
+}
+.header__inner__box .box__navi ul {
+    display: flex;
+    flex-direction: row;
+}
+.header__inner__box .box__navi ul li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.header__inner__box .box__navi ul li a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.header__inner__box .box__navi ul li:nth-child(1) > a{
+   font-size: 11px;
+   color: #404040;
+}
+.header__inner__box .box__navi ul li:nth-child(1) > a:after{
+    content: "";
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background-position: -308px -345px;
+    background-repeat: no-repeat;
+    background-image: url(../images/sp_main_dba1af.png);
+    background-size: 457px 434px;
+    margin: 0 3px;
+}
+
+.header__inner__box .box__navi ul li .bar{
+    width: 1px;
+    height: 10px;
+    margin: 0 10px 0 5px;
+    background-color:#e4e8eb ;
+}
+
+.header__inner__box .box__navi ul li:nth-child(2) > a{
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 10px;
+    background-position: -262px -330px;
+    background-repeat: no-repeat;
+    background-image: url(../images/sp_main_dba1af.png);
+    background-size: 457px 434px;
+}
+
+.header__inner__box .box__navi ul li:nth-child(3) > a{
+    content: "";
+    display: inline-block;
+    width: 34px;
+    height: 11px;
+    background-position: -369px -299px;
+    background-repeat: no-repeat;
+    background-image: url(../images/sp_main_dba1af.png);
+    background-size: 457px 434px;
+    margin-left: 8px;
+}
+
+/*검색박스*/
+.header__inner__box .box__search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.box__search .logo a{
+    display: inline-block;
+    width: 222px;
+    height: 52px;
+    background-position: 0 -158px;
+    background-repeat: no-repeat;
+    background-image: url(../images/sp_main_dba1af.png);
+    background-size: 457px 434px;
+    margin-left: 8px;
+
+}
+.box__search .box__search__wrap{
+    display: flex;
+    justify-content: center;
+}
+.box__search .box__search__wrap > form > .swindow{
+    display: flex;
+    width: 582px;
+    height: 52px;
+    border: 2px solid #19ce60;
+}
+.box__search .box__search__wrap > form > .swindow > .input_text{
+    width: 90%;
+    height: 100%;
+    padding: 13px 15px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000;
+    font-weight: 700;
+    background-color: #fff;
+    border: 0;
+}
+.box__search .box__search__wrap > form > .swindow > .sbutton{
+    width: 10%;
+    height: 100%;
+    background-color: #19ce60;
+}
+.box__search .box__search__wrap > form > .swindow > .sbutton > span{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-position: -420px 0;
+    background-repeat: no-repeat;
+    background-image: url(../images/sp_main_dba1af.png);
+    background-size: 457px 434px;
+    vertical-align: top;
+}
+
+/*gnb*/
+.header__inner__gnb{
+    border-top: 1px solid #e4e8eb;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%);
+}
+.header__inner__gnb .gnb__inner{
+    width: 1130px;
+    margin: 0 auto;
+}
+.header__inner__gnb .gnb__inner .gnb__inner__group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 11px 0;
+}
+
+.header__inner__gnb .gnb__inner .gnb__inner__group .list01{
+
+}
+
+/*--container--*/
+
+/*배너*/
+.banner{
+    width: 750px;
+    height: 135px;
+}
+
+/*뉴스*/
+.news{
+    width: 750px;
+    margin-top: 12px;
+}
+
+/*콘텐츠*/
+.contents{
+    width: 750px;
+}

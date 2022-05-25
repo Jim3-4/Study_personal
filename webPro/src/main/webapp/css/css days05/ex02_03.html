@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 5. 25 - 오전 10:41:13</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+   .dropdown{
+      position: relative;  /* 중요하다... 왜 ?   */
+      display: inline-block;
+      
+      left: 200px;
+   }   
+   .dropdown-content{
+     display:none;
+   
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     /* 박스의     그림자 효과 */
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0, 0.2);
+     padding: 12px 16px;
+     z-index: 1; 
+   }
+   
+  .dropdown:hover .dropdown-content{
+     display: block;
+   }
+</style>
+
+</head>
+<body>
+<h3>ex02_03.html - css 드롭다운 메뉴 </h3>
+
+<!-- .dropdown>span+.dropdown-content>p -->
+<div class="dropdown">
+	<img src="../images/img_5terre.jpg" style="width:100px;height: 50px;">
+	<div class="dropdown-content">
+		<img src="../images/img_5terre.jpg" style="width:300px;height: 150px;">
+		<div class="desc">이미지 설명</div>
+	</div>
+</div>
+<br>
+js <br>
+css <br>
+
+</body>
+</html>

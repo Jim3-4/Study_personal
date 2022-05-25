@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 5. 25 - 오전 11:49:33</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+  *{
+     box-sizing: border-box;
+  }
+  div.gallery{
+    border: 1px solid #ccc;
+    width: 180px;
+    margin: 5px;
+    
+    float: left;
+  }
+  div.gallery:hover{
+    border: 1px solid #777;
+  }
+  div.gallery img{
+     width: 100%;
+     height: auto;
+  }
+  div.gallery div.desc{
+     padding: 15px;
+     text-align: center;
+  }
+  
+  .clearfix::after{
+     content: "";
+     clear: both;
+     display: table;
+  }  
+</style>
+
+<style>
+  @media  screen and ( max-width:500px ) {
+     div.gallery{
+        width:100%;
+     }
+  }
+  
+  @media  screen and ( min-width:500px )  and ( max-width:700px ){
+     div.gallery{
+        width:48%;
+     }
+  }
+</style>
+
+</head>
+<body>
+
+<h3>css 반응형 웹 + 이미지 갤러리 </h3>
+
+<!-- .gallery*4>a[target='_blank']>img^.desc>{Add a description of the image here} -->
+<div class="gallery">
+	<a href="../images/img_5terre.jpg" target="_blank"><img src="../images/img_5terre.jpg" alt="" /></a>
+	<div class="desc">Add a description of the image here</div>
+</div>
+<div class="gallery">
+	<a href="../images/img_forest.jpg" target="_blank"><img src="../images/img_forest.jpg" alt="" /></a>
+	<div class="desc">Add a description of the image here</div>
+</div>
+<div class="gallery">
+	<a href="../images/img_lights.jpg" target="_blank"><img src="../images/img_lights.jpg" alt="" /></a>
+	<div class="desc">Add a description of the image here</div>
+</div>
+<div class="gallery">
+	<a href="../images/img_mountains.jpg" target="_blank"><img src="../images/img_mountains.jpg" alt="" /></a>
+	<div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="clearfix"></div>
+
+<div style="padding:6px;">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse libero ipsa optio quas ipsum dolorem unde sint asperiores maiores fuga. Hic recusandae neque officiis vero optio quidem magni. Animi fugiat.</p>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

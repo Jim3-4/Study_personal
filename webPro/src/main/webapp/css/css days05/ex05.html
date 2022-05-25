@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 5. 25 - 오후 12:15:05</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+  #navlist{
+     position: relative;
+  }
+  #navlist  li{
+    position:absolute;
+    top:0;
+    
+    margin:0;
+    padding:0;
+    
+    list-style-type: none;
+  }
+  #navlist  li, #navlist a{
+     height: 44px;
+     width:43px;
+     /* border:1px solid red; */ 
+     display: block;
+  }
+  li#home{
+     left: 0;
+     background: url('../images/img_navsprites_hover.gif');
+  }
+  li#prev{
+     left:63px;
+     background: url('../images/img_navsprites_hover.gif') -47px  0;
+  }
+  li#next{
+     left:129px;
+     background: url('../images/img_navsprites_hover.gif') -91px  0;
+  }
+  
+  li#home:hover{
+    background: url('../images/img_navsprites_hover.gif') 0   -45px;
+  }
+  li#prev:hover{
+    background: url('../images/img_navsprites_hover.gif')-47px   -45px;
+  }
+  li#next:hover{
+    background: url('../images/img_navsprites_hover.gif')-91px    -45px;
+  }
+</style>
+
+</head>
+<body>
+
+<h3>ex05.html - 이미지 스프라이트( image sprites )</h3>
+<pre>
+  이미지 스프라이트 :  단일 이미지에 넣은 이미지 모음
+  이미지가 많이 웹 페이지를 로드할 때 오래 시간이 걸린다. ( 성능 떨어진다. )
+  서버 이미지 가지러 여러 번 요청 X ( 성능 향상 )
+</pre>
+
+<!-- ul#navlist>li[id]*3>a[href=#] -->
+<ul id="navlist">
+	<li id="home"><a href="#"></a></li>
+	<li id="prev"><a href="#"></a></li>
+	<li id="next"><a href="#"></a></li>
+</ul>
+
+</body>
+</html>
+
+
+
+
+
+
+

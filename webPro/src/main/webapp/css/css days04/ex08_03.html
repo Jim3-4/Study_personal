@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 5. 24 - 오후 2:49:22</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+   div > p{
+      background-color: yellow;
+      padding: 20px;
+      
+      display: none;
+   }
+  
+</style>
+</head>
+<body>
+
+<h3>ex08_03.html    - js 툴팁 기능 구현 </h3> 
+<!-- <div  onmouseover="div_mouseover();" onmouseout="div_mouseout();"> -->
+<div>
+   HOver Over Me
+   <p>Lorem ipsum dolor sit amet.</p>
+   <p>Fugit eaque distinctio molestias porro.</p>
+   <p>Dolor repudiandae quod quisquam dignissimos.</p>
+</div>
+
+<!-- js 사용 -->
+<script>
+  /*
+  function div_mouseover(){
+	  // console.log( "onmouseover ");   // 이벤트 확인
+	  // 풍선도움말( 툴팁 ) show
+	  document.querySelector("div > p:first-child").style.display = "block";
+  }
+  function div_mouseout(){
+	  // console.log( "onmouseout ");   // 이벤트 확인
+	   // 풍선도움말( 툴팁 ) hide
+	  document.querySelector("div > p:first-child").style.display = "none";
+  }
+  */ 
+</script>
+
+<!-- jquery 사용 수정 -->
+<script>
+    /*
+   $("div").mouseover(function(event) {
+   	  $("div > p:first-child").show();
+   });
+   $("div").mouseout(function(event) {
+	   $("div > p:first-child").hide(); 	
+   });
+   */
+   
+   /*
+   $("div")
+       .mouseover(function(event) {
+	   	  // $("div > p:first-child").show();	   	  
+	   	  $( "p:first-child"  , this).show();
+	   })
+	  .mouseout(function(event) {
+		   $("div > p:first-child").hide(); 	
+	   });
+   */
+   
+   $("div").hover(
+		   function(event) {   // mouseover
+			   $( "p:first-child"  , this).show();
+		   }, function(evnet) { // mouseout
+			   $("div > p:first-child").hide(); 	
+		   }
+   );
+   
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

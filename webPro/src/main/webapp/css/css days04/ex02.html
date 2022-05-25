@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 5. 24 - 오전 11:18:38</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+
+  p{
+     border:3px solid #4caf50;
+     padding:5px;
+  }
+  
+   p img{
+     width: 170px;
+     /*float: left; */
+     float:right; 
+     
+     /* float:none; */
+     
+     margin-left: 15px;
+   }
+   /* 
+   .clearfix{
+      overflow: auto;
+   }
+    */
+    
+    /* 
+    ::   after  의사클래스
+    :    hover 의사요소
+     */
+    .clearfix::after{
+       content:"";
+       clear: both;
+       display: table;
+    }
+</style>
+
+</head>
+<body>
+
+<h3>ex02.html - float 속성</h3>
+
+<pre>
+  [ float 속성 ]
+  - 콘텐츠의 [위치를 지정]하고, 형식을 지정하는 사용 속성
+  - 요소가 어떻게 떠야 하는 지를 지정하는 속성
+  - left , right, none(기본값), inhreit
+  - clear 속성 
+</pre>
+
+<!-- p>img+lorem -->
+<!-- 이미지가 p 컨테이너의 출력  + 텍스트   :  이미지 오른쪽 띄우고 싶다. -->
+
+<!-- float된 img 태그가 p 컨테이너보다 영역 커져서 오버플로워 발생.. -->
+<p class="clearfix">
+  <img src="../images/pineapple.jpg" alt="" />
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quas sequi 
+  voluptatum quae minus magni. Magni sit odio id optio aspernatur vero quam
+   quidem unde animi tempore itaque odit accusantium!
+</p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

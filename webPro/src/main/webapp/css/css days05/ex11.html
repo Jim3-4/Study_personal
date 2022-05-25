@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 5. 25 - 오후 4:26:21</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+   p{
+     width: 200px;
+     height: 200px;
+     border: 1px solid green;
+     padding:20px;
+   }
+   
+  /*  p:first-child{ */
+  p:first-of-type{
+     background-color: green;
+     border-radius: 15px 50px 30px 5px;
+   }
+   
+   p:nth-of-type(2){
+      background: url('../images/paper.gif') left top repeat;
+      border-radius: 0 50%;
+   }
+   
+   /* p:last-child */
+   /* p:nth-of-type(3) */
+   p:last-of-type{
+     border:2px solid #73da21;
+     border-top-left-radius: 15px;
+     border-bottom-right-radius: 15px;
+   }
+</style>
+</head>
+<body>
+
+<h3>css 둥근모서리 ( border-radius 속성 )</h3>
+
+<p>Lorem ipsum dolor.</p>
+<p>Quis rerum neque.</p>
+<p>Perspiciatis dolor hic?</p>
+
+</body>
+</html>
