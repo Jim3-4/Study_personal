@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div{
+        width:300px;
+        height: 100px;
+        background-color: yellow;
+        border:1px solid black;
+    }
+    #demo{
+        transform: rotateX(45deg);
+        
+    }
+</style>
+</head>
+<body>
+    <h3>CSS 3D 변환-transform 속성</h3>
+    <pre>
+        1.요소 회전
+        rotateX(), rotateY(), rotateZ() , rotate3d(x,y,z)
+        2.요소 이동
+        translateX(), translateY(), translateZ(), translate3d(x,y,z)
+        3.요소 크기
+        scaleX(), scaleY(), scaleZ(), scale3d(x,y,z)
+        4.matrix3d()
+
+
+
+    </pre> 
+     <button>회전</button>
+    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic incidunt ullam fugit dolorum, accusantium soluta cupiditate corrupti minus quo non facere voluptas pariatur cumque </div>
+    <div id="demo">Lorem, ipsum dolor.</div>
+    <script>
+        var angle=1;
+        var timer;
+         document.querySelector("button:first-of-type").onclick=function(){
+      timer=setInterval(div_rotate,10);
+    
+    }
+    function div_rotate(){
+        var target=document.querySelector("#demo");
+         target.style.transform="rotateX("+angle+"deg)";
+       /* target.style.transform="rotateY("+angle+"deg)";
+        target.style.transform="rotateZ("+angle+"deg)"; */
+
+        angle+=1;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            /* 주어진 시간동안 부드럽게 전환 */
+            /* transition: width 2s ease, height 1s ease; */
+            transition: width 2s, height 1s;
+        }
+/*         너비가 100에서 마우스를 올리면 300px로 증가 
+        콜론 하나는 가상클래스  
+        너비변경을 부드럽게 변경=>전환*/
+        div:hover{
+            width: 300px;
+            height: 200px;
+        }
+
+</style>
+</head>
+<body>
+<h3>css 2D/3D 변환작업</h3>
+    <h3>css전환</h3>
+    <pre>전환: 주어진 기간동안 속성값을 부드럽게 변경 
+        [2D/3D 변환]
+
+        변환: 요소크기 조정/이동/기울기/회전 transform 속성
+        
+        전환: 주어진 기간동안 속성값을 부드럽게 변경  transition 속성
+       
+       1.trainsition
+       2.transition-delay 전환 연기시간 속성
+       3.transition-duration 지속시간 속성
+       4.transition-property CSS 속성
+       5.transition-timing-function ease 전환속도 곡선 속성
+       
+       전환효과를 만들려면 2가지 지정
+       1.효과를 추가하려는 css속성
+       2.효과를 지속시간 
+       
+        지속시간을 지정하지 않으면 기본값은 0 으로 적용 
+        ease(기본값) 천천히(시작) -> 빨리 -> 천천히(종료)
+        linear 등속 (시작~종료)
+        ease-in 천천히 (시작)
+        ease-out 천천히 (종료)
+        ease-in-out 등등
+   
+
+
+    </pre>
+    <div></div>
+</body>
+</html>
