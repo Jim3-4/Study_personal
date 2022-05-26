@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            width: 200px;
+            border: 1px solid black;
+
+        }
+      /*   p{
+            white-space: nowrap;
+        } */
+        p.text1{ white-space: nowrap;
+            overflow:hidden;
+            text-overflow:clip;
+        }
+        p.text2{ white-space: nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        p.text1:hover{
+            overflow:visible;
+   
+        }
+        
+        p.text3{
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+       
+    </style>
+</head>
+<body>
+    <p class="text1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, accusantium?</p>
+    <p class="text2">Odit aperiam quo nemo magni excepturi quae corporis totam? Inventore?</p>
+    <p class="text3">긴단어를테스트합니다어떻게될지Loremipsumdolorsitametconsectetur adipisicing elit. Possimus illo aliquam reiciendis expedita, dignissimos alias repellat asperiores, quaerat placeat laudantium provident sed, cupiditate consectetur. Saepe nulla recusandae quae minima ut.</p>
+</body>
+</html>

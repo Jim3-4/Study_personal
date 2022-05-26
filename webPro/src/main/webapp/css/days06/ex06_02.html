@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div{
+        width:300px;
+        height: 50px;
+        background-color: yellow;
+        border: 1px solid black;
+        
+      /*   transform: scaleX(1.5); 
+        transform: scaleY(1.5);  */
+       /* 너비2배, 높이1/2배 */
+        /* transform: scale(2,0.5); */
+        /* transform: skewX(180deg); */
+        /* transform: skewY(20deg); */
+        transform: skew(20deg,10deg);
+    }
+</style>
+</head>
+<body>
+    <input type="radio" name="direction"value="">시계방향
+    <input type="radio" name="direction"value="">반시계방향
+    <div>Lorem ipsum dolorl.</div>
+    <button>회전</button>
+    <button>멈춤</button>
+
+</body>
+</html>
