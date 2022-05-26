@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mydiv{width:200px;
+        height: 30px;
+        background-color:cornflowerblue;
+        border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+   <div id="mydiv">안녕1</div>
+   <button>회전</button>
+   <button>멈춤</button> 
+<script>
+    var angle=1;
+    var timer;
+
+    document.querySelector("button:first-of-type").onclick=function(){
+        timer=setInterval(div_rotate,1);
+    }
+    function div_rotate(){
+        var target=document.querySelector("#mydiv");
+        target.style.transform="rotateY("+angle+"deg)";
+        angle+=1;
+    }
+
+    document.querySelector("button:last-of-type").onclick=function(){
+   
+        clearInterval(timer);
+    }
+</script>
+</body>
+</html>
