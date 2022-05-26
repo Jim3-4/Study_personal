@@ -5,9 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div#trans{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            text-align: center;
+           /* 뒤에 ease안붙여도 된다. 기본값이기 때문에  
+           변환 -transform(rotate) 부드럽게 회전 
+           */
+            transition: width 3s ease, height 2s ease,transform 2s ;  
+            
+        }
+        /* 의사클래스는 특정 상태를 나타낸다 . */
+        div#trans:hover{
+            width: 300px;
+            height: 300px;
+            transform: rotate(180deg);
+        }
+    </style>
 </head>
 <body>
-    <h3>transition-전환</h3>
-    <div>box</div>
+    <h3>transition-전환+변환</h3>
+    <div id="trans">box</div>
+    
 </body>
 </html>
