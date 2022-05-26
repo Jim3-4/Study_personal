@@ -11,8 +11,14 @@
             height: 100px;
             background: red;
             /* 주어진 시간동안 부드럽게 전환 */
-            /* transition: width 2s ease, height 1s ease; */
+            
             transition: width 2s, height 1s;
+            transition-property: width;
+            transition-duration: 2s;
+            /* 전환할때 속도곡선 */
+            transition-timing-function: ease;
+            
+
         }
 /*         너비가 100에서 마우스를 올리면 300px로 증가 
         콜론 하나는 가상클래스  
@@ -49,7 +55,7 @@
         linear 등속 (시작~종료)
         ease-in 천천히 (시작)
         ease-out 천천히 (종료)
-        ease-in-out 등등
+        ease-in-out 천천히 시작 ~천천히 종료 
    
 
 
