@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body{
+/*             border: 1px solid red; */
+
+/* %의 단위는 항상 부모의 %이다.        */
+height: 100%;
+
+/* 테두리가 2개가 생기는것은 body에 마진이 있기 때문  */
+margin:0;
+padding:0;
+
+}
+ .parallex{
+     border:1px solid green;
+/*      부모가 body이기 때문에 body의 100%; */
+     height: 100%;
+    background: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDAzMjNfMTQ3%2FMDAxNTg0OTMxMDgwMTky.TxNH_rxkcHU_g1mOUVkCFCwIL1BDa26g2MjLcCqKLagg.FCxiEPlEl-ABt35N9DfVNN45CXJSZgLkisoFoo93qbQg.JPEG.worldflora%2F80926d9ddfc108dee3a632a1d63f7fac.jpg&type=a340') no-repeat center fixed;
+    background-size: cover; /* 꽉채우겟다 . */
+}   
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi ipsam unde ea amet, aliquam illum sit eos commodi, earum expedita, quasi debitis. Id perspiciatis illo, est inventore laboriosam placeat autem!</p>
+    <div class="parallex"></div>
+    <div style="height: 500px;background:fuchsia;font-size:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta enim rem minus quo provident aut corrupti inventore numquam consectetur quidem exercitationem maiores deleniti ullam quisquam, tempore eveniet ipsa recusandae omnis!</div>
+    <div class="parallex"> </div>
+</body>
+</html>

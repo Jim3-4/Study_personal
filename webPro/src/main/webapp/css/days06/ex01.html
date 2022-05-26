@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:150px;
+            height: 120px;
+            border: 1px solid black;
+            background: url("..\webPro\src\main\webapp\images\coffeehouse2.jpg");
+        }
+    </style>
+</head>
+<body>
+    <h3>배경사이즈:contain,cover </h3>
+    <pre>
+        -contain: 가능한 크게 배경이미지 확대 
+        -cover: 콘텐츠 영역이 완전히 배경 이미지에 포함되도록 처리 
+    </pre>
+    <h3>contain,cover x</h3>
+    <div id="div1">
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <h3>contain</h3>
+    <div id="div2"style="background-size:contain">
+        <p>Deserunt eos dicta natus in?</p>
+    </div>
+    <h3>cover</h3>
+    <div id="div3"style="background-size:cover">
+        <p>Fugit illum repellat id explicabo.</p>
+    </div>
+</body>
+</html>
