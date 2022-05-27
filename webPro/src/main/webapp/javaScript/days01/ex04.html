@@ -6,14 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body onclick="test()">
     <fieldset>
         <legend>성별</legend>
-        <input type="radio" name="gender" id="g_m" checked="checked"><label for="g_m">남자</label>
-        <input type="radio" name="gender" id="g_f"><label for="g_f">여자</label>
+        <input type="radio" name="gender" id="g_m" checked="checked" value="male"><label for="g_m">남자</label>
+        <input type="radio" name="gender" id="g_f"  value="female"><label for="g_f">여자</label>
     </fieldset>
     <button>성별 확인</button>
-    <p>남자</p>
-   
+    <p id="demo">남자</p>
+   <script>
+       function test(){
+          /*  console.log("남자 라디오 버튼:"+document.getElementById("g_m").checked);
+           console.log("여자 라디오 버튼:"+document.getElementById("g_f").checked); */
+
+          /*  if(document.getElementById("g_m").checked)
+            document.getElementById("demo").innerText="남자";
+           if(document.getElementById("g_f").checked)
+            document.getElementById("demo").innerText="여자"; */
+
+           var genderRadios= document.querySelectorAll("[name='gender']");
+           for(var i=0; i<genderRadios.length; i++){
+               if(genderRadios[i].checked){
+                //    document.getElementById("demo").innerText=genderRadios[i].value;
+                // 라디오버튼 뒤에있는 것 ,다음요소형제
+                document.getElementById("demo").innerText=genderRadios[i].nextElementSibling.innerText;
+                break;
+               }
+           }
+       }
+   </script>
 </body>
 </html>
