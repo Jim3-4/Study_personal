@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>ex01_03 html 요소 속성변경</h3>
+    <button onclick="bulb_on()">trun on</button>
+    <button disabled="disabled" onclick="bulb_off()">turn off</button>
+    <img src="../images/pic_bulboff.gif" alt="" id="imgbulb">
+    <script>
+        function bulb_on(){
+            let bulb=document.getElementById("imgbulb");
+            bulb.src="../images/pic_bulbon.gif";
+
+            //TURN ON 버튼 비활성화
+            // document.querySelector("button:nth-of-type(1)")
+            document.querySelector("button:first-of-type").disabled=true;
+
+            //turn off 버튼 비활성화 
+            document.querySelector("button:last-of-type").disabled=false;
+        }
+        function bulb_off(){
+            let bulb=document.getElementById("imgbulb");
+            bulb.src="../images/pic_bulboff.gif";
+
+            //TURN ON 버튼 비활성화
+            // document.querySelector("button:nth-of-type(1)")
+            document.querySelector("button:first-of-type").disabled=false;
+
+            //turn off 버튼 비활성화 
+            document.querySelector("button:last-of-type").disabled=true;
+        }
+    </script>
+</body>
+</html>

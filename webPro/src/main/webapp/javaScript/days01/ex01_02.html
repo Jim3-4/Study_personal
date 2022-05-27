@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inputcls{
+            padding: 5px;
+            border: 1px solid gray;
+            width: 400px;
+
+        }
+    </style>
+</head>
+<body>
+    <h3>ex01</h3>
+<input class="inputcls" type="text" id="txtMsg" name="txtMsg" autofocus="autofocus">
+<button onclick="btn_click()">Click me!</button>
+<p id="demo"></p>
+<script>
+    var h3elemt=document.querySelector("h3");
+    h3elemt.innerText+="html내용을 js로 변경 ";
+    // js로 input요소에 class 속성을 inputcls를 추가 
+    /* document.getElementById("txtMsg").classList.add("inputcls");
+    document.getElementById("txtMsg").className("inputcls")
+    document.getElementById("txtMsg").setAttribute("class","inputcls"); */
+    function btn_click(){
+       var message= document.getElementById("txtMsg").value;
+       var pdemo=document.getElementById("demo");
+       pdemo.innerText=message;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inputcls{
+            padding: 5px;
+            border: 1px solid gray;
+            width: 400px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h3>ex01</h3>
+    <input class="inputcls" type="text" id="txtMsg" name="txtMsg" autofocus="autofocus" value="안녕하세요">
+    <button onclick="btn_click()">Click me!</button>
+    <p id="demo"></p>
+<script>
+ $("h3").text($("h3").text()+"-html 내용을 js로 변경");
+ $("#txtMsg").addClass("inputcls");
+ $("button").click(function(event){
+    $("#demo").text( $("txtMsg").value);
+ });
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>하나의 버튼으로 불 끄고 켜기 </h3>
+    <button onclick="bulb_on_off(this);">Turn on</button>
+    <img src="../images/pic_bulboff.gif" alt="" id="imgbulb">
+    <script>
+        function bulb_on_off(btn){
+            let bulb=document.getElementById("imgbulb");
+            if (btn.innerText=="Turn on") {
+               bulb.src="../images/pic_bulbon.gif";
+               btn.innerText="Turn off";
+            }else{
+                bulb.src="../images/pic_bulboff.gif";
+               btn.innerText="Turn on";
+            }
+        }
+    </script>
+</body>
+</html>
