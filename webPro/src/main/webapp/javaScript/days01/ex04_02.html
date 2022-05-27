@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    좋아하는 과목 선택?
+    <br>
+    
+    <select name="subject" id="subject" onchange="subject_change()">
+        <option 
+        >선택하세요</option>
+        <option value="kor">국어</option>
+        <option value="eng">영어</option>
+        <option value="mat">수학</option>
+        <option value="pe">체육</option>
+    </select>
+    <p id="demo">선택된 과목 </p>
+
+    <script>
+        function subject_change(){
+            // alert("d");
+            var s=document.getElementById("subject");
+        //    alert( s.selectedIndex); 선택된 인덱스
+            var o_value=s.options[s.selectedIndex].value;
+            var o_text=s.options[s.selectedIndex].text;
+            document.getElementById("demo").innerText=o_value+"/"+o_text;
+        }
+    </script>
+</body>
+</html>
