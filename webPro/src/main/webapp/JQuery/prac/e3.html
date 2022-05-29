@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="gender" id="g_m" value="male"><label for="g_m">남자</label>
+    <input type="radio" name="gender" id="g_f" value="female"><label for="g_f">여자</label>
+    <button  onclick="test()">성별확인</button>
+    <p id="demo">선택한 성별은 </p>
+    
+    <script>
+       
+        function test(){
+            var radios=document.querySelectorAll("[name='gender']");
+           var btn=document.querySelector("button");
+        
+            for (let i = 0; i < radios.length; i++) {
+                if(radios[i].checked){
+                    document.getElementById("demo").innerText=radios[i].nextElementSibling.innerText;
+                }
+            }
+           
+        }
+    </script>
+</body>
+</html>

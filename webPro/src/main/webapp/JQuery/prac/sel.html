@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <select name="subject" id="subject" onchange="sel()">
+            <option >선택하세요</option>
+            <option value="kor">국어</option>
+            <option value="eng">영어</option>
+            <option value="mat">수학</option>
+        </select>
+    </fieldset>
+    <p id="demo"></p>
+    
+    <script>
+        function sel(){
+            var s=document.querySelector("select");
+            var pdemo=document.getElementById("demo");
+
+            var v_val=s.options[s.selectedIndex].value;
+            pdemo.innerText=v_val;
+        }
+    </script>
+</body>
+</html>

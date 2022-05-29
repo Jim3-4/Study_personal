@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  <img src="../images/pic_bulboff.gif" alt="" id="imgbulb">
+    <button id="btn" onclick="bulb_on_off()">turn on</button>
+  
+    <script>
+         var btn=document.getElementById("btn");
+            var img=document.getElementById("imgbulb");
+        var sw=false;
+            function bulb_on_off(){
+            img.src="../images/pic_bulb"+(sw?"on":"off")+".gif";
+            btn.innerText=(sw?"turn off":"turn on");
+            sw=!sw;
+        }
+    </script>
+</body>
+</html>
