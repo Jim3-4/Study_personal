@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>연습</h3>
+    <button onclick="bulb_on_off(this)">turn on</button>
+   <!-- <button onclick="bulboff()" disabled="disabled">turn off</button> -->
+    <img src="C:\Users\kimjm\OneDrive\문서\java\webPro\src\main\webapp\javaScript\images\pic_bulboff.gif" alt="" id="imgbulb">
+
+    <script>
+        var sw=false;
+        function bulb_on_off(btn){
+            let bulb=document.getElementById("imgbulb");
+
+            bulb.src="../images/pic_bulb"+(sw?"off":"on")+".gif";
+            btn.innerText=sw?"Turn on":"Turn off";
+
+            sw=!sw;
+        }
+
+      /*           
+        function bulbon(){
+            var bulb=document.getElementById("imgbulb");
+            bulb.src="C:\Users\kimjm\OneDrive\문서\java\webPro\src\main\webapp\javaScript\images\pic_bulbon.gif";
+            document.querySelector("button:first-of-type").disabled=true;
+            document.querySelector("button:last-of-type").disabled=false;
+        }
+        function bulboff(){
+            var bulb=document.getElementById("imgbulb");
+           
+            bulb.src="C:\Users\kimjm\OneDrive\문서\java\webPro\src\main\webapp\javaScript\images\pic_bulboff.gif" ;
+            
+            document.querySelector("button:first-of-type").disabled=false;
+            document.querySelector("button:last-of-type").disabled=true;
+        } */
+
+    </script>
+</body>
+</html>
