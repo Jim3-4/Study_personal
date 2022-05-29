@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=~, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>e1연습</h3>
+    <input type="text" id="txtMsg" name="txtMsg" autofocus="autofocus">
+    <button onclick="btn_click()">완료</button>
+    <p id="demo"></p>
+    <script>
+        var h3elemt=document.querySelector("h3");
+        h3elemt.innerText+=" 이렇게";
+        h3elemt.innerText+=" 여기에 추가를 할게요";
+        document.getElementById("txtMsg").classList.add("clstxt");
+        function btn_click(){
+            var messgage=document.getElementById("txtMsg").value;
+            //    var message=document.getElementsByClassName("clstxt").value;
+            var pdemo=document.getElementById("demo");
+            pdemo.innerText=message;
+        }
+    </script>
+</body>
+</html>
