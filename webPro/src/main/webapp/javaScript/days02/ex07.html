@@ -18,10 +18,31 @@
             margin: 10px;
             width: 90%;
         }
+        /* 의사 클래스 (특정 상태) */
+        input[type=text]:focus{
+             background-color: yellow;}
     </style>
 </head>
-<body>
-    <input type="text" id="txtbox1" >
-    <input type="text" id="txtbox2" >
+<body onload="init()" >
+    <input type="text" id="txtbox1" tabindex="1" onkeydown="txt1_keydown()" onkeypress="" onkeyup="txt1_keyup()">
+    <input type="text" id="txtbox2" tabindex="2" >
+
+<script>
+    function init(){
+        document.getElementById("txtbox1").focus();
+    }
+    function txt1_keyup(){
+        document.getElementById("txtbox2").value=document.getElementById("txtbox1").value;
+
+    }
+    function txt1_keydown(){
+    /*     event.srcElement;
+        event.keyCode; -> 13(enter) 16(shift) 38(f1) 65(a/A) -대소문자 구분 x
+        */
+        document.getElementById("txtbox2").value=event.keyCode+"("+String.fromCharCode(event.keyCode)+")"+"/"+event.shiftKey;
+   
+    }
+    
+    </script>
 </body>
 </html>
