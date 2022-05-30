@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" value="kor"  name="subject"  id="s_kor" ><label for="s_kor">국어</label>
+    <input type="checkbox" value="eng"  name="subject"  id="s_eng"  checked="checked"><label for="s_eng">영어</label>
+    <input type="checkbox" value="mat"  name="subject"  id="s_mat" ><label for="s_mat">수학</label>
+    <input type="checkbox" value="pe"  name="subject"  id="s_pe" ><label for="s_pe">체육</label>
+     
+     <br>
+     <button >확인</button> 
+     <p id="demo"></p>
+
+    <script>
+    $("button").click(function(event){
+   /*      :radio==[type=radio]
+        :text==[type=text] 
+        :checkbox==[type=checkbox]
+        체크된 체크박스만 얻어오기 $(":checkbox:checked") */
+
+        //var result="";
+        $(":checkbox:checked").each(function(i,element){
+            //result+=element.value+"/";
+            $("#demo").text(function(index,text){
+                return text+(text ?",":"")+ $(element).val();
+            });
+        });
+        
+    });
+
+
+/*     $("button").click(function(event){
+        var result = "";
+        $("input[name=subject]").each(function(index, element) {
+           // console.log=index+":"+element.value+"/"+element.checked;
+  
+            if(element.checked){
+                result += element.value+"/";
+            }
+        });
+        $("#demo").text(result);
+    }); */
+
+   /*      document.querySelector("button").onclick=function(){
+          var result="";
+           // var subjects= document.querySelectorAll("input[type=checkbox][name=subject]");
+            var subjects= document.querySelectorAll("input[name=subject]");
+            //alert(subjects.length);
+            for (let i = 0; i< subjects.length; i++) {
+                if(subjects[i].checked){
+                    //result+=subjects[i].value+"/";
+                    result+=subjects[i].nextElementSibling.innerText+"/";
+                }
+            }//for
+            document.getElementById("demo").innerText=result;
+     } */
+
+</script>
+</body>
+    
+
+</html>
