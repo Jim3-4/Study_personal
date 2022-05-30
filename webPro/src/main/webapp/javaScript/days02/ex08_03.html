@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type=text]{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    주민등록번호:
+    <input type="text" id="rrn6" autofocus="autofocus" onkeyup="rrn6_keyup()">- <input type="text" id="rrn7" onkeyup="rrn7_keyup()">
+    <p id="demo"></p>
+<script>
+    function rrn6_keyup(){
+  if (event.keyCode >= 48 && event.keyCode <= 57) 
+        { return true; } 
+        else {  
+          alert("숫자만 입력하세요");}
+        if(document.getElementById("rrn6").value.length==6){
+            document.getElementById("rrn7").focus();
+        }
+    }
+    function rrn7_keyup(){
+        if(document.getElementById("rrn7").value.length==7){
+           document.getElementById("demo").innerText=document.getElementById("rrn6").value+"-"+  document.getElementById("rrn7").value;
+            
+        }
+    }
+</script>
+</body>
+</html>
