@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>   
+    <style>
+       select{
+          height: 200px;
+          width: 100px;
+       }
+       button{
+          width:40px;
+       }   
+    </style>
+</head>
+<body>
+    <button onclick="disp();">현재 시간 출력 버튼</button>
+<p id="demo"></p>
+<script>
+$("button").click(function(){
+    $("#demo").text(new Date());
+});
+</script>
+
+</body>
+</html>

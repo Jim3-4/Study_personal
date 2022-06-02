@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>   
+    <style>
+       select{
+          height: 200px;
+          width: 100px;
+       }
+       button{
+          width:40px;
+       }   
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                    <select multiple="multiple" id="sleft">
+                      <option>이창익</option>
+                      <option>김지민</option>
+                      <option>김희진</option>
+                      <option>유환재</option>
+                      <option>박예린</option>
+                    </select>
+            </td>
+            <td>
+               <button onclick="moveRight()">▶</button><br>
+               <button>▶▶</button><br>
+               <button>◀</button><br>
+               <button>◀◀</button><br>
+            </td>
+            <td>
+            <select multiple="multiple" id="sright">
+            </select>
+            </td>
+        </tr>
+    </table>   
+    <script>
+        function moveRight(){
+            var sleftOptions=document.querySelectorAll("#sleft option");
+            for (let i = 0; i < sleftOptions.length; i++) {
+               if(sleftOptions[i].selected){
+                   //console.log(sleftOptions[i].selected)
+               
+                //단지 옮기는 기능 
+                //   document.getElementById("sright").appendChild(sleftOptions[i]);
+                
+                //innerHTML을 쓰게되면 한개만 집어넣을 수 있게 되기 때문에 좋지 않다. 
+                //복제
+                document.getElementById("sright").appendChild(sleftOptions[i].cloneNode(true));
+                }
+                
+            }
+        }
+    </script>
+</body>
+</html>

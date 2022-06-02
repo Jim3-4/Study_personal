@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"  autofocus="autofocus">
+    + 
+   <input type="text" >
+    = 
+    <input type="text"  disabled="disabled">  
+<script>
+//    제이쿼리에서는  :text
+    document.querySelector("input[type=text]:first-of-type").onkeyup=function(){
+        if(event.keyCode==13){
+            document.querySelector("input[type=text]:nth-of-type(2)").focus();
+        }
+    }
+    // 숫자입력안하면 이벤트취소
+    document.querySelector("input[type=text]:first-of-type").onkeydown=function(){
+        this.value = this.value.replace( /[\ㄱ-ㅎ|ㅏ-ㅣ]/g, '');
+      if(!(event.keyCode>=48 && event.keyCode<=57|| event.keyCode==13||event.keyCode==8)){
+          alert("입력잘못");
+          event.returnValue=false;
+      }
+    }
+
+    document.querySelector("input[type=text]:nth-of-type(2)").onkeyup=function(){
+        if(event.keyCode==13){
+            document.querySelector("input[type=text]:nth-of-type(3)").value=
+            parseInt(document.querySelector("input[type=text]:nth-of-type(1)").value)+
+            parseInt(document.querySelector("input[type=text]:nth-of-type(2)").value);
+            document.querySelector("input[type=text]:nth-of-type(1)").focus();
+            document.querySelector("input[type=text]:nth-of-type(1)").select();
+            //document.querySelector("input[type=text]:nth-of-type(1)").value="";
+        }
+    }
+</script>
+</body>
+</html>

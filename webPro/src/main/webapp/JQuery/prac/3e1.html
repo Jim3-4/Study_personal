@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" autofocus="autofocus" > 
+    <select id="operator">
+        <option value="+" selected="selected">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="%">%</option>
+        <option value="/">/</option>
+        <option value="**">**</option>
+    </select>
+    <input type="text"  >=
+    <input type="text"  >
+<script>
+   // $(":text:first-of-type") ==  $(":text").eq(0) == $(":text").first()
+    $(":text").eq(0).keydown(function(event){
+        if(event.keyCode==13){
+            $("select").focus();
+        }
+    });
+    $("select").change(function(){
+        $(":text").eq(1).focus();
+
+    }).keydown(function(event){
+        if(event.keyCode==13){
+            $(":text").eq(1).focus();
+        }
+    });
+    $(":text").eq(1).keydown(function(event){
+        if(event.which==13){
+            var n1=parseInt($(":text").first().val());
+            var n2=parseInt($(":text").eq(1).val());
+            var op=$("select").val();
+            var result;
+            
+            $(":text").last().val(resul)
+        }
+    })
+   </script>
+</body>
+</html>

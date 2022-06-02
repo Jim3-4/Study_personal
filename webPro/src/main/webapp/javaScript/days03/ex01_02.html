@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>  
+        table, th, td {
+          border: 1px solid gray;
+        }
+        table{
+          width:50%;
+          margin:0 auto;
+        }  
+      </style>
+</head>
+<body>
+<h3>모두 체크와 체크풀기 예제 </h3>
+    <table>
+        
+        <thead>
+         <tr>
+            <td><input type="checkbox" class="all">모두 선택</td>
+            <td>Name</td>
+            <td>Loc</td>
+         </tr>
+        </thead>   
+        <tbody>
+         <tr>
+            <td><input type="checkbox" id="ck1"></td>
+            <td>Animi.</td>
+            <td>Hic.</td>
+         </tr>
+         <tr>
+            <td><input type="checkbox" id="ck2"></td>
+            <td>Esse.</td>
+            <td>Fuga.</td>
+         </tr>
+         <tr>
+            <td><input type="checkbox" id="ck3"></td>
+            <td>Fuga.</td>
+            <td>Ducimus?</td>
+         </tr>
+         <tr>
+            <td><input type="checkbox" id="ck4"></td>
+            <td>Beatae.</td>
+            <td>Optio.</td>
+         </tr>
+        </tbody>   
+        <tfoot>
+            <tr>
+                <td colspan="3" align="center">
+                    <button>확인</button>
+                </td>
+            </tr>
+        </tfoot>
+      </table>
+<p id="demo"> 체크된 체크박스의 id속성값을 출력 </p>
+      <script>
+          //모두체크
+          $(":checkbox.all").click(function(){
+              $(":checkbox:not(.all)").prop("checked",true);
+          });
+
+          //체크풀기 
+          $(":checkbox:not(.all)").click(function(){
+              if( $(":checkbox:not(.all):checked").length==4){
+                $(":checkbox").eq(0).prop("checked",true);
+              }else{
+                $(":checkbox").eq(0).prop("checked",false);
+              }
+          });
+
+          // 삼항연산자 
+          $(":checkbox:not(.all)").click(function(){
+              let len= $(":checkbox:not(.all):checked").length;
+              $(":checkbox.all").prop("checked", len==4? true:false);
+          });
+
+          //id 출력하기 
+            $("tfoot button").click(function(){
+              //  alert("xxx");
+              $(":checkbox:not(.all):checked").each(function(i,element){
+                  console.log(element.id);
+                  // p태그에 id출력
+                $("p#demo").html(function(index,htmlString){
+                    return htmlString+"<li>"+element.id+"</li>";
+                });a
+              });
+              
+            });
+            //name 출력하기 
+            $("tfoot button").click(function(){
+              //  alert("xxx");
+              $(":checkbox:not(.all):checked").each(function(i,element){
+                // var name=  element.parentElement.nextElementSibling.innerHTML;
+                var name=  element.parentElement.nextElementSibling.childNodes[0].innerText;
+                console.log(name);
+                });
+              
+            });
+
+
+         /*    li태그를 만들고 그 안에 id 값을 주겟다 .
+            "<li>"+element.id+"</li>";== $("<li></li>").text(element.id);
+             */
+
+      </script>
+</body>
+</html>

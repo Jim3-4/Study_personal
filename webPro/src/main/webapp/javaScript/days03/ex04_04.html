@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <title>Document</title>
+</head>
+<body>
+    팀원입력: 
+    <input type="text" value="이창익, 유환재, 김지민, 백경환, 박예린">
+   <script>
+        $(":text").keydown(function(event){
+       if(event.which==13){
+        let team=$(this).val();
+        let pattern=",";
+        let teams= team.split(pattern);
+       //alert(teams.length);
+        console.log(typeof teams);
+
+        $(teams).each(function(i,element){
+            console.log(element);
+            $("<li></li>").text(element).appendTo($("#demo"));
+        })
+       /*  for (let i = 0; i < teams.length; i++) {
+            console.log(teams[i]);
+            
+        } */
+       }
+});
+   </script>
+</body>
+</html>

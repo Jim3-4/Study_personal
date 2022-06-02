@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" autofocus="autofocus" > 
+    <select id="operator">
+        <option value="+" selected="selected">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="%">%</option>
+        <option value="/">/</option>
+        <option value="**">**</option>
+    </select>
+    <input type="text"  >=
+    <input type="text"  >
+<script>
+   // $(":text:first-of-type") ==  $(":text").eq(0) == $(":text").first()
+    
+   $(":text").eq(0).keydown(function(event){
+        //js에서 event.keyCode
+        if(event.which==13){
+           // $(":text").eq(1).focus();
+            $("select").focus();
+
+        }
+    });
+
+/*     change는 똑같은 이벤트가 아닌, 서로 다른 이벤트를 선택해야 일어난다 
+    즉 변화가 있어야 한다는 뜻 */
+ $("select").change(function(){
+    $(":text").eq(1).focus();
+ }).
+ keydown(function(event){
+     if(event.keyCode==13){
+        $(":text").eq(1).focus();
+     }
+ });
+ $(":text").change(function(){
+    $(":text").eq(1).focus();
+ });
+ $(":text").eq(1).keydown(function(event){
+    if(event.which==13){ 
+    var n1=parseInt($(":text").first().val());
+     var n2=parseInt($(":text").eq(1).val());
+
+     //var op=$("select option:selected").val();
+     //alert(op);
+     var op=$("select").val();
+
+     var result;
+     
+
+     if(op=='+'){
+         result=n1+n2;
+     }else if(op=='-'){
+        result=n1-n2;
+     }else if(op=='*'){
+        result=n1*n2;
+     }
+     else if(op=='/'){
+        result=n1/n2;
+     }
+     else if(op=='%'){
+        result=n1%n2;
+     }else if(op=='**'){
+        result=n1**n2;
+     }
+     $(":text").last().val(result);
+    }
+    });
+  /* 
+		$("document").ready(function(){
+            $("#operator").change(function(event) {
+                alert("D");
+			var t1 = $(":text:first-of-type").val();
+			var t2 = $(":text:nth-of-type(2)").val();
+			var oper  = $(this).val();
+            alert($(this).val());
+			var result ;
+            switch(oper){
+                case '+':
+                    result=parseInt(t1)+parseInt(t2);break;
+                case '-':
+                    result=parseInt(t1)-parseInt(t2);break;
+                case '*':
+                    result=parseInt(t1)*parseInt(t2);break;
+                case '%':
+                    result=parseInt(t1)%parseInt(t2);break;
+                case '/':
+                    result=parseInt(t1)/parseInt(t2);break;
+                
+                    
+            } 
+            $(":text:nth-of-type(3)").text(result) ;
+
+		});
+
+        }); */
+</script>
+
+</body>
+
+</html>

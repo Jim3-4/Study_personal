@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        p{
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text"  autofocus="autofocus">
+    + 
+   <input type="text" >
+    = 
+    <input type="text"  disabled="disabled">
+
+    <script>
+        document.querySelector("input:first-of-type").onkeydown=function(){
+            if(event.keyCode==13){
+                if(isNaN(this.value)){
+                    alert("숫자만입력");
+                    this.focus()
+                        .select();
+                }
+                else{
+                    document.querySelector("input:nth-of-type(2)").focus();
+            
+                }
+            }
+        }
+
+        document.querySelector("input:nth-of-type(2)").onkeydown=function(){
+            if(event.keyCode==13){
+                if(isNaN(this.value)){
+                    alert("숫자만입력");
+                    this.focus()
+                        .select();
+                }
+                else{
+                    document.querySelector("input:nth-of-type(3)").focus();
+                    var x=document.querySelector("input:first-of-type").value;
+                var y=document.querySelector("input:nth-of-type(2)").value;
+                document.querySelector("input:nth-of-type(3)").value=parseInt(x)+parseInt(y);
+                document.querySelector("input:first-of-type").focus();
+                document.querySelector("input:first-of-type").select();
+                }
+            }
+        }
+
+
+
+     
+    </script>
+</body>
+</html>

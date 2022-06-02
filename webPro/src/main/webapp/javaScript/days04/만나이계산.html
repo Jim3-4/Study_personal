@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"  id="txtrrn" value="891223-1700001">
+<br>
+<button id="btn">만나이 계산</button>
+<p id="demo"></p>  	    
+<script>
+    $("#btn").click(function(){
+        let rrn=$("#txtrrn").val();
+        let age=getAge(rrn);
+        alert("만나이:"+age+"살");
+    });
+
+    function getAge(rrn){
+        //성별
+        // 생년월일
+        //substr은 2번째 인덱스가 가져올 문자 갯수
+        let bYear=parseInt(rrn.substr(0,2));
+        let bMonth=parseInt(rrn.substring(2,4));
+        let bDay=parseInt(rrn.slice(4,6));
+        console.log(bYear+"/"+bMonth+"/"+bDay);
+
+        let today=new Date();
+        let year=today.getFullYear();
+        
+ 
+       var key=parseInt(rrn.slice(7,8));
+
+        //문자열 자르는 함수를 쓰면 string 형이니 parseint를 해주던지, 
+        //case문의 조건을 문자열로 맞추어주던지 2가지 
+
+        switch(key){
+            case 1: case 2: case 5: case 6: 
+                bYear+=1900;
+                break;
+            case 3: case 4: case 7: case 8:
+                bYear+=2000;    
+                break;
+            case 9: case 0:
+                bYear+=1800;
+                break;
+        }
+        console.log(bYear);
+        let age=year-bYear;
+        
+        //생일이 지나지 않은경우 
+        //정수를 만들어서 비교 
+        let b= bMonth*100+bDay; //1223
+        let a=today.getMonth()*100+today.getDate(); //602
+        if(a<b) age--;
+        return age;
+    
+    }
+</script>
+</body>
+</html>

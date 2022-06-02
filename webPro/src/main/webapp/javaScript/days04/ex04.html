@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        1.toString()
+        2.toExponential() 반올림되고 지수 표기법 출력-> 문자열 변환 
+        
+    </pre>
+    <script>
+        let x= 9.646;
+/*         document.write(x.toExponential(2));
+        document.write("<br>");
+        document.write(x.toExponential(4));
+        document.write("<br>");
+        document.write(x.toExponential(6));
+        document.write("<br>"); */
+/*         document.write(x.toFixed(2));
+        document.write("<br>");
+        document.write(x.toFixed(4));
+        document.write("<br>");
+        document.write(x.toFixed(6));
+        document.write("<br>");  */
+
+
+        document.write(x.toPrecision());
+        document.write("<br>");
+        document.write(x.toPrecision(2));
+        document.write("<br>");
+        document.write(x.toPrecision(4));
+        document.write("<br>");
+        document.write(x.toPrecision(6));
+        document.write("<br>"); 
+    </script>
+</body>
+</html>

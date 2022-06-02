@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>    <input type="radio" name="sort" value="1" checked="checked">오름차순정렬
+    <input type="radio" name="sort" value="-1">내림차순정렬
+    <button onclick="test();"> 배열 정렬 후 출력 </button>    
+<script>
+    function test(){
+
+         //    m.sort(); //오름차순 정렬 
+         //string 형태는 정렬이 잘되지만 number형은 제대로 되지 않는다. 
+        var radioValue=parseInt($(":radio[name=sort]:checked").val());
+        var m=[3,5,2,4,100,1,51];
+        m.sort((a,b) => radioValue*(a-b)); //오름차순정렬
+
+      /*   m.sort((a,b) => b-a); //내림차순정렬-숫자
+        m.sort((a,b) => a-b); //오름차순정렬-숫자 */
+
+        m.forEach(function(elt,i,array){
+            console.log("m["+i+"]="+elt);
+            
+        })
+    }
+</script>
+</body>
+</html>

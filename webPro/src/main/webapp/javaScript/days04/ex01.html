@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+<script>
+
+    //두자리숫자를 4자리 숫자로 출력 
+/* let no="15";
+let numberOfDigits=4-no.length;
+for (let i = 0; i < numberOfDigits.length; i++) {
+    no="0"+no;    
+} */
+
+/* let no="5";
+no=no.padStart(4,"0");
+ */
+
+ let no=7;
+ no=no.toString().padStart(4,"0");
+ console.log(no);
+
+
+/*         var name="hong gil dong";
+        var html="<ol>";
+        for (let i = 0; i < name.length; i++) {
+        html+="<li>"+name.charAt(i)+"</li>";
+        }
+        html+="</ol>";
+        $("#demo").html(html);*/
+</script> 
+</body>
+</html>

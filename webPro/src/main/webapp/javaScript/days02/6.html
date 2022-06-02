@@ -18,23 +18,15 @@
       <input type="radio" name="subject"   value="kor"><label>국어</label>
       <input type="radio"  name="subject"  value="eng"><label>영어</label>
       <input type="radio"  name="subject"  value="mat"><label>수학</label>
+      <input type="radio"  name="subject"  value="pe"><label>체육</label>
      
       <script>
-          document.getElementById('subject').onchange = function(){
-        //1.선택된 option의 value 속성값
-        //console.log(this.selectedIndex);  //선택된 옵션의 인덱스
-        // 2.options 컬렉션
-         console.log(this.options[this.selectedIndex].value);
-        // console.log(this.options[this.selectedIndex].text);
-
-        var subjectRadios = document.getElementsByName('subject');
-        alert(subjectRadios.length);
-
-        //subjectRadios[].checked = 'checked';
-        subjectRadios[this.selectedIndex-1].checked = true;
-
-    };
-
+         document.getElementById('subject').onchange = function(){
+            console.log(this.selectedIndex);
+ var subjectRadios = document.getElementsByName('subject');
+            
+ subjectRadios[this.selectedIndex].checked = true;
+};
 
       </script>
 </body>

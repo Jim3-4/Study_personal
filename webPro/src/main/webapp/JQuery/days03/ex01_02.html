@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    <title>Document</title>
+</head>
+<body>
+    <h3>jquery</h3>
+    <ul id="ulist">
+        <li>Lorem.</li>
+        <li>Dolorem.</li>
+        <li>Iure!</li>
+        <li>Iure!</li>
+        <li>Illo.</li>
+    </ul>
+    <button>항목 목록 확인</button>
+    <p id="demo"></p>
+    <script>
+        //#ulist의 형제버튼을 클릭 
+        $("#ulist+button").click(function(){
+           //alert("d");
+            var litext="";
+           $("#ulist>li").each(function(index,element){
+                console.log(index+"/"+element.innerText);
+                litext+=element.innerText+",";
+            });
+            $("#demo").text(litext);
+        });
+
+        $("#ulist+button").click(function(){
+           //alert("d");
+            $("#ulist>li").each(function(index,element){
+                console.log(index+"/"+element.innerText);
+                $("#demo").text(function(text){
+                    return text+","+element.innerText;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

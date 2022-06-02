@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        select{
+            height: 200px;
+            width: 100px;
+        }
+        button{
+            width:40px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+
+            <select multiple="multiple" id="sleft">
+                <option>이창익</option>
+                <option>김지민</option>
+                <option>김희진</option>
+                <option>유환재</option>
+                <option>박예린</option>
+            </select>
+        </td>
+        <td>
+            <button>▶</button><br>
+            <button>▶▶</button><br>
+            <button>◀</button><br>
+            <button>◀◀</button><br>
+        </td>
+        <td>
+            <select multiple="multiple" id="sright"></select>
+        </td>
+    </tr>
+</table>
+<script>
+//jq
+$("button").first().click(function(){
+    //선택한것만 옮기기
+    $("#sleft option:selected").each(function(i,element){
+        //남기지않고 옮기기
+        //$("#sright").append(element);
+
+        //남기고(복제하고) 옮기기
+        $("#sright").append($(element).clone());
+
+        //$("#sright").append($("<option></option>").text(element.innerText));
+           
+        });
+});
+$("button").eq(1).click(function(){
+    $("#sleft option").each(function(i,element){
+        $("#sright").append(element);
+});
+});
+</script>
+
+</body>
+</html>

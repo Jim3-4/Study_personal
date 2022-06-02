@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    let rrn="892323-1700001";
+/*     rrn.substr(from.length);
+    rrn.substring(from ,to); 음수값사용 x
+    rrn.slice(from ,to); 음수값사용o
+    
+    */
+
+   // 1.substr()
+/*     let rrn6=rrn.substr(0,6);
+    console.log(rrn6); */
+    
+    let rrn6=rrn.substring(0,7);
+    console.log(rrn6);
+
+    let rrn7=rrn.slice(7);
+    console.log(rrn7);
+
+
+    var year=rrn.substr(0,2);
+    console.log(year);
+    var month=rrn.substring(2,4);
+    console.log(month);
+    var day=rrn.slice(4,6);
+    console.log(day);
+    var sex=rrn.slice(7,8);
+    console.log(sex);
+    var con=rrn.slice(-1);
+    console.log(con);
+    </script>
+</body>
+</html>

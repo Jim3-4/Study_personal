@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="checkbox">모두 선택
+        <br>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+  </div>
+
+  <script>
+//jquery
+// eq(i)로 순서를 지정할 수 있다. 
+//      $(":checkbox:first-of-type") ==  $(":checkbox").eq(0)
+$(":checkbox").eq(0).click(function(){
+      //  alert("d"); 
+       $(":checkbox:not(:first-of-type)").prop("checked",$(this).prop("checked"));
+       // $(":checkbox:not(:first-of-type)").prop("checked",true);
+      });
+      
+//체크풀기
+      $(":checkbox:not(:first-of-type)").click(function(){
+        if( $(":checkbox:not(:first-of-type):checked").length==4){
+            $(":checkbox").eq(0).prop("checked",true);
+        }else{
+            $(":checkbox").eq(0).prop("checked",false);
+        }
+      });
+
+      //js
+/*       document.querySelector("input[type=checkbox]:first-of-type").onclick=function(){
+         // alert("1");
+         var ckbs=document.querySelectorAll("input[type=checkbox]:not(input[type=checkbox]:first-of-type)");
+        // alert(ckbs.length);
+        for (let i = 0; i < ckbs.length; i++) {
+           ckbs[i].checked=this.checked;
+            
+        }
+    } */
+  </script>
+</body>
+</html>

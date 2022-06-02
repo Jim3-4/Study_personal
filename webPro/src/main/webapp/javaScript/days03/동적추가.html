@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            border:1px solid gray;  
+
+            text-align: center;
+        }
+        p:hover{
+            cursor: pointer;
+            background-color: gray;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<script>
+    for (let i = 0; i <10; i++) {
+     //$("<p>1</p>").appendTo($("body"));
+    //$("body").append( $("<p>1</p>"));
+    $("<p></p>").text("test-"+i).click(function(){
+        $(this).hide()
+    }).appendTo($("body")) ;
+    }
+</script>
+<!-- 
+<script>
+    for (let i = 0; i < 10; i++) {
+     let pelemt=document.createElement("p");
+    pelemt.innerText="test-"+(i+1);
+    pelemt.onclick=function(){
+        //this.style.display="none";
+        event.srcElement.style.display="none";
+    };
+    document.body.appendChild(pelemt);
+     }
+</script> -->
+</body>
+</html>

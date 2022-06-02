@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <script>
+        var msg;
+        alert(undefined==null);
+        if(msg==null){
+            //true
+        }
+        if(msg==undefined){
+//타입 undefined!=object false 
+        }
+    </script>
+    <button onclick="this.innerText=new Date();">현재시간은 ?</button>
+    <button onclick="disp()">현재시간은?</button>
+    <p id="demo"></p>
+    <script>
+        function disp(){
+            document.getElementById("demo").innerText=new Date();
+        }
+    </script>
+    <script>
+        var x=30;
+        alert(typeof x);
+        var x2=new Number();
+    </script>
+    <script>
+
+        // 객체 
+        const person={
+            name:"admin",
+            age:20,
+            dispinfo:function(){
+                return this.name+","+this.age;
+            }
+        }
+    console.log(person.name);
+    console.log(person["name"]);
+    console.log(person.dispinfo());
+    </script>
+
+</body>
+</html>

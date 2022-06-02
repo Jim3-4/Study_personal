@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //~로 끝나는지, ~로 시작하는지 
+        var url="www.sist.co.kr";
+        document.write(url.startsWith("http://"));
+        document.write(url.endsWith("kr"));
+        
+        //text 문자열에 target 특정문자열 포함여부를 true/false 반환 
+   
+        var text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti vero tenetur inventore voluptatum corrupti facilis. Unde cumque facere nihil, quasi voluptatem exercitationem fuga, reprehenderit inventore laboriosam deserunt, eos dolorem excepturi?";
+        var target="dolor";
+        document.write(text.includes(target));
+
+        document.write(10%0); //nan =not a number
+        document.write(10/0); //infinity
+
+        var num="12a"
+        //입력받은 수가 숫자인지 아닌지 확인
+        document.write("12a는"+isNaN(num)); //숫자가 아니니 true
+        document.write("35 : "+isNaN("35")); //숫자이니 false 
+    </script>
+</body>
+</html>

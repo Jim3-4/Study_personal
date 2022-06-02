@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var msg="hong gil dong";
+        // hong=>홍
+ /*        pattern : string 또는 regexp 
+        replacement:string */
+        //msg=msg.replace(pattern, replacement)
+        console.log(msg);
+
+       //msg=msg.replaceAll(pattern, replacement);
+
+        const regex = /HONG/i;
+        msg=msg.replace(regex, "홍");
+        console.log(msg);
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Id blanditiis fugiat maxime veritatis reprehenderit vitae 
+        doloribus sapiente eum at consectetur ipsa totam eligendi aut 
+        cupiditate veniam iste laborum. Nam quia?</p>
+        
+        <button>en 찾기</button> 
+        
+ <script>
+     $("button").click(function(event){
+/*      
+        en 들어가 있는 곳의 스타일을 변경 
+         let pText=$("p").text();
+         let pattern=/en/igm;
+         let replacement="<span style='color:white; background-color:red';>en</span>";
+         pText=  pText.replace(pattern, replacement);
+         $("p").html(pText); 
+
+         en 문자열이 있는 모든 위치를 li태그로 출력 
+         */
+         let pText=$("p").text();
+         let pattern=/en/igm;
+        let from=0;
+        let index=-1;
+       
+        //찾을것이 없다면 -1반환 
+        while(( index=pText.indexOf('en',from))!=-1){
+            console.log(index);
+
+            $("#demo").append($("<li></li>").text(index));
+            // 인덱스 찾은곳에서,en 길이만큼 더한값을 (다시찾는) 시작값으로
+            from=index+'en'.length;
+    }
+
+         
+        });
+
+</script>
+</body>
+</html>
