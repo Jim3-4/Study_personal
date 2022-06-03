@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 3. - 오후 2:28:31</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex04_04.html</h3>
+
+<select id="cmbyear" onchange="changeDate()"></select>
+<select id="cmbmonth" onchange="changeDate()"></select>
+<select id="cmbdate"></select>
+
+<script>
+   // cmbyear 
+   var cmbyear = document.getElementById("cmbyear");   
+   //cmbyear.options[0] =new Option( 1970, 1970); 
+   //cmbyear.options[1] =new Option( 1971, 1971);    
+   for (var y = 1970; y <= 2050; y++) {
+	   // js Option 객체	   
+	   // js selected Option 객체    Option( text, value, defaultSelected, selected )
+	   if (  y == 2022 ) {
+		   cmbyear.options[y-1970] =new Option( y, y, true, true);
+	  } else {
+		cmbyear.options[y-1970] =new Option( y, y);
+	  }	   
+  } // for
+   
+  
+  // cmbmonth
+  var cmbmonth = document.getElementById("cmbmonth");   
+  for (var m = 1; m <= 12; m++) { 
+	  cmbmonth.options[m-1] =new Option( m, m); 
+ } // for
+ cmbmonth.selectedIndex = 6-1;
+ 
+ // cmbdate
+ function getLastDay(year, month){
+    	 var d = new Date( year, month);  // 일 X  1  2022.7.1  - 하루
+    	 d.setDate(0);
+    	 return d.getDate();  // 30
+     }
+ 
+ var cmbdate = document.getElementById("cmbdate");
+ var lastday = getLastDay(2022, 6);
+  for (var d = 1; d <= lastday; d++) { 
+	  cmbdate.options[d-1] =new Option( d, d); 
+ } // for
+ cmbdate.selectedIndex = 3-1; 
+   
+</script>
+
+<script>
+  function changeDate(){
+	  year =   cmbyear.options[cmbyear.selectedIndex].value;
+	  month = cmbmonth.options[cmbmonth.selectedIndex].value;
+	  // 	  alert( year +"/" + month);
+	  var lastday = getLastDay(year, month);
+	  
+	  // 이전에 있던 option 태그 제거 X
+	  cmbdate.innerHTML = "";  // <select></select>
+	  
+	  for (var d = 1; d <= lastday; d++) { 
+		  cmbdate.options[d-1] =new Option( d, d); 
+	 } // for
+	  
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

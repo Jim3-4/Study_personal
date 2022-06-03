@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 3. - 오전 11:21:33</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex02.html</h3>
+
+<pre>
+   [ js 날짜 객체 : Date ]
+   1. 새로운 날짜 객체를 생성하는 4가지 방법
+      ㄱ. new Date()  현재 날짜 + 시간              ***
+      ㄴ. new Date(y, m, d, h, m, s, ms)           ***
+      ㄷ. new Date( ms )     1970.1.1  00:00:00  ***
+      ㄹ. new Date(String date)
+</pre>
+
+<p id="demo"></p>
+
+<script>
+    // var now = new Date(); 
+    
+   //  var now = new Date( 2018, 12, 24, 10, 33 , 30, 0 );
+    //                                        11           -> 12월 설정
+    // js    1월(0) ~ 12월(11)
+    //                                          12   -> 년도 12증가    1월
+    
+    
+     //var now = new Date( 2018, 11, 24, 10, 33  );
+     //  var now = new Date( 2018, 11, 24 );
+      // var now = new Date( 2018, 11 );  // 1일   00:00:00
+      
+      
+    //   ㄷ. new Date(       ms )     1970.1.1  00:00:00 
+    //var now = new Date( 2018 ) // 년도 X - >  ms
+    // 월까지 최소한 생략 X
+    //$("#demo").html(  now  ); //  Thu Jan 01 1970 09:00:02 GMT+0900 (한국 표준시)
+</script>
+
+<script>
+    /*
+    //var d = new Date( 99, 11, 24);  // 2자리 년도  -> 19XX년도 인식
+    //$("#demo").html(  d  );
+    
+     var ms =  Number(  new Date()  );
+     $("#demo").html(  ms  ); //  1654223567416 
+     
+     // ms -> Date
+     ms = -10000;   // 1970.1.1. 00:00:00 기준   이전 날짜.. 
+     var d  = new Date( ms );
+     $("#demo").html(  d  );
+     */
+</script>
+
+<script>
+   // yyyy-mm-dd    js ISO 표준
+   //var d = new Date("2015-03-25");
+   // var d = new Date("2015-03");  // 1일
+   // var d = new Date("2015");     //  1월 1일
+   
+   //  UTC( 협정 세계시)
+   //  GMT( 그리니치 표준시)
+   // ISO 표준 : 날짜 + 시간
+   // var d = new Date("2015-03-25T12:00:00Z"); // UTC 시간
+   
+   // MM/DD/YYYY      js 짧은 날짜
+   // var d = new Date("03/25/2015");  // Wed Mar 25 2015 00:00:00 GMT+0900 (한국 표준시)
+   
+   // 유효한 날짜형의 문자열 -> ms  :      Date.parse()
+   
+   var d =  Date.parse( "03/25/2015" );  // 1427209200000
+   // var d = Number(   new Date("03/25/2015") );
+   
+   
+   $("#demo").html(  d  );
+   // 11:52 수업 시작
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
