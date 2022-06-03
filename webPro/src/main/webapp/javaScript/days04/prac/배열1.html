@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.02 21:39:15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>배열1.html</h3>
+<script>
+    var fruits=["banana","orange","apple","mangp"];
+/*     console.log(fruits);
+fruits.sort();
+console.log(fruits);
+fruits.reverse();
+console.log(fruits);
+ */
+/* fruits.sort(function(a,b){
+    if(a>b){return 1;}
+    if(a<b){return -1;}
+    return 0;
+});
+fruits.sort(function(a,b){
+    if(a<b){return 1;}
+    if(a>b){return -1;}
+    return 0;
+}); */
+
+fruits.sort(function(a,b){
+    return b.localeCompare(a);
+});
+console.log(fruits);
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.03 12:02:31</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex03.html</h3>
+<input type="date">
+<button>확인</button>
+<p id="demo"></p>
+<script>
+    document.querySelector("button").addEventListener("click",function(e){
+       var date=document.querySelector("input[type=date]").value;
+       
+       alert(typeof date); //string
+       //String-> date로 바꾸기 ex02의 ㄹ번째 new Date(String date)를 사용
+       var d=new Date(date);
+       //  alert(d);  //Wed Jun 22 2022 09:00:00 GMT+0900 (한국 표준시)
+       
+      var today=new Date();
+
+       //09:00:00 만들기 
+       today.setHours(9);
+       today.setMonth(0);
+       today.setSeconds(0);
+       today.setMilliseconds(0);
+
+    
+    },true );
+</script>
+</body>
+</html>

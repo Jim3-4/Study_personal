@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.03 03:50:52</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>배열난수.html</h3>
+<p id="demo"></p>
+<script>
+    var m=[];
+    for (let i = 0; i < 5; i++) {
+        m.push(Math.floor(Math.random()*100)+1);
+
+    }
+    document.getElementById("demo").innerText+=m.toString();
+
+    m.sort(function(a,b){
+        return a-b;//  오름차순 
+        //	return b-a; //내림차순
+    });
+    document.getElementById("demo").innerHTML+="<br>";
+    document.getElementById("demo").innerText+="오름차순 정렬 :";
+    document.getElementById("demo").innerText+=m.toString();
+
+
+    m.sort(function(a,b){
+        return 0.5-Math.random();
+    });
+    document.getElementById("demo").innerHTML+="<br>";
+    document.getElementById("demo").innerText+="무작위 정렬 :";
+    document.getElementById("demo").innerText+=m.toString();
+
+    //가장 작은값과 가장 큰값
+    m.sort(function(a,b){
+        return a-b;
+    });
+
+    document.getElementById("demo").innerHTML+="<br>";
+    document.getElementById("demo").innerText+="가장 작은값과 가장 큰값 : ";
+    document.getElementById("demo").innerText+=m[0]+","+m[m.length-1];
+  
+  
+    //2번째 방법으로 최대값 최소값 구하기 
+    var max= Math.max.apply(null,m);
+    var min=Math.min.apply(null,m);
+
+    document.getElementById("demo").innerHTML+="<br>";
+    document.getElementById("demo").innerText+="가장 작은값과 가장 큰값 : ";
+    document.getElementById("demo").innerText+=min+","+max;
+  </script>
+</body>
+</html>

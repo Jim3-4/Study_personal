@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.03 14:19:27</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex04_03.html-마지막날짜를 알아보기 </h3>
+
+<script>
+var year=2022;
+var month=6;
+
+function getLastDay(year, month){
+    var d=new Date(year,month); // 일x 2022.7.1 -하루 =마지막 날 알기 
+   // alert(d.toLocaleDateString());
+    d.setDate(0);
+    //alert(d.toLocaleDateString());
+    return d.getDate();
+}
+getLastDay(2022,6);
+function getDayOfWeek(year,month,day){
+    //주의 1월=0 ~ 12월=11 
+    var d=new Date(year, month-1, day);
+    return d.getDay();
+}
+alert(getDayOfWeek(2022,6,3));
+
+
+</script>
+</body>
+</html>

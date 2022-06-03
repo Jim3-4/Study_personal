@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.03 16:42:14</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex09.html</h3>
+<script>
+    ///java 컬렉션 프레임워크 list, set, map
+    var fruits=new Map([
+        ["apple",500],
+        ["banana",300],
+        ["orange",200]
+    ]);
+    
+    for (let f of fruits) {
+        document.write(f+"<br>");
+    }
+</script>
+<script>
+    var letters=new Set(["a","b","c"]);
+    for (let x of letters) {
+       document.write(x+"<br>"); 
+    }
+</script>
+<script>
+    var name="hong gil dong";
+    document.write(name.charAt(0)+"<br>");
+    document.write(name[0]+"<br>");
+    for (let c of name) {
+        document.write(c+"<br>");
+    }
+</script>
+<script>
+    var person={
+        name:"hong",
+        age:20,
+        bloodType:"A"
+        };
+        for (var elt in person) {
+            document.write(key+"/"+person[key]+"<br>");
+            }
+        
+</script>
+</body>
+</html>

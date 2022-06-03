@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.03 14:09:48</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex04_02.html</h3>
+<ul class="days"></ul>
+<script>
+    for (let d = 1; d <= 31; d++) {
+       var li_day= document.createElement("li");
+
+       //li태그 text로 사용할 객체만들기
+     // li_day.innerText=d;
+     var li_day_text=document.createTextNode(d); 
+
+
+     //3일이면 span 태그 
+    if(d==3){
+        //<span class="active"></span>
+        var li_span=document.createElement("span");
+        li_span.setAttribute("class","active");
+        //<span class="active">3</span>
+        li_span.appendChild(li_day_text);/* <li>수</li> */
+    }else{
+        li_span.appendChild(li_day_text);
+    }
+
+    
+    //ul태그 안에 넣기 
+    document.querySelector("ul.days").appendChild(li_day);
+    }
+</script>
+</body>
+</html>

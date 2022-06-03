@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.03 14:28:40</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex04_04.html</h3>
+<select  id="cmbyear" onchange="changeDate()"></select>
+<select  id="cmbmonth" onchange="changeDate()"></select>
+<select  id="cmbdate"></select>
+
+<script>
+    var cmbyear=document.getElementById("cmbyear");
+
+   for (var y= 1970; y<=2050; y++) {
+	//<option value="value" selected> text </option>
+	//js option객체 Option(text, value, defaultselected, selected])
+	if(y==2022){ 
+     
+		cmbyear.options[y-1970] = new Option(y,y,true, true);  
+        //true true 속성때문에 2022가 기본 selected 되어짐
+	
+	}else{
+		cmbyear.options[y-1970] = new Option(y,y); 
+	}
+	
+}//for
+
+var cmbmonth=document.getElementById("cmbmonth");
+
+for (var m=1; m<=12; m++) {
+    cmbmonth.options[m-1]=new Option(m,m);
+}//for
+
+//selectedindex를 통해, 6월(인덱스로는 6-1)이 설정되도록 
+cmbmonth.selectedIndex=6-1;
+
+
+
+
+function getLastDay(year, month){
+    var d=new Date(year,month); // 일x 2022.7.1 -하루 =마지막 날 알기 
+   // alert(d.toLocaleDateString());
+    d.setDate(0);
+    //alert(d.toLocaleDateString());
+    return d.getDate();
+}
+
+
+var cmbdate=document.getElementById("cmbdate");
+var lastday=getLastDay(2022,6);
+for (var d=1; d<=lastday; d++) {
+    cmbdate.options[d-1]=new Option(d,d);
+}//for
+
+//selectedindex를 통해, 6월(인덱스로는 6-1)이 설정되도록 
+cmbdate.selectedIndex=3-1;
+</script>
+
+<script>
+    function changeDate(){
+        year=cmbyear.options[cmbyear.selectedIndex].value;
+        month=cmbmonth.options[cmbmonth.selectedIndex].value;
+        //alert(year+","+month);
+        var lastday=getLastDay(year,month);
+
+
+        //이전에 있던 option태그 제거하는 작업을 안했다. ->2월 선택해도 해당하지 않는 값이 있다 .
+        cmbdate.innerHTML=""; // 그안에 있던것 option태그 초기화작업 <select></select>
+        for(var d=1; d<=lastday; d++){
+            cmbdate.options[d-1]=new Option(d,d);
+        }//for
+   }
+</script>
+</body>
+</html>

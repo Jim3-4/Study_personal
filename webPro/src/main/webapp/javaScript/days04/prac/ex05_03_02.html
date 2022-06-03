@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.03 04:29:15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex05_03_02.html</h3>
+숫자 입력: <input type="text"id="num"autofocus="autofocus"value="3,5,2,4,1,100,51">
+<br>
+
+<br>
+<input type="radio"name="sort"checked="checked" value="1">오름차순정렬
+<input type="radio"name="sort" value="-1">내림차순정렬
+<button>배열추가하고 정렬</button>
+
+<p id="demo"></p>
+<script>
+    var numbers=[];
+    $("button").click(function(event){
+        var data=$("#num").val();
+        var nums=data.split(/\s*,\s*/);
+        nums.forEach(function(elt, i,array){
+            numbers.push(elt);
+        });
+        
+        var RadioValue=parseInt($(":radio[name=sort]:checked").val());
+        console.log(numbers.toString());
+       //오름차순정렬 numbers.sort(function(a,b){ return a-b;});
+       // numbers.sort((a,b) => a-b);
+        numbers.sort((a,b) => RadioValue*(a-b));
+            console.log(numbers.toString());
+        var text="<ul>";
+        numbers.forEach(function(elt,i,array){
+            text+="<li>"+elt+"</li>";
+        });
+        text+="</ul>";
+            $("#demo").html(text);   
+    });
+     
+</script>
+</body>
+</html>

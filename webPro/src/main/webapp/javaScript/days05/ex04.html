@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.03 12:49:33</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    select {
+       width: 100px;
+       text-align: center;
+    }
+    
+    * {
+       box-sizing: border-box;
+    }
+    
+    ul {
+       list-style-type: none;
+    }
+    
+    body {
+       font-family: Verdana, sans-serif;
+    }
+    
+    .month {
+       padding: 70px 25px;
+       width: 100%;
+       background: #1abc9c;
+       text-align: center;
+    }
+    
+    .month ul {
+       margin: 0;
+       padding: 0;
+    }
+    
+    .month ul li {
+       color: white;
+       font-size: 20px;
+       text-transform: uppercase;
+       letter-spacing: 3px;
+    }
+    
+    .month .prev {
+       float: left;
+       padding-top: 10px;
+    }
+    
+    .month .next {
+       float: right;
+       padding-top: 10px;
+    }
+    
+    .weekdays {
+       margin: 0;
+       padding: 10px 0;
+       background-color: #ddd;
+    }
+    
+    .weekdays li {
+       display: inline-block;
+       width: 13.6%;
+       color: #666;
+       text-align: center;
+    }
+    
+    .days {
+       padding: 10px 0;
+       background: #eee;
+       margin: 0;
+    }
+    
+    .days li {
+       list-style-type: none;
+       display: inline-block;
+       width: 13.6%;
+       text-align: center;
+       margin-bottom: 5px;
+       font-size: 12px;
+       color: #777;
+    }
+    
+    .days li .active {
+       padding: 5px;
+       background: #1abc9c;
+       color: white !important
+    }
+    </style>
+</head>
+<body>
+<h3>ex04.html</h3>
+<select id="cmbyear" onchange="changeDate()"></select>
+    <select id="cmbmonth" onchange="changeDate()"></select>
+    <select id="cmbdate"></select>
+   <br>
+   <div class="month">
+      <ul>
+         <li class="prev" onclick="changeCalendar(-1)">&#10094;</li>
+         <li class="next" onclick="changeCalendar(1)">&#10095;</li>
+         <li><span id="month">August</span><br> <span id="year"
+            style="font-size: 18px">2017</span></li>
+      </ul>
+   </div>
+   <ul class="weekdays">
+      <li>Su</li>
+      <li>Mo</li>
+      <li>Tu</li>
+      <li>We</li>
+      <li>Th</li>
+      <li>Fr</li>
+      <li>Sa</li>
+   </ul>
+   <ul class="days">
+      <!--  
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li><span class="active">10</span></li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>  
+   -->
+   </ul>
+
+
+   <script>
+       var now=new Date();
+       var nowYear=now.getFullYear();
+       var nowMonth=now.getMonth()+1; //5가 6월이니까 하나 더 더하기
+       var nowDate=now.getDate();  
+
+       var spanYear=document.getElementById("year");
+       var spanMonth=document.getElementById("month");
+       spanYear.innerHTML=nowYear;
+       spanMonth.innerHTML=nowMonth;
+
+       //일자
+       var ulDays=document.querySelector("ul.days");
+
+      // printCalendar(nowYear,nowMonth);
+
+       function getLastDay(year, month){
+    var d=new Date(year,month); // 일x 2022.7.1 -하루 =마지막 날 알기 
+   // alert(d.toLocaleDateString());
+    d.setDate(0);
+    //alert(d.toLocaleDateString());
+    return d.getDate();
+}
+
+function getDayOfWeek(year,month,day){
+    //주의 1월=0 ~ 12월=11 
+    var d=new Date(year, month-1, day);
+    return d.getDay();
+}
+//달력그리기 함수
+function printCalendar(year,month){
+    //이전에 생성된 li태그 제거 
+    ulDays.innerHTML="";
+    var lastDay=getLastDay(year,month);
+    var dayOfWeek=getDayOfWeek(year,month,1);
+    
+    for (let i = 0; i < dayOfWeek; i++) {
+      var liDay=document.createElement("li");
+        ulDays.appendChild(liDay);
+        
+    }
+ 
+        
+for (var d = 1; d <= lastDay; d++) {
+    var li_day = document.createElement("li");
+    var li_day_text = document.createTextNode(d);
+
+    if (d == nowDate) {
+        // <li>
+        var li_span = document.createElement("span");
+        li_span.setAttribute("class", "active");
+        li_span.appendChild(li_day_text);
+        li_day.appendChild(li_span);
+    } else {
+        li_day.appendChild(li_day_text);
+    }
+    ulDays.appendChild(li_day);
+}
+    }//function
+
+    printCalendar(nowYear,nowMonth);
+    </script>
+    <script>
+        //value 값은 -1이거나 1
+        function changeCalendar(value){
+          
+            var year=parseInt(spanYear.innerHTML);
+            var month=parseInt(spanMonth.innerHTML)+value;
+            //value를 미리 더해서,0 일때와 13일때만 관리
+
+            if(month==0){
+                //현재년도를 하나 감소시키고 달을 12월 
+                //이작업을 안하면 월이 0, -1로 나타난다. 
+                year-=1;
+                month=12;
+            }
+            else if(month==13){
+                year+=1;
+                month=1;
+            }
+            spanYear.innerHTML=year;
+            spanMonth.innerHTML=month;
+            printCalendar(year,month);
+        }
+    </script>
+    <script>
+    var cmbyear=document.getElementById("cmbyear");
+
+   for (var y= 1970; y<=2050; y++) {
+	//<option value="value" selected> text </option>
+	//js option객체 Option(text, value, defaultselected, selected])
+	if(y==2022){ 
+     
+		cmbyear.options[y-1970] = new Option(y,y,true, true);  
+        //true true 속성때문에 2022가 기본 selected 되어짐
+	
+	}else{
+		cmbyear.options[y-1970] = new Option(y,y); 
+	}
+	
+}//for
+
+var cmbmonth=document.getElementById("cmbmonth");
+
+for (var m=1; m<=12; m++) {
+    cmbmonth.options[m-1]=new Option(m,m);
+}//for
+
+//selectedindex를 통해, 6월(인덱스로는 6-1)이 설정되도록 
+cmbmonth.selectedIndex=6-1;
+
+
+
+
+function getLastDay(year, month){
+    var d=new Date(year,month); // 일x 2022.7.1 -하루 =마지막 날 알기 
+   // alert(d.toLocaleDateString());
+    d.setDate(0);
+    //alert(d.toLocaleDateString());
+    return d.getDate();
+}
+
+
+var cmbdate=document.getElementById("cmbdate");
+var lastday=getLastDay(2022,6);
+for (var d=1; d<=lastday; d++) {
+    cmbdate.options[d-1]=new Option(d,d);
+}//for
+
+//selectedindex를 통해, 6월(인덱스로는 6-1)이 설정되도록 
+cmbdate.selectedIndex=3-1;
+</script>
+
+<script>
+    function changeDate(){
+        year=cmbyear.options[cmbyear.selectedIndex].value;
+        month=cmbmonth.options[cmbmonth.selectedIndex].value;
+        //alert(year+","+month);
+        var lastday=getLastDay(year,month);
+
+
+        //이전에 있던 option태그 제거하는 작업을 안했다. ->2월 선택해도 해당하지 않는 값이 있다 .
+        cmbdate.innerHTML=""; // 그안에 있던것 option태그 초기화작업 <select></select>
+        for(var d=1; d<=lastday; d++){
+            cmbdate.options[d-1]=new Option(d,d);
+        }//for
+        //cmbyear.options[cmbyear.selectedIndex].value;
+        cmbyear.value;
+
+        var year=cmbyear.value;
+        var month=cmbmonth.value;
+
+        spanYear.innerHTML=year;
+            spanMonth.innerHTML=month;
+            printCalendar(year,month);
+   }
+//제이쿼리로 바꾸는 작업 
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.03 11:21:40</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex02.html</h3>
+<pre>
+    js 날짜 객체 :Date
+    1. 새로운 날짜 객체를 생성하는 4가지 방법 
+      new Date() 현재날짜+시간
+      new Date(y, m, d, h, m, s, ms)
+      new Date(ms)
+      new Date(string date)
+</pre>
+<p id="demo"></p>
+<script>
+    // var now=new Date();
+    //Fri Jun 03 2022 11:23:34 GMT+0900 (한국 표준시)
+
+    //년도만 입력하면, 이것을 ms로 인식한다. 
+    //var now=new Date(2011);
+    //Thu Jan 01 1970 09:00:02 GMT+0900 (한국 표준시)
+
+    //최소한 월까지는 넣어야한다. 
+    //var now=new Date(2011,0);
+    //Sat Jan 01 2011 00:00:00 GMT+0900 (한국 표준시)
+
+    //필요없는 매개변수는 뺄 수있다.  나머지는 0으로 셋팅 
+     //var now=new Date(2021,1,24);
+     //Wed Feb 24 2021 00:00:00 GMT+0900 (한국 표준시)
+
+    //js 1월(0) ~ 12월(11)
+   // var now=new Date(2021,1,24,10,22,33,3);
+    //Wed Feb 24 2021 10:22:33 GMT+0900 (한국 표준시)
+
+    //월에 12를 넣었다면 년도 1 증가 
+   // var now=new Date(2021,12,24,10,22,33,3);
+    //Mon Jan 24 2022 10:22:33 GMT+0900 (한국 표준시)
+
+    // $("#demo").html(now);
+
+   
+</script>
+<script>
+/*     var d=new Date(99,11,24); //2자리년도 -1900년도로 인식 
+    $("#demo").text(d); */
+
+   var ms= Number(new Date());
+   $("#demo").html(ms);
+
+   //ms=>date 
+   //Date 생성자에 다시 넣어주기 
+   var d=new Date(ms);
+   $("#demo").html(d);
+
+   //- 값을 주게되면, 1970년 기준날짜 
+   var d=new Date(-1000);
+   $("#demo").html(d);
+   //Thu Jan 01 1970 08:59:59 GMT+0900 (한국 표준시)
+</script>
+
+<script>
+    //yyyy-mm-dd js ISO 표준 
+    var d=new Date("2015-03-25");
+
+    var d=new Date("2015-03");
+    $("#demo").html(d);
+
+    //iso 표준 날짜+시간
+    var d=new Date("2015-03-25T 12:00:00"); //UTC시간 
+    $("#demo").html(d);
+/* 
+    UTC= 협정세계시
+    GMT= 그리니치 표준시
+    ISO 표준: 날짜+시간  */
+
+    var d=new Date("03/25/2015");
+    $("#demo").html(d);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.03 09:04:47</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>시험.html</h3>
+<p id="demo"></p>
+<script>
+   var m=[];
+   for (let i = 0; i < 10; i++) {
+    m.push(Math.floor(Math.random()*100)+1);
+   }
+   m[0]=101;
+   console.log(m.toString());
+   m.splice(1,1);
+  
+   console.log(m.toString());
+   m[2]=205;
+   console.log(m.toString());
+
+
+  // var firstElement=m.shift();
+//console.log(firstElement);
+   var pdemo= document.getElementById("demo");
+   var hStr="<ul>";
+   m.forEach(function(elt,i,array){
+       hStr+="<li>"+elt+"</li>";
+   });
+   hStr+="</ul>";
+   pdemo.innerHTML=hStr;
+   console.log(m.toString());
+   //m.sort(function(a,b){return a-b});
+   m.sort((a,b) => a-b);
+    document.getElementById("demo").innerText+="가장 작은값"+m[0]+",과 가장 큰값 : "+m[m.length-1];
+var max=Math.max.apply(null,m);
+var min=Math.min.apply(null,m);
+document.getElementById("demo").innerText+="가장 작은값"+min+",과 가장 큰값 : "+max;
+
+</script>
+</body>
+</html>

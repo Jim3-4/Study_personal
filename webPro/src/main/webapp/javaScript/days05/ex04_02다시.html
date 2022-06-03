@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.03 14:20:09</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex04_02다시.html</h3>
+<ul class="days"></ul>
+<script>
+
+for (var d = 1; d <= 31; d++) {
+    var li_day = document.createElement("li");
+    var li_day_text = document.createTextNode(d);
+
+    if (d == 3) {
+        // <li>
+        var span = document.createElement("span");
+        span.setAttribute("class", "active");
+        span.appendChild(li_day_text);
+        li_day.appendChild(span);
+    } else {
+        li_day.appendChild(li_day_text);
+    }
+    document.querySelector("ul.days").appendChild(li_day);
+}
+</script>
+</body>
+</html>
