@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 3. - 오후 2:19:18</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex04_03.html</h3>
+
+<script>
+     // java  달력
+     // 1) 마지막 날짜 ? 30
+     // 2) 1일  무슨 요일 ? 수요일
+     var year = 2022;
+     var month = 6;
+     
+     function getLastDay(year, month){
+    	 var d = new Date( year, month);  // 일 X  1  2022.7.1  - 하루
+    	 d.setDate(0);
+    	 return d.getDate();  // 30
+     }
+     
+     getLastDay(  2022, 6 );
+    		 
+     function getDayOfWeek(year, month, day){
+    	 // 주의 )   월     1월(0) ~ 12월(11)
+    	 var d =  new Date(  year, month-1 , day );
+    	 return d.getDay();  // 0(일) 1(월) 2(화) ~ 6(토)
+     }
+     
+    // alert(   getDayOfWeek(2022, 6, 3)  );  // 5(금) 
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
