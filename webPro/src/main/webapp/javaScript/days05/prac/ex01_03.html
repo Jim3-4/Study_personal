@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.04 19:18:58</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex01_03.html</h3>
+<script>
+var m=[13,23,55,22,11];
+//var n=[];
+var n=m.filter(function(elt, i,array){
+    return elt>15;
+});
+var n=m.filter((elt)=> {return elt>15});
+
+console.log(n.toString());
+
+var n=m.filter(function(elt, i,array){
+    return elt>15;
+});
+var n=m.filter((elt,i)=>{return elt>15;})l;
+</script>
+</body>
+</html>

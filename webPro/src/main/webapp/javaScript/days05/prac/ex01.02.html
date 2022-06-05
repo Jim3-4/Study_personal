@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.04 19:15:05</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex01.02.html</h3>
+<script>
+    function sum(){
+        var result=0;
+        for(var i =0; i<arguments.length; i++){
+            result+=arguments[i];
+        }
+        return result;
+    }
+    var result=sum(1,2,3,4);
+    console.log(result);
+</script>
+</body>
+</html>

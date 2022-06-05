@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.05 07:53:45</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex03_02.html</h3>
+<script>
+var $sel=$("<select></select>");
+$("body").append($sel);
+var colors=["white","red","green","blue"];
+colors.forEach(function(elt,i,array){
+    $sel.append("<option value="+elt+">"+elt+"</option>");
+
+});
+$sel.change(function(event){
+    document.bgColor=$(this).val();
+
+});
+</script>
+</body>
+</html>

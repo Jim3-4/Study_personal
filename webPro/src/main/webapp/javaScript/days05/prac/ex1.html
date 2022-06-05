@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.04 07:25:36</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex1.html</h3>
+<script>
+    
+  var m = [45, 4, 9, 16, 25];  
+/*   console.log(m.indexOf(4)); //1
+  console.log(m.indexOf(30));// -1
+  console.log(m.lastIndexOf(4)); //1
+  console.log(m.lastIndexOf(45)); //0
+  console.log(m.lastIndexOf(30)); //-1
+  console.log(m.lastIndexOf(16)); //3 */
+  for(var i in m){
+      console.log(i+"번째:"+m[i]);
+  }
+  for(var v of m){
+    console.log(v);
+  }
+  let e=m.entries();
+  for(var v of e){
+      console.log(v);
+  }
+</script>
+</body>
+</html>

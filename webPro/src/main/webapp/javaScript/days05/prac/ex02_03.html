@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.05 06:50:34</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex02_03.html</h3>
+
+<input type="date" >
+<button>확인</button>
+<p id="demo"></p>
+
+<script>
+   // 만나이 :  오늘 날짜  =  주민등록번호  생일            -1
+   // "before"  / "after" / "equal"   
+   // Date() 생성, + 값   
+   // 다음 주 부터 : js / jquery     [주제] + 요구분석 + DB모델링 + insert
+   
+   //  onclick=""
+   // document.querySelector("button").onclick = function (){}
+   document.querySelector("button").addEventListener("click", function(e) {
+   	  // alert("xxx")
+   	  var date =  document.querySelector("input[type=date]").value;   	  
+   	  // alert( typeof date );   // "2022-06-14"  string
+   	  // string -> Date
+   	  var   d =   new Date(   date  );
+   	  //alert( d ) ;  // Tue Jun 07 2022 [09:00:00] GMT+0900 (한국 표준시)
+   	  
+   	  
+   	  var today = new Date();
+   	  // alert( today );  // Fri Jun 03 2022 12:24:42 GMT+0900 (한국 표준시)
+   	  today.setHours(9);
+   	  today.setMinutes(0);
+   	  today.setSeconds(0);
+   	  today.setMilliseconds(0);
+   	  
+   	  // 날짜 - 날짜   쉽게 날짜 비교 가능
+   	   if(  today < d )
+   		  alert("After");
+   	  else if ( today > d )
+   		  alert("Before")
+   	   else
+   		   alert("Equal")
+   	  
+   	  // d -> ms
+   	  /* 
+   	  var dms =  d.getTime();
+   	  // today -> ms
+   	  var tdms = Number( today );
+   	  
+   	  if(  tdms < dms )
+   		  alert("After");
+   	  else if ( tdms > dms )
+   		  alert("Before")
+   	   else
+   		   alert("Equal")
+   		 */	  
+   	  
+   	  
+   	  
+   }, true);
+   
+</script>
+</body>
+</html>
