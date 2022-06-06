@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.06 16:02:01</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex09.html</h3>
+<script>
+    //js 객체 
+    var person={
+        name:"hong",
+        age:20,
+        bloodType:"A"
+    };
+    for(var key in person){
+        document.write(key+"/"+person[key]+"<br>");
+    }
+/*     name/hong
+age/20
+bloodType/A */
+</script>
+<script>
+    var name="hong gil dong";
+    for(let c of name){
+        document.write(c+"<br>");
+    }
+/*     h
+o
+n
+g
+
+g
+i
+l
+
+d
+o
+n
+g */
+</script>
+<script>
+    var fruits=new Map([
+        ["apple", 500],
+        ["banana", 300],
+        ["orange",100]
+    ]);
+    for(let f of fruits){
+        document.write(f+"<br>");
+    }
+
+/*     apple,500
+banana,300
+orange,100 */
+</script>
+</body>
+</html>
