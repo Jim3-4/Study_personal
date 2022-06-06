@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.05 22:58:48</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex04_04.html</h3>
+<select id="cmbyear" onchange="changeDate()"></select>
+<select id="cmbmonth" onchange="changeDate()"></select>
+<select id="cmbdate"></select>
+
+<script>
+
+      // cmbyear 
+      var cmbyear = document.getElementById("cmbyear");   
+   //cmbyear.options[0] =new Option( 1970, 1970); 
+   //cmbyear.options[1] =new Option( 1971, 1971);    
+   for (var y = 1970; y <= 2050; y++) {
+	   // js Option 객체	   
+	   // js selected Option 객체    Option( text, value, defaultSelected, selected )
+	   if (  y == 2022 ) {
+		   cmbyear.options[y-1970] =new Option( y, y, true, true);
+	  } else {
+		cmbyear.options[y-1970] =new Option( y, y);
+	  }	   
+  } // for
+
+  //cmbmonth
+
+  var cmbmonth=document.getElementById("cmbmonth");
+  for (let m = 1; m <=12; m++) {
+      cmbmonth.options[m-1]=new Option(m,m);
+      
+  }//for
+  cmbmonth.selectedIndex=6-1;
+
+  function getLastDay(year,month){
+    var d=new Date(year,month);
+    //month에 -1을 하지 않는이유는, 해당달의 마지막날을 알기위해서
+    //-1을 하게 되면, 이전달의 마지막날을 알게된다. 
+   console.log(d.toString()); //7/1
+    d.setDate(0); //0월이 없으므로 이전달 마지막날
+    console.log(d.toString()); //6/30
+return d.getDate(0);
+}
+
+var cmbdate=document.getElementById("cmbdate");
+var lastday=getLastDay(2022,6);
+for (let d = 1; d <= lastday; d++) {
+   cmbdate.options[d-1]=new Option(d,d);
+}
+cmbdate.selectedIndex=5-1;
+
+function changeDate(){
+    year=cmbyear.options[cmbyear.selectedIndex].value;
+    month=cmbmonth.options[cmbmonth.selectedIndex].value;
+    
+    var lastday=getLastDay(year,month);
+  // 이전에 있던 option 태그 제거 X
+    cmbdate.innerHTML="";
+    
+    for(var d=1; d<=lastday; d++){
+        cmbdate.options[d-1]=new Option(d,d);
+    }
+}
+</script>
+</body>
+</html>
