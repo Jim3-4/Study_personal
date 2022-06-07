@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 3. - 오후 12:49:30</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+select {
+	width: 100px;
+	text-align: center;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+ul {
+	list-style-type: none;
+}
+
+body {
+	font-family: Verdana, sans-serif;
+}
+
+.month {
+	padding: 70px 25px;
+	width: 100%;
+	background: #1abc9c;
+	text-align: center;
+}
+
+.month ul {
+	margin: 0;
+	padding: 0;
+}
+
+.month ul li {
+	color: white;
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.month .prev {
+	float: left;
+	padding-top: 10px;
+}
+
+.month .next {
+	float: right;
+	padding-top: 10px;
+}
+
+.weekdays {
+	margin: 0;
+	padding: 10px 0;
+	background-color: #ddd;
+}
+
+.weekdays li {
+	display: inline-block;
+	width: 13.6%;
+	color: #666;
+	text-align: center;
+}
+
+.days {
+	padding: 10px 0;
+	background: #eee;
+	margin: 0;
+}
+
+.days li {
+	list-style-type: none;
+	display: inline-block;
+	width: 13.6%;
+	text-align: center;
+	margin-bottom: 5px;
+	font-size: 12px;
+	color: #777;
+}
+
+.days li .active {
+	padding: 5px;
+	background: #1abc9c;
+	color: white !important
+}
+</style>
+
+</head>
+<body>
+
+<!-- 오후 2:00 수업 시작 -->
+<!-- 3:03 수업 시작 -->
+<h3>ex04.html </h3>
+
+    <select id="cmbyear" onchange="changeDate()"></select>
+    <select id="cmbmonth" onchange="changeDate()"></select>
+    <select id="cmbdate"></select>
+	<br>
+	<br>
+	<div class="month">
+		<ul>
+			<li class="prev" onclick="changeCalendar(-1)">&#10094;</li>
+			<li class="next" onclick="changeCalendar(1)">&#10095;</li>
+			<li><span id="month">August</span><br> <span id="year"
+				style="font-size: 18px">2017</span></li>
+		</ul>
+	</div>
+	<ul class="weekdays">
+		<li>Su</li>
+		<li>Mo</li>
+		<li>Tu</li>
+		<li>We</li>
+		<li>Th</li>
+		<li>Fr</li>
+		<li>Sa</li>
+	</ul>
+	<ul class="days">
+ <!-- 
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li><span class="active">10</span></li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>  
+  -->
+	</ul>
+
+<script>
+   // 현재 날짜  2022, 6
+   var now = new Date();
+   var nowYear = now.getFullYear();  // 2022
+   var nowMonth = now.getMonth() + 1 ;  // 6 
+   var nowDate = now.getDate();
+   // 
+   var spanYear = document.getElementById("year");
+   var spanMonth = document.getElementById("month");
+   spanYear.innerHTML = nowYear;
+   spanMonth.innerHTML = nowMonth;
+   // 
+   var ulDays = document.querySelector("ul.days"); 
+  
+</script>
+<script>
+	function getDayOfWeek(year, month, day){
+		 // 주의 )   월     1월(0) ~ 12월(11)
+		 var d =  new Date(  year, month-1 , day );
+		 return d.getDay();  // 0(일) 1(월) 2(화) ~ 6(토)
+	}
+	function getLastDay(year, month){
+		 var d = new Date( year, month);  // 일 X  1  2022.7.1  - 하루
+		 d.setDate(0);
+		 return d.getDate();  // 30
+	}
+	// 달력그리기 함수
+	function printCalendar( year , month ){
+		// 이전 생성된   <li>1</li> 제거
+		ulDays.innerHTML = "";
+		//
+		var lastDay = getLastDay(year, month);
+		var dayOfWeek = getDayOfWeek(year, month, 1 );  // 수  3
+		//  java   " "  " "  " "  1
+		for (var i = 0; i < dayOfWeek; i++) {
+			var liDay = document.createElement("li");
+			ulDays.appendChild( liDay );
+		}
+		// 1일 ~ 마지막날짜( lastDay)
+		for (var d = 1; d <= lastDay ; d++) {	
+			var li_day =  document.createElement("li");	 
+			var li_day_text = document.createTextNode(   d  );	 
+			if (   d == nowDate ) {  
+				var li_span = document.createElement("span");
+				li_span.setAttribute("class", "active");		
+				li_span.appendChild( li_day_text );
+				li_day.appendChild( li_span );
+			} else {
+				li_day.appendChild(li_day_text); 
+			} 
+			ulDays.appendChild( li_day );
+		}
+	} // function 
+	
+	 printCalendar( nowYear , nowMonth );
+</script>
+
+<script>
+   function changeCalendar( value ){  // -1             1
+	   
+	   var year =  parseInt(  spanYear.innerHTML ) ;
+       var month =  parseInt( spanMonth.innerHTML ) + value;
+       // 2022  , 13       0 
+     
+       if( month == 0 ){
+    	 year -= 1;
+    	 month = 12;
+       }else if( month == 13){
+    	   year += 1;
+    	   month = 1;
+       } 
+       
+        spanYear.innerHTML = year;
+        spanMonth.innerHTML = month;
+        
+	   printCalendar( year , month );
+   }
+</script>
+
+<script>
+   // cmbyear 
+   var cmbyear = document.getElementById("cmbyear");   
+   //cmbyear.options[0] =new Option( 1970, 1970); 
+   //cmbyear.options[1] =new Option( 1971, 1971);    
+   for (var y = 1970; y <= 2050; y++) {
+	   // js Option 객체	   
+	   // js selected Option 객체    Option( text, value, defaultSelected, selected )
+	   if (  y == 2022 ) {
+		   cmbyear.options[y-1970] =new Option( y, y, true, true);
+	  } else {
+		cmbyear.options[y-1970] =new Option( y, y);
+	  }	   
+  } // for
+   
+  
+  // cmbmonth
+  var cmbmonth = document.getElementById("cmbmonth");   
+  for (var m = 1; m <= 12; m++) { 
+	  cmbmonth.options[m-1] =new Option( m, m); 
+ } // for
+ cmbmonth.selectedIndex = 6-1;
+ 
+ // cmbdate
+ function getLastDay(year, month){
+    	 var d = new Date( year, month);  // 일 X  1  2022.7.1  - 하루
+    	 d.setDate(0);
+    	 return d.getDate();  // 30
+     }
+ 
+ var cmbdate = document.getElementById("cmbdate");
+ var lastday = getLastDay(2022, 6);
+  for (var d = 1; d <= lastday; d++) { 
+	  cmbdate.options[d-1] =new Option( d, d); 
+ } // for
+ cmbdate.selectedIndex = 3-1; 
+   
+</script>
+
+<script>
+  function changeDate(){
+	  year =   cmbyear.options[cmbyear.selectedIndex].value;
+	  month = cmbmonth.options[cmbmonth.selectedIndex].value;
+	  // 	  alert( year +"/" + month);
+	  var lastday = getLastDay(year, month);
+	  
+	  // 이전에 있던 option 태그 제거 X
+	  cmbdate.innerHTML = "";  // <select></select>
+	  
+	  for (var d = 1; d <= lastday; d++) { 
+		  cmbdate.options[d-1] =new Option( d, d); 
+	 } // for
+	 
+	 // select  year, month
+	 // cmbyear.options[cmbyear.selectedIndex].value;
+	 // $("").val()
+	 var year = cmbyear.value;
+	 var month = cmbmonth.value;
+	 
+	  spanYear.innerHTML = year;
+      spanMonth.innerHTML = month;
+      
+	   printCalendar( year , month );
+  } // changeDate
+  
+  
+
+</script>
+</body>
+</html>
