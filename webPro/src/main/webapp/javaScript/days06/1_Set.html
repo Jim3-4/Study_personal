@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 09:30:12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <button>로또 번호  발생기</button>
+    <p id="demo"></p>
+    
+
+<h3>1-2.html</h3>
+<script>
+
+            $("button").click(function(event) {
+                var lottos=new Set();
+                var n;
+                
+                for (var i = 0; i <$("#cmbCnt").val(); i++) {
+                    lotto=[]; 
+                    while (lotto.size<6) {
+                        n=RandLotto(1,45);
+                        lottos.push(lotto);
+                    };
+                    lotto.sort((a,b) => a-b);
+                    
+                    for(let e of lotto.values()){
+                    console.log(e);
+                        }
+                }
+                
+                $("#demo").html(lottos.join("<br>").toString());
+            });
+        
+        function RandLotto(min,max) {
+            return Math.floor(Math.random()*(max-min+1))+min;
+        }
+
+        function isDup(lotto, n) {
+            return lotto.every(function(elt, i, array) {
+                return elt!=n;
+            });
+        }
+    
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 14:52:19</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex10_02.html</h3>
+<script>
+    //[중첩된 객체 배열]
+    var person={
+        name:"hong",
+        age:20,
+        cars:[
+            {name:"Ford", models:["aa","bb","cc"]},
+            {name:"BMW", models:["xx","yy"]},
+            {name:"Kia", models:["s1","s2","s3"]},
+        ]
+           
+    };
+console.log(person.cars[0].name);
+    var person={
+        name:"hong",
+        age:20,
+        cars:{
+            car1:"BMW",
+        car2:"KIA",
+        car3:"Ford"
+    }
+    };
+    console.log(person.cars.car1);
+    console.log(person.cars["car1"]);
+    console.log(person["cars"]["car1"]);
+    console.log(person.name);
+    console.log(person["name"]);
+</script>
+</body>
+</html>

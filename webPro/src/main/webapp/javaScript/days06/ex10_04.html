@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 15:21:35</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex10_04.html</h3>
+<script>
+    //js객체 생성자: 객체를 만들떄 사용되는 함수를 객체 생성자라고 한다.
+    //대문자로 이름을 짓는다
+/*     function 함수명(){
+    
+    } */
+
+    new String()
+    new Number()
+    new Boolean()
+    new Object()
+    new Array()
+    new RegExp()
+    new Function()
+    new Date()
+
+    //js 객체생성자
+    function Person(fname, lname, age, eyecolor){
+        this.firstname=fname;
+        this.lastname=lname;
+        this.age=age;
+        this.eyecolor=eyecolor;
+        this.name=function(){
+            return this.firstname+""+this.lastname;
+        }
+    }
+   var myFather=new Person("jone","Doe",40,"blue");
+
+   //객체 생성자를 통해서->속성추가 X
+  // Person.nationality="Korea"; X
+  // prototype 속성 객체 생성자를 통하여 속성.메소드 추가 O
+  Person.prototype.nationality="Korea";
+   //객체 생성자를 통해 생성된 객체를 통해서 속성추가 
+   myFather.nationality="Korea";
+   function Car(name, year){
+       this.name=name;
+       tihs.year=year;
+   }
+   myFather.name=function(){
+
+   }
+</script>
+</body>
+</html>

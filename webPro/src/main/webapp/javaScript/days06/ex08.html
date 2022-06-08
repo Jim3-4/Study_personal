@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 12:49:00</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex08.html</h3>
+<pre>
+    js모듈:코드를 별도의 파일로 저장->관리
+    import/export 
+    ex08_person.js
+</pre>
+<p id="id"></p>
+
+<script type="module">
+    import message from "../ex08_message.js";
+    let text="name="+name+", age="+age+".";
+    $("#demo").html(message());
+</script>
+<!-- <script type="module">
+    import{name, age} from "./ex08_person.js";
+    let text="name="+name+", age="+age+".";
+    $("#demo").html(text);
+</script> -->
+</body>
+</html>

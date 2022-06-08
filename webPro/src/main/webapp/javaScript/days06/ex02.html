@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 11:19:22</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex02.html</h3>
+//js Set
+//js Map
+//key- value ,한쌍 entry 
+//1.new Map()
+//2.set()/ get() /delete()/ for each /size
+//3.entries() 
+
+<script>
+    var fruits=new Map();
+    console.log(fruits.size); //0 
+    fruits.set("apple",10);
+    fruits.set("banana",20);
+    fruits.set("orange",15);
+    console.log(fruits.size);
+    console.log(fruits.get("banana"));
+
+    console.log(fruits.has("apple"));
+
+    fruits.forEach(function(value, key, map){
+        console.log(key+"/"+value);
+    });
+/*     apple/10
+ banana/20
+ orange/15
+ */
+
+ for(let entry of fruits.entries()){
+     console.log(entry);
+ 
+ }
+/* (2) ['apple', 10]
+(2) ['banana', 20]
+(2) ['orange', 15] */
+
+
+</script>
+
+</body>
+</html>

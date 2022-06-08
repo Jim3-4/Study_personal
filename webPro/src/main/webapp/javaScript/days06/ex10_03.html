@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 15:12:59</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex10_03.html</h3>
+<script>
+    //ECMAScript5 getter/setter 도입 ->개체접근자 
+    //java getter, setter private 필드에 접근하는 방법 
+    var person={
+        firstname:"john",
+        lastname:"Doe",
+        language:"kr",
+
+        get lang(){
+            return this.language.toUpperCase();
+        },
+
+        set lang(lange){
+            this.language=lange.toUpperCase();
+        }
+    }
+
+    person.lang="en";
+    console.log(person.lang);
+    
+    </script>
+</body>
+</html>

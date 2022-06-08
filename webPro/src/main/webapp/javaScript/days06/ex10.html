@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 14:35:47</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex10.html -js 객체</h3>
+<script>
+//1. js객체는 기본형을 제외하면 모두 js 객체이다
+//2.js 기본형: string,  number, boolean, null,undefined
+//3.js 객체: new Number(), new String(), new Boolean(), new Date, Math, 배열 ,함수 ,object 등등
+//4. js 객체도 변수이다. 
+//var person={이름: 값,이름: 값,이름: 값,이름: 값,이름: 값,메서드:function(){}}
+
+
+/* 
+var person={firstname:'john', 
+lastname:'Doe',
+ age:40, 
+ eyecolor:'blue',
+ fullName:function(){
+    return this.firstname+""+this.lastname;
+}
+}
+
+//새로운 속성 추가 
+//person.새로운속성명=속성값;
+person.nationality="Korea";
+
+
+//속성으ㅓㄹ 제거 
+delete person.eyecolor;
+//==delete person['eyecolor'];
+
+//메소드호출
+ var name=person.fullName();
+ console.log(name);
+
+ //새로운 메소드 추가
+ person.메소드명=function(){}
+
+ //새로운 메소드 추가 
+  person.name=function(){
+  return this.firstname+""+this.lastname;}
+
+  //모든 속성을 출력 
+  for(var p in person){
+      console.log(p+","+person[p]);
+  }
+ */
+//1번 
+var person={}
+//2번 권장 x
+var person=new Object();
+person.firstname="john";
+person.age=40;
+person.eyecolor="blue";
+</script>
+</body>
+</html>

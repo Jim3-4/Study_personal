@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 10:49:00</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>구구단.html</h3>
+
+<button>구구단 출력 버튼</button>
+<p id="demo"></p>
+    <script>
+        $("button").click(function(event){
+            //동적 table 생성 -> p 출력
+            //<table border='1'></table>
+            var tbl=documnet.createElement("table");
+            tbl.setAttribute("border","1");
+            tbl.setAttribute("style","width:100%");
+            
+        //    <tr></tr>
+            var tr=document.createElement("tr");
+            tbl.appendChild(tr);
+            var tr=tbl.insertRow(tbl.rows.length);
+            
+            //insertRow() 함수 
+            document.getElementById("demo").appendChild(tbl);  //innerHTML 써도된다. 
+            
+            for(var i=2; i<=9; i++){
+                //<th>1단/th>
+                var th=tr.insertCell(i-2);
+                th.setAttribute("align","center");
+                th.innerHTML=i+"단";
+                        }
+
+                        for(var i=1; i<=9; i++){
+               
+                            tr=tbl.insertRow(tbl.rows.length);
+                            for (let j = 2; j <= 9; j++){
+                                var td=tr.insertCell(j-2);
+                                td.innerHTML=j+"*"+"i"+"="+(j*i);
+                            }
+                        }
+        });
+    </script>
+</body>
+</html>

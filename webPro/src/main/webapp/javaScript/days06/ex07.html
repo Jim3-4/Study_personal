@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 12:38:41</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex07.html</h3>
+//js 에도 class 키워드를 사용해서 클래스를 선언할 수 있다. 
+
+<script>
+    class Car{
+       //   멤버변수==필드
+        // private String name;
+        // private int age
+
+        //속성
+        //생성자 <br>
+        //멤버변수를 꼭 안쓰고 생성자에서 이렇게 선언해도 된다ㅣ. 
+        //생성자 이름은 반드시 constructor
+        //항상 constructor추가 
+                constructor(name, year){
+            this.name=name;
+            this.year=year;
+        }
+        age(year){
+            return year-this.year;
+        }
+        
+
+
+    }
+    var myCar=new Car("BMW", 2019);
+    console.log(myCar.name+"/"+myCar.year+"=>"+myCar.age(2022)); //BMW/2019=>3
+
+</script>
+</body>
+</html>

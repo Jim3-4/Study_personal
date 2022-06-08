@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 11:57:27</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex06.html</h3>
+<script>
+  /*   화살표함수 (람다식) es6 도입 
+    더 짧은 함수 구문을 작성, 사용
+  */
+ var hello=function(){
+    return "hello world";
+ };
+ alert(typeof hello); //function
+ alert(hello()); //hello world
+
+//  var hello =() =>{ return "hello world";};
+//{}은 생략가능 , return  생략가능 
+//  var hello=()=>{}
+
+var hello=function test(name){
+    return name+"   Hi~~";
+}
+
+alert(hello("admin"));
+
+//위 함수를 람다식으로 변경 
+var hellolamda =(name)=> name+"hi~~";
+//매개변수가 1개라면 ()생략가능
+var hellolamda = name => name+"hi~~";
+alert(hellolamda ("d"));
+
+/* function(a,b){return a+b;} */
+var result= (a,b)=>a+b;
+console.log(result(10,20));
+</script>
+</body>
+</html>

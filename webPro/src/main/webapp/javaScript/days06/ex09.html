@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 14:22:31</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex09.html</h3>
+<form action="form1" action="ex09_ok.jsp" method="get" onsubmit="return validate()">
+    Name: <input type="text" name="name" autofocus="autofocus"> <br>
+    Age: <input type="text" name="age" > <br>
+    <input type="submit">
+    <button type="button" onclick="btn_submit();">전송</button>
+</form>
+<script>
+    function btn_submit(){
+        document.forms["form1"].submit();
+    }
+
+    // 유효성 검사후 서브밋
+    function validate(){
+        alert("xxx");
+        var name=document.forms["form1"]["name"].value;
+        if(name.trim().length==0){
+            alert("이름 필수 입력 항목");
+            document.forms["form1"]["name"].focus();
+            return false; //이벤트취소
+        }
+        var age=document.forms["form1"]["age"].value;
+        if(age.trim().length==0){
+            alert("나이 필수 입력 항목");
+            document.forms["form1"]["age"].focus();
+            return false; //이벤트취소
+        }
+    }
+</script>
+</body>
+</html>

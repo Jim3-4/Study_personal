@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 10:30:08</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex01_02_02.html</h3>
+<script>
+    //중복x 
+    //js Set() 객체 사용 : add(), size(), has() , values(), forEach()
+    var s=new Set();
+s.add("a");
+s.add("b");
+s.add("b");
+s.add("b");
+s.add("c");
+
+s.delete("b");
+console.log(s.size); //3 
+
+s.delete("b");
+console.log(s.size);
+console.log(s.has("b"));
+
+for(let e of s.values()){
+    console.log(e);
+}
+//set은 중복 제거 
+
+
+
+
+</script>
+</body>
+</html>

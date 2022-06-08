@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 11:47:02</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex05.html</h3>
+<script>
+    //클릭이벤트가 발생할때 호출되는 익명함수 ==이벤트 핸들러
+    document.querySelector("h3").onclick=function(){
+        alert(this); //[object HTMLHeadingElement]
+        //이때 this는 클릭 이벤트를 발생한 (수신한)객체 
+    }
+</script>
+<script>
+    function test(){
+        //함수 안에 있는 this  //[object Window]
+        alert(this); 
+        return this;
+    }
+    test();
+</script>
+<script>
+    var x=this;
+    alert(x); //[object Window]
+</script>
+<script>
+    var person={
+    name:"hong",
+    age:20,
+    //객체안에있는 메소드 
+    //객체 안에서의 this는 person 객체 자신을 나타낸다 .
+    disp:function(){
+        return this.name+"/"+this.age;
+    }
+
+};
+person.name==person["name"];
+</script>
+</body>
+</html>

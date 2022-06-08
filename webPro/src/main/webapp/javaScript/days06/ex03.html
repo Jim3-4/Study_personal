@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 11:28:52</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex03.html</h3>
+
+
+<script>
+    //엄격모드 사용 
+    // 반드시 변수를 선언하고 자바스크립트를 사용 
+    //ECMASript5 도입
+    "use strict";
+    var form="admin";
+    function test(){
+        //ex03.html:19 Uncaught ReferenceError: from is not defined
+        //from="hong";
+        document.write(form);
+    }
+    test();
+</script>
+<!-- <script>
+//js호이스팅 
+//변수 선언 부분을 자동으로 맨 위로 이동 
+n=400; //400 초기화 
+var n; //n 변수 선언
+console.log(n);
+test(); //함수 선언이 호출 뒤에 온다면, ?  -> 호이스팅 되어 잘 호출된다. 
+
+//함수 선언
+function test(){
+    console.log("test()~");
+}
+</script> -->
+</body>
+</html>
