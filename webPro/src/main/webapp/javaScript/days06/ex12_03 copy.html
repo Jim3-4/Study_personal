@@ -23,16 +23,18 @@
         content=document.documentElement.innerHTML;
         contentLength=content.length;
         typeWriter();
+        timer=setInterval(typeWriter,10)
     });
 
     function typeWriter(){
         if(i<=contentLength){
             var oneChar=content.charAt(i++);
             demo.innerHTML+=(oneChar=='\n'?"<br>":oneChar);
-            timer=setTimeout(typeWriter,50);;
+           // window.scrollTo(0,0) //맨위로 스크롤 올림 
+            window.scrollTo(0,document.body.scrollHeight);
 
         }else{
-            clearTimeout(timer);
+            clearInterval(timer);
             alert("출력완료");
         }
     }
