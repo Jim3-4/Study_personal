@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.08 16:06:24</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex12.html</h3>
+<h1 id="demo"></h1>
+<button onclick="timer_start()">setTimeout</button>
+<button onclick="timer_stop()">clearTimeout</button>
+<pre>
+    
+    setTimeout()/clearTimeout()
+    setInterval()/ clearInterval()
+
+</pre>
+<script>
+    var demo;
+   // body onload=""
+    window.onload=function(){
+        window.demo=document.getElementById("demo");
+    }
+    function dispDT(){
+     var now=new Date();
+     demo.innerHTML=now.toLocaleString();  
+     timer=setTimeout(dispDT,1000); 
+    }
+    function timer_start(){
+        dispDT();
+    }
+    var timer;
+    function timer_stop(){
+        clearTimeout(timer);
+    }
+   
+</script>
+</body>
+</html>

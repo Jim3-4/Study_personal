@@ -33,18 +33,15 @@ ex11.html -call()/apply()
     var person={
         //속성
         //속성
-        print: function(city,lang){
-            return this.name+"/"+this.age+city+"/"+lang;
+        print: function(){
+            return this.name+"/"+this.age;
     }}
     
     /*     console.log(person1.print());
     console.log(person2.print());
     function test(){} */
-    console.log(person.print.call(person1,'seoul','kr')); //나열
-    console.log(person.print.apply(person2,['seoul','kr'])); //배열
-
-    console.log(Math.max.apply(null,[3,5,2,4,1]));
-    
+    console.log(person.print.call(person1));
+    console.log(person.print.apply(person2));
 </script>
 </body>
 </html>
