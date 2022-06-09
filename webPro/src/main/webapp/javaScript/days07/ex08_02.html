@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 16:38:45</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+// if(!zipWin)로 되어있기 때문에 윈도우가 한번열리고나면 뜨지않는다. 
+<body onload="init();" onunload="win_unload()"> <!-- onunload: 윈도우가 닫혀도 -->
+
+    <table border="1" style="width:100%">
+      <tr>
+        <td>
+            검색할 동 입력 :
+            <input type="text" id="dong" name="dong" />
+            <input type="button" value="검색"  onclick="search_dong();"/> 
+        </td>
+      </tr>
+      <tr>
+         <td>
+           <div id="searchResult" class="box" style="visibility: hidden;">
+             <a href="javascript:sendAddr('123','451','서울 영등포구 당산 1동')">123-451</a>서울 영등포구 당산 1동<br>
+             <a href="javascript:sendAddr('123','452','서울 영등포구 당산 2동')">123-452</a>서울 영등포구 당산 1동<br>
+             <a href="javascript:sendAddr('123','453','서울 영등포구 당산 3동')">123-453</a>서울 영등포구 당산 1동<br>
+             <a href="javascript:sendAddr('123','454','서울 영등포구 당산 4동')">123-454</a>서울 영등포구 당산 1동<br>
+             <a href="javascript:sendAddr('123','455','서울 영등포구 당산 5동')">123-455</a>서울 영등포구 당산 1동<br>
+             <a href="javascript:sendAddr('123','456','서울 영등포구 당산 6동')">123-456</a>서울 영등포구 당산 1동<br>
+             <a href="javascript:sendAddr('123','457','서울 영등포구 당산 7동')">123-457</a>서울 영등포구 당산 1동<br>
+             <a href="javascript:sendAddr('123','458','서울 영등포구 당산 8동')">123-458</a>서울 영등포구 당산 1동<br>
+             <a href="javascript:sendAddr('123','459','서울 영등포구 당산 9동')">123-459</a>서울 영등포구 당산 1동<br>
+             <a href="javascript:sendAddr('123','461','서울 영등포구 당산 10동')">123-461</a>서울 영등포구 당산 1동<br>
+           </div>
+         </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="box" style="visibility: hidden;">
+             '당산' 검색 결과 10개 검색되었습니다. 
+          </div>
+        </td>
+      </tr>
+    </table>
+    
+    <script>
+        function init() {
+            document.getElementById("dong").value = default_dong; 
+        }
+        
+        function search_dong() {
+            document.getElementById("searchResult").style.visibility="visible";
+            document.getElementsByClassName("box")[1].style.visibility="visible";
+            /* var searchList = document.getElementsByClassName("box");
+            //searchList는 2개
+            for (var i = 0; i <searchList.length; i++) {
+                searchList[i].style="visible";
+            } */
+        }
+        
+        //우편번호 앞자리, 뒷자리 (3개씩), 주소
+        function sendAddr(zip1, zip2, addr1) {
+            //현재창을 오픈시킨 창?! 
+            opener.document.getElementById("zip1").value = zip1;
+            opener.document.getElementById("zip2").value = zip2;
+            opener.document.getElementById("addr1").value = addr1;
+            
+            self.close();
+            
+            opener.document.getElementById("addr2").focus();
+        }
+        
+        function win_unload() {
+            opener.zip = null; //null줘야 우편번호 수정할 수 있게 또 열림
+        }
+    </script>
+</html>

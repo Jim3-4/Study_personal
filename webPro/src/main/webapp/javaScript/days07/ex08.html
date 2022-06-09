@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 16:38:45</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex08.html</h3>
+<table border="1" style="width: 500px;margin: 0 auto">
+    <tr>
+      <td>우편번호</td>
+      <td>
+              <!-- zip1, zip2 우편번호 관련 태그는 readonly 속성에 의해 입력 불가 -->
+          <input type="text" id="zip1" name="zip1" size="3" readonly="readonly" />-
+          <input type="text" id="zip2" name="zip2" size="3" readonly="readonly"/>
+          <input type="button" value="우편번호 검색"  onclick="search_zipcode()"/>
+      </td>
+    </tr>
+    <tr>
+      <td>주소</td>
+      <td><input type="text" id="addr1" name="addr1" style="width:90%" /></td>
+    </tr>
+    <tr>
+      <td>상세주소</td>
+      <td><input type="text" id="addr2" name="addr2" style="width:90%" /></td>
+    </tr>
+  </table>
+<!--   <script>
+
+	var zip; //undefined (undefined, 0, false, null은 모두 false다)
+	function search_zipcode() {
+		if(!zip){ //창이 안띄워져 있으면 == !undefined 
+			
+		zip = window.open("ex05_02.html","",
+				"width=600, height=300, top=100, left=200");
+		zip.default_dong="당산"; //전역변수로 선언해 고정값 넣어둠
+		//=> ex05가서 body에 onload=init() 주기
+		
+		}else{ //만일 떠있는 창이 있으면
+			zip.focus();
+		}
+	}
+	
+</script> -->
+
+<script>
+    //우편번호 검색 버튼 누를때의 이벤트 핸들러
+    var zipWin;
+    function search_zipcode(){
+        if(!zipWin){
+            zip=window.open("ex08_02.html","","width=600, hegiht=300, top=100, left=200")
+        }else{
+            zipWin.focus();
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 16:22:35</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex07.html</h3>
+Browser Object Model 약자
+브라우저 제공하는 객체의 모델
+window
+모든 브라우저가 제공
+브라우저의 창을 나타낸다.
+최상위 부모 객체
+전역변수, 함수 선언하면 자동으로 window 객체의 구성원이 된다.
+screen
+location
+navigator
+history
+
+<script>
+let w = window.innerWidth; // 브라우저의 내부너비 (단위 px)
+let h = window.innerHeight; // 브라우저의 내부높이 (단위 px)
+alert(w + " / " + h);
+
+//alert(w+"/"+h);
+document.body.clientWidth;
+document.body.clientHeight;
+
+//html태그
+document.documentElement.clientWidth;
+document.documentElement.clientHeight;
+
+새 창열기 window.open()
+현재창닫기 window.close();
+현재창 이동 window.moveTo()
+window.moveBy()
+현재창 크기 조절 window.resizeTo(); 
+window.resizeBy();
+</script>
+</body>
+</html>

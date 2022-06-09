@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 16:33:18</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex07_03.html</h3>
+<table border="1" style="width:100%">
+    <tr>
+       <td>절대위치</td>
+       <td onclick="fn_moveto()">moveTo()</td>
+    </tr>
+    <tr>
+       <td>상대위치</td>
+       <td onclick="fn_moveby()">moveBy()</td>
+    </tr>
+    <tr>
+       <td>절대크기</td>
+       <td onclick="fn_resizeto()">resizeTo</td>
+    </tr>
+    <tr>
+       <td>상대크기</td>
+       <td onclick="fn_resizeby()">resizeBy</td>
+    </tr>
+    <tr>
+       <td><button onclick="win_shake();">창 흔들기</button></td>
+       <td><button onclick="win_close();">창 닫기</button></td>
+    </tr>
+ </table>
+ <script>
+     function fn_moveto(){
+         //절대크기
+        window.moveTo(10,10);
+    }
+    function fn_moveby(){
+        //현재기준위치에서 10,10 -상대크기
+        window.moveBy(10,10);
+    }
+    function fn_resizeto(){
+        window.resizeTo(300,300); //절대크기
+    }
+    function fn_resizeby(){
+       window.resizeBy(10,10); //상대크기
+    }
+    function win_shake(){
+        
+    }
+    function win_close(){
+        //자기자신창 닫기   
+       self.close();
+    }
+ </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 12:27:58</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+
+#container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background-color: yellow;
+}
+
+#animate {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+}
+</style>
+
+</head>
+<body>
+<h3>ex09.html</h3>
+<p>
+    <button onclick="myMove();">Click Me</button>
+</p>
+<div id="container">
+    <div id="animate"></div>
+</div>
+
+<!-- <script>
+    function myMove() 
+    {
+    var elem = document.getElementById("animate");
+    //좌표
+    var pos = 0; // x, y
+    var timer = setInterval(function() { //중첩함수
+        if (pos == 350) { //전체div가 400이고 공이 50이어서 
+            clearInterval(timer); //위치가 350이면 타이머 멈추기 
+        } else {
+            //그렇지 않다면 좌표값을 1씩증가 
+            pos++;
+            elem.style.left = pos + "px";
+            elem.style.top = pos + "px";
+            
+        }
+    },10); //ms 숫자가 커질수록 느려짐 
+}
+
+</script> -->
+<script>
+    function myMove() 
+    {
+    var elem = document.getElementById("animate");
+    //좌표
+    var pos = 0; // x, y
+    var timer = setInterval(function() { //중첩함수
+        if (pos == 350) { //전체div가 400이고 공이 50이어서 
+            clearInterval(timer); //위치가 350이면 타이머 멈추기 
+        } else {
+            //그렇지 않다면 좌표값을 1씩증가 
+            pos++;
+            elem.style.left = pos + "px";
+            elem.style.top = pos + "px";
+            
+        }
+    },10); //ms 숫자가 커질수록 느려짐 
+}
+
+</script>
+</body>
+</html>

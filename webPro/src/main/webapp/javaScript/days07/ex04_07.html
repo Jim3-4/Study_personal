@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+    href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <!-- 상대경로 맞추기 -->
+<link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+<style>
+ div.draggable {
+    width: 150px;
+    height: 150px;
+    padding: 0.5em;
+    border: solid 1px gray;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script>
+
+    //제이쿼리 안에 draggable메소드를 사용 
+    $(function() {
+        $(".draggable").draggable();
+    });
+</script>
+</head>
+<body>
+    <div class="draggable" class="ui-widget-content">
+        <p>드래그</p>
+    </div>
+   <h3 class="draggable">하이</h3>
+</body>
+</html>

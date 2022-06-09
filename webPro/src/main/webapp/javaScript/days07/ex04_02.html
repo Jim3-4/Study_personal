@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 09:47:35</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex04_02.html</h3>
+<p id="demo"></p>
+<button onclick="incCounter()">counter증가 </button>
+<!-- <script>
+    let counter=0; //전역변수
+    
+    function add(){
+        counter+=1;
+        return counter;
+    }
+    add();
+    add();
+    add();
+    document.getElementById("demo").innerHTML=counter;
+</script> -->
+<script>
+ //counter를 버튼 누를 때마다 누적시키자 => 전역변수로 쓰면 바로 가능하지만
+ //중첩함수를 사용해서 해결해보자 
+    function add(){
+       //clousers
+        //counter를 지역변수로 선언한 이유 
+        // 버튼을 누를때마다 함수가 호출될때마다, 초기화가 됨 (누적x)
+        let counter=0; 
+        counter+=1;
+        return counter;
+        }
+  
+
+   function incCounter(){
+    document.getElementById("demo").innerHTML=add();
+   }
+</script>
+</body>
+</html>

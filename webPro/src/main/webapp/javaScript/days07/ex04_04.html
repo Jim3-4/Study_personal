@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 10:35:59</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex04_04.html</h3>
+<button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button><button>0</button>
+<script>
+    var btns=document.getElementsByTagName("button");
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].onclick=(function(){
+            let counter=0;
+            return function(){
+                event.srcElement.innerHTML=++counter;
+            };
+        })();
+    };
+</script>
+
+<!-- //js
+<script>
+    var btns=document.getElementsByTagName("button");
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].onclick=function(){
+            var n=parseInt(event.srcElement.innerHTML);
+            event.srcElement.innerHTML=++n;
+        }
+    }
+</script> -->
+
+//jquery
+<!-- <script>
+
+    $("button").click(function(event){
+        var n=parseInt($(this).html());
+        $(this).html(++n);
+    });
+</script> -->
+
+<!-- <script>
+    //카운터변수를 배열로 선언 
+    var counters=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    $("button").click(function(event){
+        var idx = $(this).index();
+    counters[idx]++;
+    $(this).html(counters[idx]);
+    });
+</script> -->
+</body>
+</html>

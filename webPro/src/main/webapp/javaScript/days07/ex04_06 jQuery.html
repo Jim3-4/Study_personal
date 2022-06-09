@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 11:15:19</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    .myProgress{
+      width:100%;
+      background-color: #ddd;
+      border:solid 1px gray;
+    }
+    .myBar{
+      width:1%;
+      height: 30px;
+      background-color: #4CAF50;
+      text-align: right;
+      color:red;
+    }
+  </style>
+</head>
+<body>
+<h3>ex04_06.html</h3>
+
+<div id="myProgress1" class="myProgress">
+    <div id="myBar1" class="myBar"></div>
+    <button id="btn1">진행</button>
+</div>
+<div id="myProgress2" class="myProgress">
+    <div id="myBar2" class="myBar"></div>
+    <button id="btn2">진행</button>
+</div>
+<div id="myProgress3" class="myProgress">
+    <div id="myBar3" class="myBar"></div>
+    <button id="btn3">진행</button>
+</div>
+<div id="myProgress4" class="myProgress">
+    <div id="myBar4" class="myBar"></div>
+    <button id="btn4">진행</button>
+</div>
+<div id="myProgress5" class="myProgress">
+    <div id="myBar5" class="myBar"></div>
+    <button id="btn5">진행</button>
+</div>
+<script>
+   $(".myProgress button").click(function(event){
+    var btn=$(this);
+       var width=1;
+       var timer=setInterval(function(){
+           if(width<100){
+               width++;
+               btn.prev().css("width",width+"%");
+               btn.prev().html(width+"%")
+           }else{
+            clearInterval(timer);
+        }
+       },30);
+   });
+</script>
+<script>
+    $("button").click(function(event){
+        var width = 1;
+        var timer = setInterval(function(){ // 중첩함수
+
+            if(width < 100) {
+                width++;
+                $(this).prev().css("width", width + "%");
+                $(this).prev().html( width + "%");
+            } else {
+                clearInterval(timer);
+            }
+
+        },30);
+    });
+</script>
+
+</body>
+</html>

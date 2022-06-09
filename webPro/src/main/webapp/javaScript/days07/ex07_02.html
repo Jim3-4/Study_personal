@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 16:27:55</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex07_02.html</h3>
+<button onclick="windowOpen()">새창열기</button>
+<button onclick="windowClose()">새창닫기</button>
+<script>
+    var newWin;
+    function windowOpen(){
+        //열고자하는 창의 주소, 두번째값은 생략가능, 3번째 값은 위치랑 넓이
+        newWin=window.open("ex07_03.html","","width=600, heigh=500, top=100, left=200");
+    }
+    function windowClose(){
+        newWin.close();
+    }
+</script>
+</body>
+</html>

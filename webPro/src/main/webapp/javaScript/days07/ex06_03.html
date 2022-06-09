@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 14:46:50</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex06_03.html</h3>
+<h1 id="id01">My first Page</h1>
+<p id="id02"></p>
+<script>
+ /*    각각의 노드에는 속성
+   nodeValue 속성
+텍스트노드: 문자열
+속성노드: 속성값
+요소노드: null
+    nodeType 요소노드: 1 ,속성노드:2,  텍스트노드:3 ,주석노드:4 , 루트노드==html:5 , 선언문:6
+    nodeValue 요소노드:null, 속성노드:속성값, 텍스트노드:문자열자체 
+    
+    */
+
+    var h1=document.getElementById("id01");
+    alert(h1.firstChild); //[object text] //텍스트노드일 경우 nodeValue 값은 문자열 그자체 
+    alert(h1.firstChild.nodeValue); //My first Page
+    //속성노드일 경우 nodeValue값은 속성값을 나타낸다. 
+    //id="id01"
+    //3.요소노드일 경우 nodeValue 값은 null이다. 
+
+</script>
+</body>
+</html>

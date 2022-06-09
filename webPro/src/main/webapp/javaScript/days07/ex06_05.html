@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 15:24:47</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex06_05.html</h3>
+전체 선택 : <input type="checkbox" />
+<table border="1"> 
+  <tr>     
+     <td><input type="checkbox" />1</td>
+     <td>hong</td>
+     <td>seoul</td>
+  </tr>
+  <tr>
+     <td><input type="checkbox" />2</td>
+     <td>admin</td>
+     <td>seoul</td>
+  </tr>
+  <tr>
+     <td><input type="checkbox"  />4</td>
+     <td>kenik</td>
+     <td>pohang</td>
+  </tr>
+</table> 
+ 
+<button id="btn">버튼</button>
+
+<p id="demo"></p>
+
+
+<script>
+    document.getElementById("btn").onclick= function () {
+        var ckbList = document.querySelectorAll("table input[type='checkbox']"); 
+        for (let ckb of ckbList) {
+            if(ckb.checked){
+// parentNode가 아닌 parentElement를 사용하면 더 쉽게, 찾을 수 있다 .
+// ckb.parentElement.nextElementSibling.innerHTML
+            
+            //<td><input type="checkbox"  />4</td>
+            //여까지 네줄을 $(":checked") 이 한 줄로 끝낼 수 있음
+            //alert(ckb.nextElementSibling.innerHTML); //null이라는 에러뜸 (element가 아니니까)
+            //alert(ckb.nextSibling.nodeValue); // 번호 뜸 (1,2,4) 텍스트노드의 nodeValue
+            //alert(ckb.parentElement.nodeType); //3
+            //alert(ckb.parentElement.nodeName); //TD
+            //alert(ckb.parentElement.parentElement.nodeName); //TR (부모의 부모)
+          //  alert(ckb.parentNode.parentNode.childNodes[1].nodeName);//TD
+         //alert(ckb.parentElement.parentElement.childNodes[3].firstChild.nodeValue);이렇게 할 필요X
+            
+         document.getElementById("demo").innerHTML
+                += ck.parentElement.nextElementSibling.innerHTML+"<br>";
+            }
+        }
+    }
+    </script>
+</body>
+</html>

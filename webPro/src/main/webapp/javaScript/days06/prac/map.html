@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 08:02:02</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>map.html</h3>
+<script>
+    var fruits=new Map();
+    console.log(fruits.size); //0 
+    fruits.set("apple",10);
+    fruits.set("banana",23);
+    console.log(fruits.size); //2
+    fruits.set("apple",10);
+    fruits.set("banana",23);
+    console.log(fruits.size); //2 중복x
+    console.log(fruits.get("banana"));
+    console.log(fruits.has("banana"));
+    fruits.forEach(function(elt, i ,array){
+        console.log(i+","+elt);
+    });
+for(let entry of fruits.entries()){
+    console.log(entry);
+}for(let entry of fruits){
+    console.log(entry);
+}
+
+</script>
+</body>
+</html>

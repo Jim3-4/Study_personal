@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 12:27:58</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+
+#container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background-color: yellow;
+}
+
+.animate {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+}
+</style>
+
+</head>
+<body>
+<h3>ex09.html</h3>
+<p>
+    <button onclick="make();">Click Me</button>
+</p>
+<div id="container">
+    <div id="animate"></div>
+</div>
+<script>
+var no=1;
+function make(){
+    var newCircle=document.createElement("div");
+    newCircle.className="animate";
+    newCircle.setAttribute("id","animate"+no);
+    document.getElementById("container").appendChild(newCircle);
+
+    myMove("animate"+no);
+    no++;
+
+}
+
+function myMove(id) {
+    var elem = document.getElementById(id);
+    var posX = 0; 
+    var posY = 0; 
+    var x = 6;
+    var y = 9;
+
+    var timer = setInterval(function() {
+        //위, 아래 벽에 닿았을때 y 방향을 바꾼다 .
+        if (posY >= 350 || posY <= 0) y *= -1;
+         //왼, 오른 벽에 닿았을때 y 방향을 바꾼다 .
+        if (posX >= 350 || posX <= 0) x *= -1;
+
+        posX += x; //6
+        posY += y; //9
+
+        if (posX < 0)
+            posX = 0;
+        else if (posX > 350)
+            posX = 350;
+        if (posY < 0)
+            posY = 0;
+        else if (posY > 350)
+            posY = 350;
+
+        elem.style.left = posX + "px";
+        elem.style.top = posY + "px";
+    }, 10);
+}
+</script>
+</body>
+</html>

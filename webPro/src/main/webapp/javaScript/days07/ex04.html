@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 09:41:24</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex04.html</h3>
+<!-- js함수 클로저  -->
+<pre>
+    1.js 변수- 지역(로컬) 변수, 전역변수
+    지역변수: 함수 호출될때 생성-> 종료 삭제 
+    전역변수: 다른 페이지로 이동, 창닫힐때, 즉  페이지가 유지될때까지 
+    클로저: 전역변수를 로컬(지역)에 비공개로 만들 수 있다. 
+</pre>
+<p id="demo"></p>
+<script>
+    var a; //전역변수
+    let b; //전역변수
+    
+    function test(x){
+        //지역변수, 매개변수
+        var c; //지역변수
+        y=100; //전역변수
+        {
+            let d; //이 블럭에서만 사용 할 수 있는 지역변수 
+        }
+    
+    }
+
+
+</script>
+</body>
+</html>

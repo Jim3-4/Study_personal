@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 15:00:10</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex06_04.html</h3>
+<div id="div1">
+    <p id="p1">Lorem, ipsum dolor.</p>
+    <p id="p2">Lorem, ipsum dolor.</p>
+    <p id="p3">Lorem, ipsum dolor.</p>
+</div>
+
+<script>
+    var p3=document.createElemnet("p");
+    p3.setAttribute("id","p3");
+   // p3.innerHTML="hong gil dong";
+    document.createTextNode("hoong gil dong");
+    p3.appendChild(textNode);
+    //document.getElementById("div1").appendChild(p3);
+    var p2=document.getElementById("p2");
+    
+    document.getElementById("div1").replaceChild(p3, p2);
+    document.getElementById("div1").insertBefore(p3, p2);
+    document.getElementById("div1").removeChild(p2);
+    
+    alert(p2.parentNode.nodeName);
+    
+    document.replaceChild(p3, oldChild);
+
+
+
+</script>
+</body>
+</html>
