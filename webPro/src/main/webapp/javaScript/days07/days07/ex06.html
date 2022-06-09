@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 9. - 오후 2:20:09</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex06.html - DOM</h3>
+
+<xmp>
+   1. DOM ?
+      - Document  Object Model 의 약자
+      - 웹 페이지를 요청 -> 응답 -> 브라우저에 응답된 웹페이지가 로딩할 때 [DOM객체]를 생성
+      - 트리 구조로 된 객체
+   2. DOM 사용
+      - html 요소 추가,수정, 삭제
+      - html 속성 추가,수정, 삭제
+      - css 스타일 변경
+      - html 이벤트 추가,수정,삭제
+      등등   
+   3. W3C DOM 종류
+       1) Core DOM - 모든 문서 유형에 대한 표준 DOM 
+       2) ex05.html   ->   html  DOM
+       3) test.xml     ->   xml   DOM    
+       
+   4.  DOM 메서드
+       ㄱ. html  요소를 찾는 메서드
+	       document.getElementById()   
+	       document.getElementsByTagName( tagname  ) 
+	       document.getElementsByClassName( className)
+           document.getElementsByName( name ) 
+       ㄴ. html 요소 변경   
+          element.innerHTML =  
+          element.innerText =
+          element.속성명 = 
+          element.style.속성명 = 
+          element.setAttribute(속성명, 속성값);
+          element.getAttribute(속성명);
+       ㄷ. html 요소 동적 추가,수정,삭제
+           document.createElement();
+           document.appendChild()
+           
+           document.removeElement();
+           document.removeChild()
+           document.replace(   new, old  )      
+       ㄹ. 이벤트 처리
+            element.on이벤트명 = function (){}
+            element.onmousemove =     function (){}
+                :
+                :
+      ㅁ.
+         document.links /  document.images
+         document.scripts 컬렉션  == 모든 script 요소 
+         document.forms  
+         
+         document.body        == <body> 요소
+****  document.documentElement ==  <html> 요소         
+         document.doctype   == <!DOCTYPE> 선언문
+         document.head == <head> 요소
+         document.title  == <title> 요소
+         
+         등등 
+           
+</xmp>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

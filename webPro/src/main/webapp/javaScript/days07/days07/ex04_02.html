@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 9. - 오전 9:47:30</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex04_02.html - *** 2. js 함수 closures( 클로저 ) ***</h3>
+
+<p id="demo"></p>
+
+<!-- 
+<script>
+
+    let counter = 0;  // 전역변수
+    
+    function add(){
+    	counter += 1;
+    }
+
+    add(); // 1
+    add(); // 2
+    add(); // 3
+    
+    document.getElementById("demo").innerHTML = counter; // 3
+    
+    // [가정] counter 변수 1증가 시킬 때는 add() 함수를 통해서만 1증가...
+    
+    //counter += 10;
+    //document.getElementById("demo").innerHTML = counter; // 3
+</script>
+ -->
+ 
+<!-- js 중첩 함수를 사용하면 해결 가능 -->
+<!-- 버튼을 클릭할 때 마다 counter 변수의 값이 1씩 증가해서 p#demo 출력 -->
+<p id="demo"></p>
+<button onclick="incCounter()">counter 증가</button> 
+<script>
+
+     //let counter = 0;   // 전역변수
+    
+    // 10:10 수업 시작
+    // add()함수를 호출할 때 마다 counter 지역변수 생성 0 초기화 매번 일어나기?때문에
+    function add(){
+    	// closures == 사전적의미  "폐쇄"
+    	let counter = 0;   // 지역변수      +   전역변수 처럼 사용 가능
+    	counter += 1;
+    	return counter;
+    }
+
+    //add(); // 1
+    //add(); // 2
+    //add(); // 3 
+    
+    
+    function incCounter(){
+    	document.getElementById("demo").innerHTML = add(); // 3
+    }
+</script>
+ 
+</body>
+</html>

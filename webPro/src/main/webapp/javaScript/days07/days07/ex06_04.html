@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 9. - 오후 2:59:57</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex06_04.html</h3>
+
+<!-- 3:11 수업 시작 -->
+
+<div id="div1">
+	<p id="p1">Lorem ipsum dolor.</p>
+	<p id="p2">Lorem ipsum dolor.</p>
+	<!-- <p id="p3">hong gil dong</p> -->
+</div>
+
+<script>
+  //  1. DOM method    새 요소 생성 추가
+  var p3 = document.createElement("p");
+  p3.setAttribute("id", "p3");
+  // p3.innerHTML = "hong gil dong";
+  var textNode = document.createTextNode("hong gil dong");
+  p3.appendChild(textNode);  
+  
+  // document.getElementById("div1").appendChild(p3);
+  
+  var p2 = document.getElementById("p2");
+  // 에러 document.replaceChild(p3, p2);
+  // document.getElementById("div1").replaceChild(p3, p2);
+  
+  // document.getElementById("div1").insertBefore( p3 , p2)
+  
+  // document.getElementById("div1").removeChild(p2);
+  
+  // p2의 parentNode 확인
+  // alert(  p2.parentNode.nodeName );  // DIV 태그명
+  
+ // alert(  p2.parentNode.innerHTML );
+  p2.parentNode.innerHTML  = "XXX";
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

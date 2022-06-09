@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 9. - 오후 4:27:44</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex07_02.html</h3>
+
+<button  onclick="windowOpen()">새 창 열기</button>
+<button onclick="windowClose()">창 닫기</button>
+
+<script>
+  var newWin;
+  function windowOpen(){
+	  newWin = window.open("ex07_03.html", "", "width=600,height=500,top=100,left=200");
+  }
+  function windowClose(){
+	  newWin.close();
+  }
+</script>
+
+</body>
+</html>
