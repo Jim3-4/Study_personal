@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.10 14:53:43</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        //문서가 준비완료
+/* $(document).ready(function(){
+    $("p").click(function(){
+            $(this).hide();
+        });
+}); */
+/* $(document).ready(function(){}); == $(function(){}); */
+$(function(){
+    $("p").click(function(){
+         $(this).hide();
+        });
+
+    jQuery("p").click(function(){
+        jQuery(this).hide();
+        });
+    
+    window.jQuery("p").click(function(){
+        window.jQuery(this).hide();
+        });
+});
+    </script>
+<h3>ex02.html</h3>
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Facere, incidunt recusandae? Magni, obcaecati.</p>
+<p>Cumque asperiores laborum est? Beatae.</p>
+<p>Nobis laudantium voluptatum vero maiores.</p>
+<p>Perferendis ipsam eius minima dignissimos.</p>
+</body>
+</html>

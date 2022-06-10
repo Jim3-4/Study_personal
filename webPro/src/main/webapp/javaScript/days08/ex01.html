@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.10 09:02:23</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex01.html</h3>
+[js BOM]
+window
+[window.]screen=사용자 화면에 대한 정보를 가지고 잇는 객체 
+screen.width 스크린(화면)너비
+screen.height 높이 
+screen.availaWidth 사용 가능한 스크린 너비 
+screen.availHeight 작업표시줄 제외한 화면의 너비, 높이 
+16비트: 65536가지
+<script>
+    var output="";
+ 
+    output += screen.width + " / " + screen.height + "<br>"; // 1366 / 768
+output += screen.availWidth + " / " + screen.availHeight + "<br>"; // 1366 / 728
+output += screen.colorDepth + "<br>"; // 24
+</script>
+</body>
+</html>

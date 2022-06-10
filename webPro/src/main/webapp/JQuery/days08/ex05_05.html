@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>fadeToggle demo</title>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+ 
+<button>fadeToggle p1</button>
+<button>fadeToggle p2</button>
+<p>This paragraph has a slow, linear fade.</p>
+<p>This paragraph has a fast animation.</p>
+<div id="log"></div>
+ 
+<script>
+$( "button" ).first().click(function() {
+    //첫번째 버튼을 누르면 첫번째 p를 천천히 사라지게 한다. 
+  $( "p" ).first().fadeToggle( "slow", "linear" );
+});
+$( "button" ).last().click(function() {
+    //마지막버튼을 누르면 마지막 p를 빨리사라지게하고, 완료된 후에 log인 곳에 div태그 추가 
+  $( "p" ).last().fadeToggle( "fast", function() {
+    $( "#log" ).append( "<div>finished</div>" );
+  });
+});
+</script>
+ 
+</body>
+</html>

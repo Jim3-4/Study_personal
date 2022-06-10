@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+쿠키 이름 : <input type="text" id="cname" /><br>
+쿠키 값 : <input type="text" id="cvalue" /><br>
+<button onclick="getAllCookies()"> 모든 쿠키 정보 확인 </button>
+<button onclick="setCookie()">쿠키 생성</button>
+<button onclick="getCookie()">쿠키 확인</button>
+<button onclick="delCookie()">쿠키 삭제</button>
+<p id="demo"></p>
+<script>	
+	
+	function delCookie() {
+		var cname = $("#cname").val();
+		//쿠키를 삭제할 때는 만료시점을 과거로 설정해서 다시 쿠키 생성(저장)
+		
+		var now = new Date();
+		now.setDate(now.getDate()-1); //오늘날짜-1일 (과거로 만들기)
+		
+		//쿠키 저장
+		document.cookie = cname+"=; expires="+now.toUTCString();
+								//삭제할거니 cvalue는 필요 없겠다
+	}
+	
+	
+	function getCookie() {
+		var cname = $("#cname").val();
+		// "id=admin; color=red; age=30"
+		var cookies = document.cookie;
+		//var cookieArray = cookies.split(";");
+		var cookieArray = cookies.split(/;\s/);
+		/*
+		cookieArray.forEach(function(elt, i, array) {
+			//cookie += elt+"<br>";
+			//$("#demo").html(cookie);
+			var nv = elt.split("=");
+			if (nv[0]==cname) { //똑같으면 쿠키 찾아진것
+				$("#demo").html(unescape(nv[1])); 
+                //unescape: 저장할때 escape로 저장했으니 출력할때 유니코드값을 다시 바꿔주는 것
+				return; //forEach() 중간
+				//강제 예외 발생 - 중단 
+				//사용하려면 return이 아니라 throw를 줘서 강제로 예외 발생시켜야 함
+				//왜냐. foreach는 중단에 중단하면 안되는 함수라 빠져나올거면 
+                //강제로 예외를 발생시켜야 한다
+			}
+		}); 안된다
+		*/
+		
+		//foreach 대신 for문 쓰니 된다
+		for (var i = 0; i < cookieArray.length; i++) {
+			var nv = cookieArray[i].split("=");
+			if (nv[0]==cname) { //똑같으면 쿠키 찾아진것
+				$("#demo").html(unescape(nv[1])); 
+                //unescape: 저장할때 escape로 저장했으니 출력할때 유니코드값을 다시 바꿔주는 것
+				return;
+			}
+		}		
+		
+		$("#demo").html("찾는 쿠키는 존재하지 않습니다");			
+	}
+	
+	function setCookie() {
+		var cname = $("#cname").val();
+		var cvalue = escape($("#cvalue").val());
+		//쿠키값(cvalue) 	escape() 저장 -> %uBC30%uB2E4%uC5F0 한글이 16진수로 출력된다
+		//$("#demo").html(escape(cvalue));
+		//unescape(??); 16진수를 한글로 바꾸자
+		
+		//만료시점(10일)
+		var now = new Date();
+		now.setDate(now.getDate()+10); //오늘날짜+10일 (18+10=28)
+		
+		//쿠키 저장
+		document.cookie = cname+"="+cvalue+"; expires="+now.toUTCString();
+		
+		//텍스트 박스 초기화
+		$("#cname").val("");
+		$("#cvalue").val("");
+		
+    
+		//브라우저 우측 점3개 -> 설정
+	}
+	
+	
+	function getAllCookies(){
+		var cookies = document.cookie;		//string 돌리는데
+		if (cookies) { 	//if 줘도 되냐? => null, "", 0, undefined, -0 등등 다 false이기 때문에 가능
+		$("#demo").html(cookies);			
+		}else{
+		$("#demo").html("쿠키 존재x");						
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.10 09:10:21</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex02.html</h3>
+js BOM 객체
+
+window
+screen
+location
+    - 윈도우(창) 위치, 현재페이지의 주소를 얻기, 현재 페이지의 주소를 새로 설정=>이동
+history 
+    - 브라우저의 기록 포함 하고 잇는 객체 <br>
+    -사용자의 개인 정ㅂ도를 보호하기 위해 접근 방법이 제한적이다. 
+navigator
+
+history.back() == history.go(-1)
+history.forward() == history.go(1)
+<button onclick="move()">쌍용교육센터</button>
+<script>
+    var url=location.href;
+    document.write(url+"<br>");
+    document.write(locatin.hostname+"<br>");
+    document.write(locatin.protocol+"<br>");
+    document.write(locatin.port+"<br>");
+    function move(){
+        //href 속성 
+        location.href="https://www.sist.co.kr/index.jsp"; 
+        //assgin 
+        location.assign("https://www.sist.co.kr/index.jsp");
+    }
+</script>
+</body>
+</html>

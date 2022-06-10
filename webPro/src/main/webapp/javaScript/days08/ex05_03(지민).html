@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.10 11:16:04</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex05_02.html</h3>
+쿠키이름:
+<input type="text" id="cookiename" autofocus/>
+<br /> 쿠키값:
+<input type="text" id="cookievalue" />
+<br />
+<button onclick="getAllCookies();">모든 쿠키 정보 확인</button>
+<button onclick="setCookie();">쿠키 생성</button>
+<button onclick="getCookie();">쿠키 확인</button>
+<button onclick="delCookie();">쿠키 삭제</button>
+<p id="demo"></p>
+<script>
+function setCookie() {
+    var cname = document.getElementById("cookiename").value;
+    var cvalue = escape(document.getElementById("cookievalue").value;
+
+    // js escape()             unescape()
+    // 홍길동 -> %uD64D%uAE38%uB3D9 -> 홍길동
+    //         escape(                 unescape()
+    //             $("#demo").html(escape(cvalue));
+
+    
+    var now = new Date();
+    //만료시점 오늘부터 10일동안 보관하겠다. 
+    var day = now.getDate() + 10;
+    now.setDate(day); //오늘날짜에 10일이 더해진 날짜로 셋팅을 하겠다. 
+    //alert(now.toLocaleDateString());
+
+    //쿠키저장
+    document.cookie = cname + "=" + cvalue + "; expires=" + now.toUTCString();
+    //초기화
+    document.getElementById("cookiename").value="";
+    document.getElementById("cookievalue").value="";
+}
+
+function getAllCookies() {
+
+    if (cookies) {
+        document.getElementById("demo").innerHTML="";
+    } else {
+        document.getElementById("demo").innerHTML="쿠키는 존재하지 않습니다.";
+    }
+}
+
+function getCookie(){
+    var cname = document.getElementById("cookiename").value;
+    var cookies = document.cookie;
+    var pattern=/;\s/;
+    var cookieArray=cookies.split(pattern);
+    cookieArray.forEach(function(elt, i ,array){
+        var cnv=elt.split("="); //cnv는 배열 
+        cn=cnv[0];
+        cv=cnv[1];
+        if(cn==cname){
+        $("#demo").html(unescape(cv));
+        // return;
+    }
+    });
+  
+    //for문을 돌렸는데도 빠져나가지 못했다면
+    $("#demo").html("찾는 쿠키값은 조재하지 않습니다.");
+}
+</script>
+</body>
+</html>

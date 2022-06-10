@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.10 14:07:34</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="cookie.js">
+</script>
+</head>
+<body>
+<h3>ex06.html</h3>
+<table border="1" style="background-color: white;width:400px;margin:0 auto">
+    <tr>
+       <td><img src="../images/item01.gif" alt="" /></td>
+       <td><img src="../images/item02.gif" alt="" /></td>
+       <td><img src="../images/item03.gif" alt="" /></td>
+    </tr>
+    <tr>
+       <td><input type="radio" checked="checked"  name="bgImages" id="item01" value="item01" />item01</td>
+       <td><input type="radio" name="bgImages"  id="item02" value="item02" />item02</td>
+       <td><input type="radio" name="bgImages" id="item03" value="item03" />item03</td>
+    </tr>
+  </table>
+  
+<script>
+    var cname= "bgimg";
+    var cvalue ;
+    var exdays = 10; //10일동안 쿠키 살아있게
+    
+    window.onload= function () {
+    //.gif를 기본 배경으로 설정
+        
+        cvalue = getCookie(cname);
+        if (cvalue) { //쿠키가 있다면
+            document.body.style.backgroundImage="url(../images/"+cvalue+".gif)";
+            document.getElementById(cvalue).checked ="checked";
+        } else {
+            document.body.style.backgroundImage="url(../images/item01.gif)";
+        }
+        //라디오 버튼 클릭하면 //1) 배경변경 //2)쿠키저장
+        
+        var radioButtons = document.getElementsByName("bgImages");
+        for (var i = 0; i < radioButtons.length; i++) {
+            radioButtons[i].onclick = function() {
+                var imgName=event.srcElement.value;
+                document.body.style.backgroundImage="url(../images/"+imgName+".gif)";
+                //document.body.style.backgroundImage="url(../images/"+this.value+".gif)";
+                setCookie(cname, imgName, exdays);
+            }
+        }//for
+    }
+    </script>
+</body>
+</html>

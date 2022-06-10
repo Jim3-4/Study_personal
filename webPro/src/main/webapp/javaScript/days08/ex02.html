@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.10 09:31:06</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex02.html</h3>
+<pre>
+    window.alert()--경고창 띄우는 함수
+    window.confirm()--확인 대화상자 
+    window.prompt() 사용자 입력값을 받는 대화 상자 
+</pre>
+<!-- <script>
+    var message="정말 종료할까요?";
+    var  result=confirm(message);
+    if(result){
+        // alert(result); true false 
+        self.close();
+    }
+</script> -->
+<script>
+    var age=prompt("당신의 나이를 입력하세요","20");
+    //확인클릭 - 입력한 값 (String ) 반환 
+    //취소클릭: null반환 
+    alert(age);
+
+</script>
+</body>
+</html>

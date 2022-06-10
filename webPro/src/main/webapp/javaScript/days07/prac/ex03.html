@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.09 23:35:42</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex03.html</h3>
+ <script>
+     function sum(a,b=1){
+         return a+b;
+     }
+     document.write(sum(10));
+
+     var hap=function(a,b){
+         return a*b;
+     }
+     document.write(hap(3,10));
+
+     var myhap=new Function("a","b","return a+b");
+     document.write(myhap(10,2));
+
+     (function (){ alert("heelo");})();
+     function sum(a,b) {return a+b;}
+     var str=sum.toString();
+     alert(str);
+ </script>
+</body>
+</html>

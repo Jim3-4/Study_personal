@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.10 15:41:51</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex04.html</h3>
+
+<button id="btn1">show</button>
+<button id="btn2">toggle</button>
+
+<p>Lorem, ipsum dolor.</p>
+<p>Aut, deleniti sit!</p>
+<p>Aliquid, labore amet?</p>
+<p>Voluptas, aspernatur dolorum?</p>
+<p>Enim, temporibus dolore.</p>
+
+<pre>
+    다음주 월- jquery selector (선택자)
+            -action()
+    1.jQuery 효과
+
+
+    [jquery Effects]
+
+basics - hide, show, toggle
+custom
+fading
+sliding
+
+jQuery 함수
+show([duration], [complete]) 애니메이션 시간 (디폴트400).
+show([complete]) 완전히 처리된 후 함수.
+toggle([speed], [callback]) 시간과 함수.
+
+</pre>
+
+<script>
+    $(function(){
+        $("#btn2").click(function(){
+            $("p").toggle(1000,function(){
+                console.log("toggle() 메소드 추가");
+            });
+        });
+        $("#btn1").click(function(){
+            $("p").show(1000,function(){
+                console.log("show() 메소드 추가");
+            });
+        });
+    });
+</script>
+
+
+<script>
+    $(function(){
+        $("p").click(function(){
+
+            $(this).hide(1000);
+            // $(this).hide(600)은 $(this).hide("slow"); 와 같다.
+
+            $(this).hide("slow",function(){ //complete -> 콜백함수
+                alert("숨김작업이 완료된 후에 호출되는 함수 ")
+            });
+        });
+    });
+</script>
+</body>
+</html>

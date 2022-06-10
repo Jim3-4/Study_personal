@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.10 09:42:40</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    .box{
+        position: absolute;
+    }
+</style>
+</head>
+<body>
+<h3>ex03.html</h3>
+<img src="../images/item01.gif" alt="" />
+<script>
+    function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    } 
+</script>
+<script>
+      /*     
+    //   마우스 오른쪽을 눌렀을때 나오는 메뉴를 contextmenu 
+      document.oncontextmenu = function() {
+            alert("오른쪽마우스 사용 x");
+            return false;
+        }
+ */
+
+
+ //img.onmousedown이 아니고 document이지만 
+ //이벤트 버블링때문에 가능한 것이다. 
+     document.onmousedown = function() {
+        //0- >왼쪽마우스 2->오른쪽마우스 4->휠마우스
+        if (event.button == 0) {
+                document.title = event.clientX + ", " + event.clientY + ", "
+                        + $("img").width(); //62,136,122
+
+                //<img src="../images/item01.gif" alt="">
+                //DOM
+                var img = document.createElement("img");
+                //var no="01";
+                var no = getRandom(1, 20).toString().padStart(2, 0);
+               // var no = (parseInt(Math.random()*20)+1).toString().padStart(2, 0);
+                console.log(no);
+                var imgUrl = "../images/item" + no + ".gif";
+                img.setAttribute("src", imgUrl);
+                //이렇게 안하고 img.src=""; 이렇게 해도 된다. 
+
+                img.classList.add("box");
+                //event.clientX,Y =>  마우스를 클릭한 위치 
+                // -($("img").width() / 2) 122의 반을 왼쪽으로 이동 
+                var left = event.clientX - ($("img").width() / 2);
+                var top = event.clientY - ($("img").height() / 2);
+                img.setAttribute("style", "left:" + left + "px; top:" + top
+                        + "px");
+
+                document.body.appendChild(img);
+
+            }else if(event.button==2){ //오른쪽 마우스 버튼 클릭
+                //클릭한 이미지 제거 
+                document.body.removeChild(event.srcElement);
+            }else if(event.button==1){ //가운데 휠 마우스 버튼 클릭
+                //모든 이미지를 제거 
+
+                $("img").remove();
+
+
+/*           //1
+        var imgs=document.querySelectorAll("img");
+          for(){
+              //1
+              document.body.removeChild(imgs[i]);
+            //2
+              imgs[i].remove();
+          }
+          //2
+          document.body.innerHTML="";
+          
+          //3
+          document.images 컬렉션
+          document.links 컬렉션
+          var imgs=document.images; */
+
+        }
+        } 
+</script>
+</body>
+</html>
