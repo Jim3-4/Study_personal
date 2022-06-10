@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 9. - 오전 10:16:41</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex04_03.html - ***  js 함수 closures( 클로저 ) ***</h3>
+
+<button onclick="incCounter()">counter 증가</button> 
+<p id="demo"></p>
+
+<!-- 
+<script>
+   // 1.  [ 중첩 함수 ] 이해.
+   document.getElementById("demo").innerHTML = add();
+   
+   function add(){
+	   let counter = 0;  // 지역변수
+	   
+	   // counter += 1;  // 1씩 증가         => add() 함수 안에  함수 선언
+	   function plus(){
+		   // 중첩 함수(plus) 안에서   상위(부모)함수의 지역변수를 접근 가능
+		   counter += 1;
+	   }	   
+	   plus();
+	   
+	   return counter;
+   }
+
+</script>
+ -->
+ 
+ 
+<script> 
+
+// [ js 함수 클로저 ]
+ // 자체 호출 함수 + 중첩함수
+ // return 중첩함수;
+ 
+ // 익명함수는 자체 호출 함수로써 한 번만 실행된다. 
+ var add = (function (){
+					  let counter = 0;   // 지역변수    -> 전역변수 처럼 유지
+					  return function (){
+						  counter += 1;
+						  return counter;
+					  }  // 중첩함수	  
+				  })();
+  
+  function incCounter(){
+	  document.getElementById("demo").innerHTML = add();
+  }
+  //                                                                      폐쇄 + 전역변수 값 보존
+  // counter 변수는 분명히   익명함수 안에 선언된 지역변수 -> 익명함수 외에서는 접근 X
+  //                                     중첩함수 안에서 사용할 수 있고 + 마치 전역변수 처럼 상태 유지.
+  
+  
+  // 왜 ? 그냥  전역변수 counter  = 0 선언
+</script>
+ 
+ 
+ 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

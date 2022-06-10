@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 9. - 오전 9:26:05</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex03.html</h3>
+
+<pre>
+   1. js function(함수)  정리
+   *** 2. js 함수 closures( 클로저 ) ***
+</pre>
+
+
+<script>
+     /*
+    1. 함수 선언
+    function 함수명(){
+    	// 코딩;
+    	// 코딩;
+    	   :
+     }
+     */
+     
+     /*
+     function sum(a, b=1){
+    	 return a  + b;    // 실행문 뒤에 세미콜론 찍는다
+     }
+     
+     //document.write(  sum(10,20) );
+     document.write(  sum(10) );
+     */
+     
+     // 익명 함수( 이벤트 핸들러 )
+     /*
+     var hap = function (a, b){
+    	 return a+b;
+     } 
+     document.write(  hap( 1, 2 ) );
+     */
+     
+     // Function() 객체 생성자
+     /*
+     var myHap = new Function("a","b", "return a+b");
+     document.write(  myHap( 10, 20 ) );
+     */
+     
+     // js 호이스팅 : 변수, 함수 선언 자동으로 맨 위로 코딩을 올리는 것.
+</script>
+
+<script>
+   // *** [자체 호출 함수] ***
+   //        1       +         2
+   
+   /*
+   // 1. 함수 선언 부분
+   function test(){
+	   // 코딩
+	   // 코딩
+   }
+   
+   // 2. 함수 호출 부분
+   test();
+   */
+   
+   /* 자체 호출 함수 */
+   (function (){
+	   alert("hello world~");
+   })();
+   
+   // js  함수도 객체이다.
+   function sum(a,b){
+	   return a+b;
+   }
+   
+   var str = sum.toString();
+   alert( str )
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
