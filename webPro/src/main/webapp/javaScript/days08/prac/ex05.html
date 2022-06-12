@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 00:26:51</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    span {
+      color: red;
+      cursor: pointer;
+    }
+    div {
+      margin: 3px;
+      width: 80px;
+      display: none;
+      height: 80px;
+      float: left;
+    }
+    #one {
+      background: #f00;
+    }
+    #two {
+      background: #0f0;
+    }
+    #three {
+      background: #00f;
+    }
+    /* 
+    body{
+       background-color: aqua;
+    } 
+    */
+    </style>
+</head>
+<body>
+
+<h3>ex05.html</h3>
+<span>Click here...</span>
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
+<script>
+    $(document.body).click(function(){
+        $("div:hidden").first().fadeTo("slow",0.33);
+    });
+</script>
+</body>
+</html>

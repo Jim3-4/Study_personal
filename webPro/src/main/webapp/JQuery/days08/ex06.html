@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.10 16:34:52</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    div {
+      background: #3d9a44;
+      margin: 3px;
+      width: 80px;
+      height: 40px;
+      float: left;
+    }
+    </style>
+</head>
+<body>
+<h3>ex06.html</h3>
+<pre>
+    jquery효과
+    basics: show() , hide(), toggle()
+    fading: fadeIn(), fadeOut(), fadeToggle(), fadeTo()
+    slide: .slideUp(), .slideDown(),.slideToggle()
+</pre>
+Click me!
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+ 
+<script>
+    //body태그를 클릭할때 
+$( document.body ).click(function() {
+    //div중에 첫번째꺼가 숨겨져있다면 
+    if ( $( "div" ).first().is( ":hidden" ) ) {
+        //div를 천천히 보여주기
+  //  $( "div" ).show( "slow" );
+  $( "div" ).slideDown("slow");
+  } else {
+      //아니면 div를 slideup()
+      $( "div" ).slideUp(600);
+  }
+});
+</script>
+ 
+</body>
+</html>

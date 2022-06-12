@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 00:37:26</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex05_03.html</h3>
+ 
+<button>fadeToggle p1</button>
+<button>fadeToggle p2</button>
+<p>This paragraph has a slow, linear fade.</p>
+<p>This paragraph has a fast animation.</p>
+<div id="log"></div>
+
+<script>
+
+    $("button").first().click(function(){
+        $("p").first().fadeToggle("slow","linear");
+    });
+    $( "button" ).last().click(function() {
+    //마지막버튼을 누르면 
+    //마지막 p를 빨리 사라지게하고,(나타나게하고)
+    //완료된 후 호출되는(콜백함수)에 log인 곳에 div태그 추가 
+  $( "p" ).last().fadeToggle( "fast", function() {
+    $( "#log" ).append( "<div>finished</div>" );
+  });
+});
+</script>
+
+</body>
+</html>
