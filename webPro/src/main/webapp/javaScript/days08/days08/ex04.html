@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 10. - 오후 3:41:46</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex04.html</h3>
+
+<button id="btn1">show</button>
+<button id="btn2">toggle</button>
+
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Nesciunt aut maxime fugit dolorem?</p>
+<p>Quidem veritatis nemo id magnam!</p>
+<p>Nemo iste in similique nam.</p>
+<p>Ullam molestias dolorem numquam sint!</p>
+
+<pre>
+  다음 주 월  -  jquery selector(선택자)
+                  - action()
+       1. jquery 효과 ( effects )    - hide(), show(), toggle()       
+</pre>
+
+<script>
+  // 문서 로딩되어 준비가 완료했을 때...
+  $(function (){
+	  
+	  $("#btn2").click(function (){
+		  $("p").toggle(1000, function (){
+			  console.log("toggle() 메서드 확인..")
+		  });
+	  });
+	  
+	  $("#btn1").click(function (){
+		  // 모든 숨겨진 p 태그를 보이게 하자. 
+		  $("p").show("slow" , function (){
+			  // 
+		  });
+	  });
+	  
+	  $("p").click( function (){
+		  // $(this).hide();                    400ms
+		  // ㄱ  .hide()
+		  // ㄴ .hide( [duration ] [, complete ] )
+		  // ㄷ .hide( options )
+		  // ㄹ .hide( duration [, easing ] [, complete ] )
+		  // $(this).hide( 1000 );
+		   //                      200   "fast"
+		   //                      400 ms
+		  // $(this).hide( 600 ,  );
+		  $(this).hide( "slow",  function (){  // complete  콜백함수
+			  alert("숨긴 작업완료 된 후에 호출되는 함수");
+		  });
+	  });
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

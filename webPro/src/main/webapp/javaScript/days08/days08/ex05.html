@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 10. - 오후 3:59:02</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <style>
+  span {
+    color: red;
+    cursor: pointer;
+  }
+  div {
+    margin: 3px;
+    width: 80px;
+    display: none;
+    height: 80px;
+    float: left;
+  }
+  #one {
+    background: #f00;
+  }
+  #two {
+    background: #0f0;
+  }
+  #three {
+    background: #00f;
+  }
+  /* 
+  body{
+     background-color: aqua;
+  } 
+  */
+  </style>
+
+</head>
+<body>
+
+<h3>ex05.html </h3>
+<!-- 4:10 수업 시작 -->
+
+<pre>
+   1. 쿠키
+   2. jquery 개요
+   3. jquery 형식(구문)
+   4. $(document).ready( function (){ });
+       $(function (){});
+   5. jquery selector
+      action()    
+   6.   jquery effects( 효과 )
+       - Basics  :  show(), hide(), toggle()
+       - Fading :  fade 사전적 의미 : 희미하게 하다. 
+                          fadeIn(), fadeOut(), fadeTo(), fadeToggle();
+</pre>
+
+
+<span>Click here...</span>
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
+
+<script>
+// body 클릭할때      숨겨진.div 태그 중에  첫번째 요소만 fadeIn();
+$( document.body ).click(function() {
+  $( "div:hidden" ).first().fadeIn( "slow" );
+});
+</script>
+
+</body>
+</html>

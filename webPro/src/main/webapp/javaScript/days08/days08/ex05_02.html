@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 10. - 오후 4:22:04</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+  p {
+    font-size: 150%;
+    cursor: pointer;
+  }
+  </style>
+
+</head>
+<body>
+<h3>ex05_02.html    fadeIn()/[fadeOut()]</h3>
+
+
+<p>
+  If you click on this paragraph
+  you'll see it just fade away.
+</p>
+
+<script>
+/* 
+$( "p" ).click(function() {
+  $( "p" ).fadeOut( "slow" );
+});
+ */
+ 
+$( "p" ).first().click(function() {
+  $( this ).fadeTo( "slow", 0.33 );
+}); 
+</script>
+
+</body>
+</html>
