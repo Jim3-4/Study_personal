@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 16:25:00</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex08.html</h3>
+Traversing(횡단)
+<button id="hider">Hide</button>
+<button id="shower">Show</button>
+<!-- div>span*10<lorem1 -->
+<div>
+    <span>Lorem.</span><span>Asperiores.</span><span>Reiciendis?</span><br>
+    <span>Laborum.</span><span>Ab.</span><span>Quam?</span><span>Optio.</span>
+    <span>Aliquam.</span><span>Eius!</span><span>Delectus.</span>
+</div>
+<script>
+    $("#hider").click(function(){
+        //숨겨지고 난 후에 콜백함수 호출 
+        $("span:last-child").hide("fast",function(){
+            //$(this).next()
+            //앞에 애도 빠르게 숨겨라 -> 즉 2개가 삭제됨
+            //자기자신함수등록  arguments.callee
+            $(this).prev().hide("fast",arguments.callee);
+        });
+    });
+    $("#shower").click(function(){
+        $("div>span").show();
+    });
+</script>
+</body>
+</html>
