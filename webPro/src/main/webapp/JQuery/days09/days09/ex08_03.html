@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 13. - 오후 4:44:14</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+  .descendants *{
+    display: block;
+    border:2px solid lightgray;
+    color:lightgray;
+    margin: 15px;
+    padding:5px;
+  }
+</style>
+</head>
+<body>
+
+<h3>ex08_03.html</h3>
+
+<pre>
+   조상 
+   parent();
+   parents();
+   parentsUntil();
+   
+   후손(자손)
+   children() - 선택한 요소의 모든 직계 자식을 반환한다. 
+   find()
+</pre>
+
+
+<div class="descendants"  style="width:500px">
+  div( 현재 요소)
+  <p class="first"> p
+    <span>span</span>
+  </p>
+  <p class="second"> p
+    <span>span</span>
+  </p>
+</div>
+
+<script>
+   $("div")
+        // .children()  // 직계 자식
+        .children("p.first")
+              .css({
+            	  "color":"red",
+            	  "border":"2px solid red"
+              })
+         .end()
+         .find("span")  // 모든 하위 자식( span) 을 검색해서 반환
+         // .find("*")
+              .css({
+            	  "color":"blue", 
+            	  "border":"2px solid blue"
+              });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

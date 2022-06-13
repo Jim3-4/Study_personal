@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 13. - 오후 12:00:39</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+  div{
+    width:100px;
+    height:100px;
+    position: absolute;    /* 위치 이동 */
+    background-color: aqua;   
+  }
+</style>
+</head>
+<body>
+
+<h3>ex02.html</h3>
+<!-- 12:11 수업 시작 -->
+<pre>
+    jquery 애니메이션  - animate() 메서드 
+    $(selector).animate({ params },  speed, callback);
+     ㄱ. { params } 매개변수는 css 속성 정의
+     ㄴ. speed       매개변수는 효과의 지속 시간을 정의     "slow", "fast",   ms
+     ㄷ. callback : 애니메이션 효과가 완료된 후에 실행..
+</pre>
+
+<button>Run</button>
+<div></div>
+
+<script>  
+  // 미리 정의된 값(show , hide, toggle)을 사용할 수 도 있다.
+  $("button").click(function (){ 
+	  $("div").animate( {
+		           /* height: "hide" */
+		           height:'toggle'
+		  }); 
+  }); 
+</script>
+
+<!-- 3
+<script> 
+// 상대값을 정의하는 것도 가능하다. 
+// 기준 : 현재 요소의 값  
+//    +=      -= 
+  $("button").click(function (){ 
+	  $("div").animate( {
+		            left:"+=50px" , 
+		            opacity:'0.5',
+		            height:"+=150px",
+		            width:"+=150px"
+		  }); 
+  }); 
+</script>
+ -->
+<!--  2
+<script>
+  // 여러 속성 동시에 애니메이션 처리
+  // padding-left  => paddingLeft
+  $("button").click(function (){ 
+	  $("div").animate( {
+		            left:"250px" , 
+		            opacity:'0.5',
+		            height:"150px",
+		            width:"150px"
+		  }); 
+  }); 
+</script>
+ -->
+<!-- 1 
+<script>
+  $("button").click(function (){
+	  // div  오른쪽으로  250px 이동... : 애니메이션 처리
+	  $("div").animate( { left:"250px" });
+	  
+  // html 요소를  position:static  이동 X
+  //                    position: absolute; O
+  }); 
+</script>
+ -->
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 13. - 오전 9:22:49</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex01_02.html</h3>
+  <!-- p*5 -->
+  <p id="ptag"></p>
+  <p class="box"></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  
+  <!-- div*5 -->
+  <div></div>
+  <div class="demo"></div>
+  <div></div>
+  <div></div>
+  <div></div>
+
+  <hr>
+  <p>....</p>
+  <div>1</div>
+  <div>2</div>
+  <div>
+    <p>3</p>
+    <p>4</p>
+  </div>
+  <hr>
+  <h3>5</h3>
+  
+  <script>
+     $(function (){
+    	 /*
+    	 $("*").css("border","1px solid red");
+    	 $("*").css("padding",20);
+    	 $("*").css("color","blue");
+    	 */
+    	 
+    	 /* jquery 체이닝 */
+    	/*  
+    	 $("*")
+    	     .css("border","1px solid red")
+    	     .css("padding",20)
+    	     .css("color","blue");
+    	 */
+    	 
+    	 /* 모든 요소를 selecor :  * */
+    	 $("*").css({
+    		 "border":"1px solid red", 
+    		 "padding":20,
+    		 "color":"blue"
+    	 });
+    	 
+    	 // div 요소 안에 있는 모든 후손들
+    	 $("div *").css({
+    		 "background-color":"green",
+    		 "color":"red"    		 
+    	 });
+    	 
+    	 // #아이디명   jquery selector 사용
+    	 $("#ptag").hide();
+    	 
+    	 // .클래스명    jquery selector 사용
+    	 $(".box").hide();
+    	 
+    	 // .클래스명, .클래스명
+    	 // box 클래스명 또는 demo 클래스명을  jquery selector 사용
+    	 $(".box, .demo").hide();
+    	 
+    	 // 태그명 선택자로 사용
+    	 $("p").toggle();
+    	 // 모든 p 또는 h3 또는 div 를 선택자로 사용하겠다..
+    	 $("p, h3, div").toggle();
+     });
+  </script>
+</body>
+</html>
+
+
+
+
+
+

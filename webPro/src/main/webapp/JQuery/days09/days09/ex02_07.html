@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 13. - 오후 2:47:49</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+div {
+    position: absolute;
+    background-color: #abc;
+    left: 0px;
+    top: 130px;
+    width: 60px;
+    height: 160px;
+    margin: 5px;
+  }
+</style>
+</head>
+<body>
+
+<h3>ex02_07.html</h3>
+
+<button id="go">Go</button>
+<button id="stop">STOP!</button>
+<button id="back">Back</button>
+<button id="slideToggle">slideToggle()</button>
+
+<div class="block"></div>
+
+<script>
+   // 3:00 수업 시작.~
+   $("#go").click(function (){
+	   $(".block")
+	       .stop(true, false)    // 현재 block div 태그 실행중인 + 큐   애니메이션 중지, 그자리
+	       .animate({
+	    	   left:"+=100px"
+	       }, 5000);
+   });
+   $("#stop").click(function (){
+	   $(".block").stop( true, false);
+   });
+   $("#back").click(function (){
+	   $(".block")
+       .stop(true, false)    // 현재 block div 태그 실행중인 + 큐   애니메이션 중지, 그자리
+       .animate({
+    	   left:"-=100px"
+       }, 5000);
+   });
+   $("#slideToggle").click(function (){
+	   $(".block")
+       .stop(true, false)    // 현재 block div 태그 실행중인 + 큐   애니메이션 중지, 그자리
+       .slideToggle(5000);
+   });
+    
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

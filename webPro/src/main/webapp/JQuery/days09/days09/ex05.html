@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 13. - 오후 3:49:01</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+   .blue{
+      color:blue;
+   }
+   .important{
+      font-weight: bold;
+      font-size:xx-large;
+   }
+</style>
+</head>
+<body>
+<h3>ex05.html</h3>
+<pre>
+   [ jquery css  조작 방법 ]
+   ㄱ. css()
+   ㄴ. addClass()
+   ㄷ. removeClass()
+   ㄹ. toggleClass()
+</pre>
+
+<h1>Lorem ipsum dolor.</h1>
+<h1>Excepturi numquam sit?</h1>
+
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Nesciunt voluptate suscipit deserunt sit.</p>
+<p>Quibusdam maxime ab molestiae neque!</p>
+
+<div>Lorem ipsum dolor sit amet.</div>
+
+<button>add class</button>
+
+<script>
+  $("button").click( function (){
+	  //  $("h1").css("color","red");
+	  $("h1, h2, p").addClass("blue");
+	  $("p").removeClass("blue");
+	  
+	  $("p").toggleClass("important")
+  });
+</script>
+
+</body>
+</html>
+
+
+
+

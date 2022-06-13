@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 13. - 오전 11:27:48</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex01_15.html</h3>
+
+<!-- table>tr*5>td*4>lorem1 -->
+<table border="1">
+	<tr>
+		<td>Lorem.</td>
+		<td>Inventore.</td>
+		<td>Provident?</td>
+		<td>Voluptatem.</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Modi.</td>
+		<td></td>
+		<td>Doloremque.</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Sequi.</td>
+		<td>Iusto.</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td></td>
+		<td>Eveniet.</td>
+		<td>Labore!</td>
+	</tr>
+	<tr>
+		<td>Lorem.</td>
+		<td>Veritatis!</td>
+		<td>Sequi!</td>
+		<td>Laudantium.</td>
+	</tr>
+</table>
+
+<script>
+     /* <td></td> */
+     /* 빈 요소 td 를 선택자로 사용 */
+     $("td:empty").css("background-color", "red")
+     
+     /* 비어 있지 않는 td   배경색-노랑색 */
+     /* :not( jquery selector) */
+     // $("td:not(:empty)").css("background-color", "yellow")
+     
+     // 텍스트 즉, 문자열을 포함한 자식 이 있는 모든 td 
+     $("td:parent").css("background-color", "blue")
+     
+</script>
+
+</body>
+</html>
+
+
+

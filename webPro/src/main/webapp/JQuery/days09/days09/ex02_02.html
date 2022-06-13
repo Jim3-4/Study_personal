@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 13. - 오후 12:28:36</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+  div{
+    width:100px;
+    height:100px;
+    position: absolute;    /* 위치 이동 */
+    background-color: aqua;   
+  }
+</style>
+</head>
+<body>
+
+<h3>ex02_02.html</h3>
+
+<input type="radio"  name="direction"  value="+" checked="checked"/>+
+<input type="radio"  name="direction"  value="-"/>-
+<br>
+<button>Run</button>
+
+<div></div>
+<script>
+   // 라디오 버튼 +    -   선택(체크)한 후에 실행 버튼을 클릭
+   // +  오른쪽으로 50px 이동
+   // -  왼쪽으로 50px 이동
+   
+   $("button").click(function (){
+	   var dir = $(":radio:checked").val();   //  +      -
+	   $("div").animate({ 
+		   /* left:'+=50px' */
+		   left: dir +'=50px'
+	   });
+	   
+   });
+   
+</script>
+</body>
+</html>
+
