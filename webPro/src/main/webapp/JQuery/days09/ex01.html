@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 09:23:15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex01.html</h3>
+<p></p>
+<p class="box"> </p>
+<p></p>
+<p></p>
+<p></p>
+
+<div></div>
+<div class="demo"></div>
+<div></div>
+<div></div>
+<div></div>
+
+<hr>
+<p>.....</p>
+<div>1</div>
+<div>2</div>
+<div></div>
+<div>3</div>
+<div>4</div>
+<hr>
+<h3>5</h3>
+<script>
+    $(function(){
+ /*        css체이닝 */
+        $("*").css("border","1px solid red")
+        .css("padding",20)
+        .css("color","blue");
+
+        $("*").css({
+            "border":"1px solid red",
+        "padding":20,
+     "color":"blue"
+
+    });
+    $("div *").css({
+        "background-color":"green",
+        "color":"red"
+    });
+
+    //#아이디명, jquery selector로 사용 
+    $("#ptag").hide();
+
+    //클래스명 
+    $(".box").hide();
+    //클래스명이 box인 것이랑  demo 둘다 (또는) 적용시켜라
+    $(".box .demo").hide();
+
+    $("p").toggle();
+    //p태그 또는 h3태그 또는 div를 선택자로 사용하겠다. 
+    $("p, h3, div").toggle();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 11:15:03</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex01_13.html</h3>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+
+<script>
+  //  $("input[type=text]") == $(":text")
+  $(":text:eq(2)").focus();
+
+  //현재 포커스를 가진 요소를 선택자로 사용 
+  $(":focus").css("background-color","red");
+
+  
+</script>
+</body>
+</html>

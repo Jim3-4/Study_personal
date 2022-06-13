@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 15:32:14</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex04_02.html</h3>
+<p>Lorem, ipsum dolor.</p>
+<p>Quos, modi hic.</p>
+<script>
+    $("p").append("<b>Append Text</b>");
+    
+
+</script>
+<ol>
+    <li>Lorem, ipsum dolor.</li>
+    <li>Dicta, dolor ex.</li>
+    <li>Rem, quasi alias.</li>
+</ol>
+<script>
+    // $("ol").append("<li>New item4</li>"); //마지막 자식으로 추가 
+    //$("ol").prepend("<li>New item4</li>"); //첫번쨰 자식으로 추가 
+    
+    //$("<li>New Item5</li>").appendTo($("ol"));
+    //$("<li>New Item5</li>").prependTo($("ol"));
+    
+     //3번째 자리에 넣기 
+     ///<li>New item 3</li>
+    //alert($("ol>li").eq(2).html());
+
+
+    //3번째꺼 전에 붙이기 
+   //$("ol>li").eq(2).before("<li>New Item 3</li>");
+
+    //2번째꺼 뒤에 붙이기 
+    //$("ol>li").eq(1).after("<li>New Item 2</li>");
+
+/*     //모든 li태그 제거 
+    $("ol").html("");
+    $("ol").empty();
+    $("ol").remove(); //ol태그 자체를 제거  */
+    
+    //body태그안에 p태그 만드는 3가지 방법 
+    var txt1="<p>text 1</p>";
+    
+    var txt2=$("<p></p>").text("text2");
+    
+    var txt3=document.createElement("p");
+    txt3.innerHTML="Text 3";
+    $("body").append(txt1,txt2,txt3);
+
+
+    //제거할 요소를 필터링 할 수 있다. 
+    $("body>p").remove(".box");
+
+
+</script>
+</body>
+</html>

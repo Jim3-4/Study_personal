@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 12:13:15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    div{
+        width:100px;
+        height: 100px;
+        position: absolute;
+        background-color: aqua;
+    }
+</style>
+</head>
+<body>
+<h3>ex02.html</h3>
+<pre>
+    jquery 애니메이션 animate() 메소드
+    $(selector).animate({params},speed, callback);
+    ㄱ.{params} 매개변수 css 속성정의
+    ㄴ.speed 매개변수는 효과의 지속 시간을 정의 slow fast ms
+    ㄷ. 콜백: 애니메이션 효과가 완료된 후에 실행 
+    
+</pre>
+<button>Run</button>
+<div></div>
+<!-- <script>
+
+    //버튼누르면 오른쪽으로 이동
+    $("button").click(function(){
+        //div 이동 250px x좌표로 이동: 애니매이션 처리 
+       // $("div").animate({left:"250px"},speed,callback);
+       $("div").animate({left:"250px"});
+    });
+</script> -->
+<!-- <script>
+    //여러 속성 동시에 애니메이션 처리
+    $("button").click(function(){
+       
+       $("div").animate({
+        left:"250px",
+        opacity:'0.5',
+        height:"150px",
+        widht:"150px"
+    });
+    });
+</script> -->
+<!-- <script>
+    //상대값을 정의하는 것도 가능하다 
+    //기준:현재 요소의 값 
+    $("button").click(function(){
+       
+       $("div").animate({
+        left:"+=50px",
+        opacity:'0.5',
+        height:"+=150px",
+        widht:"+=150px"
+    });
+    });
+</script> -->
+
+<script>
+    $("button").click(function(){
+        $("div").animate({
+            height:'toggle'
+        });
+    });
+</script>
+
+
+</body>
+</html>

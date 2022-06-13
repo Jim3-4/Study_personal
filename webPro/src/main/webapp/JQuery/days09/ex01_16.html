@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 11:36:42</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex01_16.html</h3>
+<p>Lorem, ipsum dolor.</p>
+<p>Hic, ad iusto!</p>
+<p style="display: none;">Doloremque, vel velit!</p>
+<p>Nostrum, doloribus voluptates.</p>
+<p>Suscipit, doloremque in!</p>
+
+<script>
+    $(":root").css("background-color","green");
+
+    //보이지 않는 모든 p태그를 선택자로 사용 
+    $("p:hidden").show(5000,function(){
+          //5초동안 보이기 작업이 완료된 후에 호출되는 콜백함수
+        $("p:visible").css("background-color","yellow");
+    });
+</script>
+</body>
+</html>

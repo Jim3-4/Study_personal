@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 10:20:08</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex01_07.html</h3>
+<div>
+    <p>Lorem, ipsum dolor.</p>
+    <p>Nemo, minus quia!</p>
+</div><br>
+<div>
+    <p>Lorem, ipsum dolor.</p>
+</div><br>
+<div>
+    <span>Lorem, ipsum dolor.</span>
+    <p>Nemo, minus quia!</p>
+</div><br>
+
+<script>
+    $("div").css("border","1px solid balck");
+
+    //부모의 유일한 자식이 p태그인 선택자 
+    $("p:only-child").css("background-color","red");
+
+    //부모의 여러 자식중에 p태그만 1개 
+    $("p:only-of-type").css("background-color","red");
+</script>
+</body>
+</html>

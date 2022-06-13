@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 10:44:48</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex1_10.html</h3>
+<p>Lorem ipsum dolor sit amet.</p>
+<p class="intro">Laboriosam, consequuntur deserunt. Porro, sunt?</p>
+<p>Quo maxime doloremque nisi voluptatem.</p>
+<p>Nulla iure reiciendis vel incidunt!</p>
+<p>Nam ut minus adipisci. Adipisci?</p>
+<script>
+    $("p").not(".intro").css("background-color","blue");
+    //intro클래스가 아닌 p태그 
+    $("p:not(.intro)").css("background-color","blue");
+    
+</script>
+</body>
+</html>

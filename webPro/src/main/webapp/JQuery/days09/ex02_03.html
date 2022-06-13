@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 12:38:49</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    div{
+        width:100px;
+        height: 100px;
+        position: absolute;
+        background-color: aqua;
+    }
+</style>
+</head>
+<body>
+<h3>ex02_03.html</h3>
+jquery animate()는 대기열 기능과 함께 사용할 수 있다. 
+대기열?
+요소 a 애니메이션 효과 
+요소 b 애니메이션 효과 
+요소 c 애니메이션 효과 
+요소 d 애니메이션 효과 
+
+a->b->c->d<br><br>
+
+<button>dd</button>
+<div>sample</div>
+<script>
+    $("button").click(function(){
+        $("div")
+            .animate({hegith:"300px", opacity:'0.4'},"slow")
+            .animate({hegith:"300px", opacity:'0.8'},"slow")
+            .animate({hegith:"100px", opacity:'0.4'},"slow")
+            .animate({hegith:"100px", opacity:'0.8'},"slow")
+            .animate({'font-size':'3em'});
+    });
+</script>
+</body>
+</html>

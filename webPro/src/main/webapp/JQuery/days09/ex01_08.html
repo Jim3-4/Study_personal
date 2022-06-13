@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 10:30:09</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex01_08.html</h3>
+<p>Lorem, ipsum dolor.</p>
+<div style="border:1px solid black; padding:10px;">Lorem, ipsum dolor.</div>
+<p>Lorem, ipsum dolor.</p>
+<p>Lorem, ipsum dolor.</p>
+
+
+<div style="border:1px solid black; padding:10px;">
+<p>Lorem, ipsum dolor.</p>
+<span>
+    <p>...</p>
+</span>
+</div>
+
+<h2>this is heading</h2>
+<p>this is pelem</p>
+<script>
+    //자식
+    $("div p").css("background-color","yellow");
+
+    //div의 직계자식p
+    $("div > p").css("background-color","yellow");
+
+    //div 다음 형제 태그가 p 
+    $("div + p").css("background-color","yellow");
+
+    //div 다음 형제 태그가 p 
+    $("div ~ p").css("background-color","yellow");
+</script>
+</body>
+</html>

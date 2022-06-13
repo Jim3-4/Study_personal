@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 11:28:09</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex01_15.html</h3>
+<table>
+    <tr>
+        <td>Lorem.</td>
+        <td>Ipsam.</td>
+        <td>Dolore?</td>
+        <td>Totam!</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td>Iusto.</td>
+        <td></td>
+        <td>Assumenda!</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td>Blanditiis?</td>
+        <td>Quos.</td>
+        <td>Dolore?</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td>Aliquam.</td>
+        <td>Aspernatur.</td>
+        <td>Aperiam?</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td></td>
+        <td>Nihil.</td>
+        <td>Itaque.</td>
+    </tr>
+</table>
+<script>
+    //빈요소 td를 선택자로 사용
+    $("td:empty").css("background-color","red");
+
+//비어있지 않는 요소 
+$("td:not(:empty)").css("background-color","yellow");
+
+//문자열을 포함한 자식이 잇는 모든 td
+$("td:parent").css("background-color","blue");
+</script>
+</body>
+</html>

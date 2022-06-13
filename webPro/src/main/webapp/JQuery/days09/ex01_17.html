@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 11:44:00</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex01_17.html</h3>
+<input type="text" name="nationality" disabled="disabled"><br>
+<input type="text" name="nation" disabled="disabled"><br>
+<input type="radio" name="test"><br>
+<input type="email" name="anothernation"><br>
+
+<select name="" id="" multiple="multiple"></select>
+<option >AAA</option>
+<option selected="selected">BBB</option>
+<option >CCC</option>
+<option >DDD</option>
+
+<input type="checkbox"><br>
+<input type="checkbox" checked="checked"><br>
+<input type="checkbox"><br>
+<input type="checkbox"><br>
+<input type="checkbox" checked="checked"><br>
+<script>
+    //1속성값은 중요하지 않고 type 속성만 가지면 
+    $("[type]").css("background-color","yellow");
+
+    //2type 속성=text
+    $("[type=text]").css("background-color","red");
+
+    //3
+    $(":text").css("backgrond-color","red");
+    
+    //
+    $("[name=nation]").css("background-color","green");
+
+    //
+    $("[name$=nation]").css("background-color","red");
+
+    //
+    $("[name^=nation]").css("background-color","yellow");
+
+   $(":checked").css({
+    "color":"red",
+    "font-size":"35px",
+    "width":"50px"
+   });
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 12:47:17</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex02_04.html</h3>
+<div id="clickme">click me</div>
+<!-- //크기/배경색/글씨색 -->
+<a href="https://placeholder.com"><img src="https://via.placeholder.com/200x200/FF0000/FFFFFF?text=sample"
+    style="position: relative;left: 10px;"></a>
+
+<img  id="book">
+<a href="https://placeholder.com"><img src="https://via.placeholder.com/150x100/000000/ffffff?text=sample"></a>
+<script>
+    $("#clickme").click(function(){
+        //animate 첫번재는 css, speed, callback 함수 
+        $("#book").animate({
+            {
+                width:"toggle",
+                height:"toggle"
+            },{
+                duration:5000,
+                specialEasing:{
+                    width:"linear",height:"easeOutBounce"
+                }
+                ,complete:function(){
+                    //append() appendTo()
+                    //prepend() prependTo()
+                    //before() 
+                    //after 
+
+                    $(this).after("<div>Animation complete</div>")
+                }
+            
+        }
+        );
+
+    });
+</script>
+</body>
+</html>

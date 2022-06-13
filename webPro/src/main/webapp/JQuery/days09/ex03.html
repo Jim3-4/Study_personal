@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 15:23:16</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex03.html</h3>
+<p id="p1"></p>
+<button>click me</button>
+<script>
+    //문서가 로딩될때 함수 호출 
+    $(document).ready(function(){
+        $("button").click(function(){
+            //#p1에css주고, slideUp, slideDown주기= 체이닝 
+            $("#p1").css("color","red")
+                .slideUp(2000)
+                .slideDown(2000);
+
+        });
+    });
+</script>
+</body>
+</html>

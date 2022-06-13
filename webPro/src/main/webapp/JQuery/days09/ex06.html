@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 16:08:37</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    div{
+        width:300px;
+        height:100px;
+        padding: 10px;
+        border: 1px solid blue;
+        margin:3px;
+        background-color: lightblue;
+}
+</style>
+</head>
+<body>
+<h3>ex06.html</h3>
+<pre>
+    width()             -요소 넓이 
+    innerWidth()        -요소 넓이+패딩
+    outerWidth()        -요소 넓이+패딩+보더(border)
+    outerwidth(true)    -요소 넓이+패딩+보더+마진
+
+    height()            -요소 높이
+    innerHeight()       -요소 높이+패딩       
+    outerHeight()       -요소 높이+패딩+보더(border) 
+    outerHeight(true)   -요소 높이+패딩+보더+마진
+</pre>
+<div id="demo"></div>
+<button>확인</button>
+<script>
+    $("button").click(function(){
+        var width=$("div").width()
+        var height=$("div").Height()
+        var innerWidth=$("div").innerWidth(); //패딩추가
+        var innerheight=$("div").innerHeight(); //패딩추가
+        var outerWidth=$("div").outerWidth(); //패딩보더추가
+        var outerheight=$("div").outerHeight(); //패딩보더추가
+        var outerWidth=$("div").outerWidth(true); //패딩보더마진추가
+        var outerheight=$("div").outerHeight(true); //패딩보더마진추가
+        $("div").append("<li>width:+"+width+"</li>");
+        $("div").append("<li>height:+"+ height+"</li>");
+        $("div").append("<li>innerwidth:+"+innerwidth+"</li>");
+        $("div").append("<li>innerheight:+"+ innerheight+"</li>");
+        $("div").append("<li>outerwidth:+"+outerwidth+"</li>");
+        $("div").append("<li>outerheight:+"+ outerheight+"</li>");
+    });
+</script>
+</body>
+</html> 
