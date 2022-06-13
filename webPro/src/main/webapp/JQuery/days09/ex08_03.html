@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 16:44:28</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    .des *{
+        display: block;
+        border: 2px solid lightgray;
+        color: lightgray;
+        margin: 15px;
+        padding: 5px;
+    }
+</style>
+</head>
+<body>
+<h3>ex08_03.html</h3>
+<pre>
+    parent():
+    parents():
+    parentsUntil():
+    
+    후손(자손)
+    children() -선택한 요소의 모든 직계 자식을 반환
+    find()
+</pre>
+
+<div class="des" style="width:500px"> div(현재요소)
+<p class="first">
+        
+        <span>span</span>
+    </p>
+   <div>
+    <p class="second">
+        <b>bb</b>
+        <span>span</span>
+    </p>
+   </div>
+    <span>테스트용: p의자식이아님</span>
+</div>
+
+<script>
+    $("div")
+    //.children() //직계자식만 해당 즉 p태그 
+    .children("p")
+    .children("b")
+    .css({
+        "color":"red",
+        "border":"2px solid red"
+    })
+    .end() //.children("p.first") 없애기 
+    .find("span") 
+    //직계자식이 아닌 마지막끝까지 뒤져서 찾겠다. 
+    //모든 하위자식 반환
+    //find("*") div 태그의 모든 자식들 
+    .css({
+        "color":"blue",
+        "border":"2px solid blue"
+    });
+</script>
+</body>
+</html>

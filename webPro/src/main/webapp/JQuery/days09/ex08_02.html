@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 16:32:50</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+/* ancestors클래스안의 모든것들 */
+.ancestors *{
+    display: block;
+    border: 2px solid lightgray;
+    color: lightgray;
+    padding: 5px;
+    margin: 15px;
+    }
+</style>
+</head>
+<body>
+<h3>ex08_02.html</h3>
+<pre>
+    parent()
+    parents()
+    parentsUntil()
+
+</pre>
+<div class="ancestors">
+  <div style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)  
+      <li>li (direct parent)
+        <span>span</span>
+      </li>
+    </ul>   
+  </div>
+
+  <div style="width:500px;">div (grandparent)   
+    <p>p (direct parent)
+      <span>span</span>
+    </p> 
+  </div>
+</div>
+<!-- <script>
+    $("div.foo").click(function(){
+        //this==div.foo
+        //div.foo 안에 자식 span태그 
+        $("span",this).addClass("bar");    //$("div.foo span") 와 같은 표현 
+
+       
+    });
+</script> -->
+
+<script>
+    // $("span").parent() -->  직계 부모 ==li
+    //span태그의 부모를 찾아서 css 스타일 적용
+    $("span").parent().css(
+        {"color":"red",
+        "border":"2px solid red",
+        });
+
+        // $("span").parents() -->  모든 부모 
+        $("span").parents().css(
+        {"color":"red",
+        "border":"2px solid blue",
+        }); 
+        
+        //  $("span").parents("ul") --> 그 조상들중에서 ul만 
+        $("span").parents("ul").css(
+        {"color":"red",
+        "border":"2px solid violet",
+        }); 
+
+          //  $("span").parentsUntil("div") --> div까지만의 부모
+          //"" (div)는 포함되지 않는다. 
+          $("span").parentsUntil("div").css(
+        {"color":"red",
+        "border":"4px solid gray",
+        }); 
+</script>
+</body>
+</html>
