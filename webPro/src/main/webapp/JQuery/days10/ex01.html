@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.14 09:06:01</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    body *{
+        display: block;
+        border:2px solid lightgray;
+        color: lightgray;
+        padding:5px;
+        margin:15px;
+    }
+</style>
+</head>
+<body>
+    <pre>
+        조상
+        후손
+        형제
+        1. siblings() - 선택한 요소의 모든 형제 요소를 반환
+    
+        2. next()
+        3. nextAll()
+        4. nextUntill()
+    
+        5. prev()
+        6. prevAll()
+        7. prevUntill()
+    </pre>
+    
+<h3>ex01.html</h3>
+<div>div
+    <p>p</p>
+    <span>span</span>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+<script>
+    $(function(){
+  /*       $("h2")
+            .siblings()
+            .css({
+                "color":"red",
+                "border":"2px solid red"
+            }); */
+         /*    $("h2")
+            .siblings("p") //형제요소 필터링 가능 
+            .css({
+                "color":"red",
+                "border":"2px solid red"
+            }); */
+/* 
+            $("h2")
+            .next() //h3
+            .css({
+                "color":"red",
+                "border":"2px solid red"
+            })
+            .end() //h2
+            .prev()// 이전형제요소 span
+            .css({
+                "color":"blue",
+                "border":"2px solid red"
+            }) */
+
+           /*  $("h2")
+            //.nextAll() //다음 모든 형제요소 
+            .prevAll() //이전 모든 형제요소 
+            .css({
+                "color":"red",
+                "border":"2px solid red"
+            });  */
+
+            $("h2")
+            //.nextUntil("p") //다음의 p태그 까지  
+            .prevUntil("p")//이전의 p태그 까지 //h2, p 둘다 포함안됨  
+            .css({
+                "color":"pink",
+                "border":"2px solid red"
+            }); 
+    });
+</script>
+</body>
+</html>

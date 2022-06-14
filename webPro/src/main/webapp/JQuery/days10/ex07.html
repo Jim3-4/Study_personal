@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.14 10:33:25</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex07.html</h3>
+<ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+    <li>item4</li>
+    <li>item5</li>
+</ul>
+<script>
+    //제이쿼리 오브젝트 객체 
+    $("ul>li").each(function(index,element){
+        console.log(element.innerHTML);
+
+        console.log($(this).html());
+        //함수는 return 문을 만나면 빠져나간다. 
+        return index==2;
+    });
+</script>
+<script>
+    var arr=["one","two","three","four","five"];
+    //위에 each랑 다른것이다. 
+    //배열을 인자값으로 받음 
+    //jQuery.each()  ==  $.each()
+    $.each( arr, function( i, val ) {
+  $( "#" + val ).text( "Mine is " + val + "." );
+ 
+  // Will stop running after "three"
+  return ( val !== "three" );
+});
+</script>
+</body>
+</html>

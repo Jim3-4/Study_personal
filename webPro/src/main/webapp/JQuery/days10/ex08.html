@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.14 10:42:42</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    div {    background: white;  }
+    .red {    background: red;  }
+    .red.green  {    background: green;  }
+  </style>
+</head>
+<body>
+<h3>ex08.html</h3>
+<div>This div should be white</div>
+<div class="red">This div will be green because it now has the "green" and "red" classes.
+  It would be red if the addClass function failed.</div>
+<div>This div should be white</div>
+<p>There are zero green divs</p>
+
+<script>
+    //div 요소 중에 클래스 red 속성을 가진 div를 찾아서 .green 설정 
+  /*   //1
+    $("div.red").addClass("green");
+
+    //2
+    $("body").find(".red").addClass(".green");
+ */
+    //3
+   $("div").addClass(function(index, currentClassName) {
+    //console.log(index + " / " + currentClassName);
+    var className;
+
+    if (currentClassName == "red") {
+        className = "green";
+    }
+    return className;
+});
+//index 와 currentClassName 위치가 바뀌면 안된다.
+</script>
+</body>
+</html>

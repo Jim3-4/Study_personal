@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.14 09:47:46</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    p{
+        background-color: yellow;
+        margin: 4px;
+    }
+    div{
+        border: 2px solid blue;
+    }
+</style>
+</head>
+<body>
+<h3>ex04.html</h3>
+<pre>
+wrap() unwrap()<br>
+</pre>
+<button>wrap</button>
+<p>Lorem.</p>
+<p>Excepturi?</p>
+<p>A!</p>
+<!-- //태그를 감싸는 예제  -wrap() 
+<script>
+    var ptags=$("p");
+    $("button").click(function(){
+        //모든 p태그를 div 태그로 감싸겠다. 
+        ptags.wrap("<div></div>") 
+        
+    });
+</script> -->
+
+//태그를 감싸져 잇는지 확인하고, 감싼거 푸는예제  -upwrap() 
+<script>
+    var ptags = $("p");
+$("button").click(function(event) {
+    // p 태그가 div 태그로 감싸져잇다면 
+    //parent()는 직계부모 
+    if (ptags.parent().is("div")) {//작계부모가 div인지? = div로 감싸져있는지
+        ptags.unwrap(); //풀기
+    } else {//포장되어있지않다면 감싸기 
+        ptags.wrap("<div></div>");
+    }
+});
+</script>
+</body>
+</html>

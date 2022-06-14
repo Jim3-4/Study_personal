@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.14 09:31:02</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex02.html</h3>
+<pre>
+    $ 기호: jQuery object 
+    다른 js 프레임워크(Angular, Backbone, Enber등등)에서
+     $기호가 충돌할수 있는데 ,
+     jQuery noConflict() 메서드 사용 하면 해결가능   
+</pre>
+<!-- <script>
+    var jq=$no.Conflict();
+    jq(document).ready(function(){
+        jq("h3").css("color","red");
+    });
+</script> -->
+<script>
+    $no.Conflict();
+    jQuery(document).ready(function($){
+        //function($) - {} 안에서는 $기호를 쓰겠다. 
+        $("h3").css("color","red");
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.13 20:34:53</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body >
+    <button>click</button>
+<p>Lorem, ipsum dolor.</p>
+<p>Ex, quos nulla.</p>
+<p style="display: none;">Dolore, nostrum possimus!</p>
+<p>Praesentium, necessitatibus at!</p>
+<p>Quidem, in provident.</p>
+<input type="radio" name="fr" value="1">좋아
+<input type="radio" name="fr" value="-1">싫어 
+
+<script>
+$("#clickme").click(function(){
+    $("#book").animate({
+     width:"toggle",
+     height:"toggle"   
+    },{
+        duraiton:5000,
+        specialEasing:{
+            width:"linear",height:"easeOutBounce"
+        },complete:function(){
+            $(this).after("<div>Animation complete </div>");
+        }
+    }
+    )
+});
+</script>
+</body>
+</html>

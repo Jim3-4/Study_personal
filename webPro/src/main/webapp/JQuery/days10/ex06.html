@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.14 10:30:13</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    body, html{
+      height: 100%;
+      margin: 0;
+    }
+    .bgimg{
+      background-image: url("/webPro/javascript/images/forestbridge.jpg");
+      height:100%;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      color:white;
+      font-family: "Courier New", verdana;
+      font-size: 25px; 
+    }
+    .topleft{
+      position: absolute;
+      top:0;
+      left:16px;
+    }
+    .bottomleft{
+      position: absolute;
+      bottom:0;
+      left:16px;
+    }
+    .middle{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      text-align: center;
+      
+    }
+    hr{   margin: auto;    width:40%; }
+    
+  </style>
+
+</head>
+<body>
+<h3>ex06.html</h3>
+<div class="bgimg">
+    <div class="topleft">
+       <p>Logo</p>
+    </div>
+    <!-- .middle>h1^hr+p#demo -->
+    <div class="middle">
+       <h1>COMING SOON</h1>
+        <hr />
+       <p id="demo" style="font-size: 60px"></p>
+    </div>
+    <div class="bottomleft">
+       <p>Some text</p>
+    </div>
+ </div>
+
+ <script>
+    $(document).ready(function (){
+       // 지금 ~ 수료일   일/시/분/초/밀초 
+       var countDownDate = 
+          new Date( "2022.08.02 18:00:00" ).getTime();
+       console.log(">  countDownDate =  " + countDownDate );
+       
+       var countDownFunction  =  setInterval(function() {
+           var now = new Date().getTime();
+           var distance = countDownDate - now ; // ms
+           
+          if( distance < 0){
+             clearInterval(countDownFunction);
+             return;
+          }
+           // 일          1640422800000
+           var days = Math.floor( distance / ( 24 * 60 * 60 * 1000 ) );
+           // 시
+           var hours = Math.floor( distance % ( 24 * 60 * 60 *  1000 ) / (1000 *60*60));
+           // 분
+           var minutes = Math.floor( distance % ( 60 * 60 * 1000 ) / (1000 *60));
+           // 초
+           var seconds = Math.floor( distance % ( 60 * 1000 ) / 1000 );          
+           // 밀초
+           var miliseconds = distance % 1000 ;
+          
+           $("#demo").html( days +"d " + hours +"h "
+                         +  minutes+"m "+ seconds +"s " + miliseconds +"ms" );
+           
+           
+       }, 10) ; // 10/1000 == 0.001초
+       
+        
+    });
+ </script>
+</body>
+</html>

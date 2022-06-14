@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.14 10:57:13</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex09.html</h3>
+<form action="" method="get">
+name: <input type="text"name="name"><br>
+age: <input type="text" name="age">
+<input type="submit">
+    <button>초기화</button>
+</form>
+<script>
+    $("form button").on("click",function(){
+        var form1 = $("form")[0];
+    form1.reset(); // reset 버튼 클릭한 것처럼
+    });
+    $("form:first:button").on("click",function(){
+        event.preventDefault();
+    });
+</script>
+</body>
+</html>

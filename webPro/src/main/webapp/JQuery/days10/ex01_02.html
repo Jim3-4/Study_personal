@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.14 09:19:29</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex02.html</h3>
+<pre>
+    jqeury 필터링
+    eq() 메소드 
+    first() 
+    last()
+    filter()
+    not()
+</pre>
+
+<div style="border:1px solid black;">
+    <p>Lorem, ipsum dolor.</p>
+    <p>Corrupti, nam aliquid.</p>
+</div>
+<div style="border:1px solid black;" class="second">
+    <p>Lorem, ipsum dolor.</p>
+    <p>Harum, ratione reprehenderit.</p>
+</div>
+<div style="border:1px solid black;">
+    <p>Lorem, ipsum dolor.</p>
+    <p>Deserunt, suscipit laboriosam.</p>
+</div>
+<script>
+    $(document).ready(function(){
+      /*   //첫번째div태그를 찾아서 배경색을 노란색으로 설정
+       // $("div:first").css("background","yellow");
+         // $("div").eq(0).css("background","yellow");
+         $("div").first().css("background","yellow")
+            .end() //첫번째가아닌 div의 마지막
+            .last().css("background","green")
+            .end()//다시 div에서  클래스명 .second를 골라내겠다.
+            .filter(".second").css("color","blue")
+            .end()
+            .not(".second").css(); //클래스 .second가 아닌것  */
+
+
+        $("div").eq(1).css("background","red");
+        
+    });
+</script>
+</body>
+</html>

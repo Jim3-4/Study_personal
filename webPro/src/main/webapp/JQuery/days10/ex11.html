@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.14 11:21:36</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    p, div {
+      margin: 1px;
+      padding: 1px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    div {    color: blue;  }
+    b {    color: red;  }
+  </style>
+</head>
+<body>
+<h3>ex11.html</h3>
+<p>
+    Hi there <span>how</span> are you <span>doing</span>?
+  </p>
+  
+  <p>
+    This <span>span</span> is one of
+    several <span>spans</span> in this
+    <span>sentence</span>.
+  </p>
+  
+  <div>
+    Tags in jQuery object initially: <b>0</b>
+  </div>
+  
+  <div>
+    Tags in jQuery object after find: <b>1</b>
+  </div>
+  
+  <div>
+    Tags in jQuery object after end: <b>2</b>
+  </div>
+<script>
+    $.fn.showTags=function(n){
+        //map()
+        var tags=this.map(function(){
+            return this.tagName;
+        })
+        .get()
+        .join(",");
+    $("b.eq("+n+")").text(tags);
+        return this;
+    }
+    ("p").showTags(0).find("span")
+        .showTags(1)
+        .css("background","yellow")
+        .end()
+        .showTags(2)
+        .css("font-style","italic");
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.14 09:38:00</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex03.html</h3>
+<pre>
+    jquery-3.6.0.js 164라인에 제이쿼리객체가 선언되어있다. 
+    객체생성자에 멤버(속성 메서드를 추가할때) 
+    $.fn= jQuery.fn = jQuery.prototype
+     jQuery는 $기호로 사용하기 때문에 $.fn로 사용가능 
+</pre>
+
+<script>
+      var person={ //js object 
+        name:"hong",
+        age:20,        
+    };
+    var b=$("body"); //jquery object 
+    alert(b.jquery); //3.6.0
+    alert(person.jquery);  //undefined
+    alert($.fn.jquery); //3.6.0 
+    //제이쿼리 버전을 객체생성 없이도 할 수 있다. 
+    
+</script>
+</body>
+</html>

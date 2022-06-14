@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.14 10:06:42</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex05.html</h3>
+<pre>
+    js JSON+js AJAX+ jquery AJAX
+
+    $("button").이벤트명(함수)
+    $("button").click(function(){     
+    });
+    on()
+    one() 이벤트가 한번만 발생 
+    off()
+</pre>
+<button>hide</button>
+<p></p>
+<script>
+$("p").css({
+    width:"200px",
+    height:"100px",
+    "border":"1px solid gray",
+    "backgroundColor":"yellow"
+});
+ //버튼 누르면 t를 숨겼다가 나타났다가 
+
+
+/* $("button").one("click",function(event){
+alert("클릭됨");
+});
+ */
+$("button").on("click",function(event){
+    if($(this).text()=="hide"){
+        $("p").hide();
+        $(this).text("show");
+    }else{
+        $("p").show();
+        $(this).text("hide");
+    }  });
+ 
+
+  $("button").on("click",function(event){
+    var text= $(this).text;
+    $("p").toggle("show",function(){
+        $("button").html(text=="hide"?"show":"hide");
+    });
+});
+
+</script>
+</body>
+</html>

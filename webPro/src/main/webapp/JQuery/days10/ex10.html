@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2022.06.14 11:16:53</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex10.html 제이쿼리 객체에 함수 추가 하고 사용</h3>
+<p>Lorem ipsum dolor sit amet.</p>
+<script>
+   // $("p").myAlert("경고창을 띄웁니다.");//myAlert함수가 제이쿼리에 없다. 
+    //제이쿼리 객체에 myAlert추가 하고 사용 
+
+</script>
+
+<script>
+    //객체 생성자에 함수 추가 
+    jQuery.prototype.myAlert=function(msg){
+        // jQuery.prototype.myAlert=function(msg) == jQuery.fn.myAlert=function(msg)
+        alert("msg");
+    }
+
+    $("p").myAlert("경고창을 띄웁니다.");
+</script>
+</body>
+</html>
