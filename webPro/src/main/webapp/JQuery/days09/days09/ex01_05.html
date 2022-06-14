@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 13. - 오전 9:48:30</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex01_05.html</h3>
+
+<!-- :frist 와 :first-child 와 :first-of-type 의 차이점 이해 -->
+<!-- :last 와 :last-child 와 :last-of-type 의 차이점 이해 -->
+
+<button id="btn1">:first</button>
+<button id="btn2">:first-child</button>
+<button id="btn3">:first-of-type</button>
+
+<p>The first paragraph in body.</p>
+
+<div style="border:1px solid;">
+  <p>The first paragraph in div.</p>
+  <p>The last paragraph in div.</p>
+</div>
+<br>
+<div style="border:1px solid;">
+  <span>This is a span element.</span>
+  <p>The first paragraph in another div.</p>
+  <p>The last paragraph in another div.</p>
+</div>
+
+<p>The last paragraph in body.</p>
+
+<script>
+    // 10:03 수업 시작
+    $("#btn1").click(function (){
+    	// 모든 p 태그 중에 첫 번째 p태그
+    	$("p:first").css("background-color","yellow");
+    });
+    $("#btn2").click(function (){
+    	// 어떤 요소의 첫 번째 자식 요소가 p 태그인 것.
+    	$("p:first-child").css("background-color","red");
+    });
+    
+    $("#btn3").click(function (){
+    	//  
+    	$("p:first-of-type").css("background-color","green");
+    });
+    
+</script>
+
+</body>
+</html>

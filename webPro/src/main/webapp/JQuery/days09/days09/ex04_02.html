@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 13. - 오후 3:31:50</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3> ex04_02.html</h3>
+
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Illo sint quisquam corporis alias.</p>
+
+<script>
+  $("p").append("<b>Append Text</b>");
+</script>
+
+<!-- ol>li*3>lorem3 $ -->
+<ol>
+	<li>Lorem ipsum dolor.</li>
+	<li>Provident eos aperiam.</li>
+	<li>Voluptatem impedit aspernatur.</li>
+</ol> 
+
+<script>
+    //$("ol").append("<li>New Item 4</li>");  // 마지막 자식 으로 추가
+    //$("ol").prepend("<li>New Item 4</li>");   // 첫 번째 자식으로 추가
+    
+    
+    // $("<li>New Item 5</li>").appendTo($("ol"));
+    //$("<li>New Item 5</li>").prependTo($("ol"));
+    
+    // <li>New Item 3</li>
+    
+    // alert( $("ol > li").eq(2).html() );  // Voluptatem impedit aspernatur
+    
+    // $("ol > li").eq(2).before("<li>New Item 3</li>");
+    
+    // $("ol > li").eq(1).after("<li>New Item 3</li>");
+    
+    // 모든 li 태그 제거
+    // $("ol").html("");
+    $("ol").empty();
+    
+    // $("ol").remove();  // ol 태그 자체를 제거
+    
+    var txt1 = "<p>Text 1</p>";
+    var txt2 = $("<p></p>").text("Text 2");
+    var txt3 = document.createElement("p");
+    txt3.innerHTML = "Text 3";
+    
+    $("body").append(txt1, txt2, txt3);
+    
+    // 제거할 요소를 필터링 할 수 있다. 
+    // $("body > p").remove(".box");
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

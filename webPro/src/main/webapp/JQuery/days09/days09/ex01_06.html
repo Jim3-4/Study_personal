@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 13. - 오전 9:48:39</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex01_06.html</h3>
+ 
+<h1>Lorem ipsum dolor sit amet.</h1>
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Et illum obcaecati nam tenetur.</p>
+ 
+<div>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<span>Lorem ipsum dolor sit amet.</span>
+	<p>Laborum ipsa autem consequatur nihil.</p>
+	<p>Cupiditate quasi accusantium atque est!</p>
+</div>
+<br>
+<div>
+    <span>Lorem ipsum dolor sit amet.</span>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<p>Laborum ipsa autem consequatur nihil.</p>
+	<p>Cupiditate quasi accusantium atque est!</p>
+</div>
+
+<p>Et illum obcaecati nam tenetur.</p>
+
+
+<script>
+   $("div").css("border", "1px solid black");
+   // nth-child(n) 와 nth-of-type(n) 차이점 이해
+   //$("p").css("background-color", "red");
+   
+   // :nth-child(2)   각 요소 안의 두 번째 요소가 p 태그이면 css 적용
+   // $("p:nth-child(2)").css("background-color", "red");
+   
+   // 각 요소의 2번째 요소인 p 에게 css 적용
+   $("p:nth-of-type(2)").css("background-color", "blue");
+   
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

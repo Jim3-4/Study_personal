@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 13. - 오후 12:47:08</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex02_04.html</h3>
+<!-- 오후 2:00 수업 시작 -->
+<!-- https://placeholder.com/ -->
+<div id="clickme">Click Here</div>
+<img id="book" src="https://via.placeholder.com/200x200/FF0000/FFFFFF?text=sample" 
+style="position: relative;left:10px">
+
+<script>
+   $("#clickme").click(function (){
+	   $("#book").animate(
+			   {
+				   width:"toggle",
+				   height:"toggle"
+			   }
+			   , {
+				   duration:5000,
+				   specialEasing:{
+					   width:"linear",
+					   height:"easeOutBounce"
+				   }
+					, complete:function (){
+						// append(), appendTo()
+						// prepend(), prependTo()
+						// before()
+						// after()
+				      $(this).after("<div>Animation complete.</div>")
+			        }
+			   }
+			   );
+   });
+</script>
+
+
+</body>
+</html>
+
+
+
+

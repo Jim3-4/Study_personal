@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS16 2022. 6. 13. - 오후 2:31:44</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex02_06.html</h3>
+<pre>
+   stop(stopAll, goToEnd);
+</pre>
+
+<button id="start">start</button>
+<button id="stopff">stop( f, f )</button>
+<button id="stopft">stop( f, t )</button>
+<button id="stoptf">stop( t, f )</button>
+<button id="stoptt">stop( t, t )</button>
+
+<div style="background-color: aqua;width:200px;
+height:100px;position: absolute;">HELLO</div>
+
+<script>
+   $("#start").click( function (){
+	   // 대기열(큐)    1,2
+	   $("div")
+	          .animate( { left:"200px" }, 5000 )          // 1
+	          .animate( { fontSize:"3em"}, 5000);       // 2
+   });
+   
+   $("#stopff").click(function (){
+	                //    stopAll   goToEnd
+	   $("div").stop(false, false);
+	   // 1  애니 처리할 때 stopff  버튼 클릭 -> 1 애니 중지, 2 큐에 남아있다.
+	   //  
+   });
+   $("#stopft").click(function (){
+	   $("div").stop(false, true);
+   });
+   $("#stoptf").click(function (){
+	   // 1 진행 중 stop(true, ) 
+	   $("div").stop(true, false);
+   });
+   $("#stoptt").click(function (){
+	   // [1]2 중지
+	   // 1 완료 상태 
+	   $("div").stop(true, true);
+   });
+   
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
