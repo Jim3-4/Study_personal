@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+                                  xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                                    http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+                           
+     <bean id="calc" class="aop.CalculatorImpl"></bean>
+    <!--  id는 소문자 -->
+     <bean id="logPrintAroundAdvice" class="aop.advice.LogPrintAroundAdvice"></bean>
+     <bean id="logPrintBeforeAdvice" class="aop.advice.LogPrintBeforeAdvice"></bean>
+  <bean id="logPrintAfterReturningAdvice" class="aop.advice.LogPrintAfterReturningAdvice"></bean>
+   <!-- calc.add(), sub() 등등  메서드   pointcut 설정 + adroundadvice 등록 -->
+   <!-- 스프링 AOP :  프록시( proxy ) 기반  : 핵심기능 + 공통기능 -->
+   <bean id="calcProxy"  class="org.springframework.aop.framework.ProxyFactoryBean">
+      <!-- 1.  핵심 기능을 하는 객체  setTarget( calc ) -->
+      <property name="target" ref="calc"></property>
+      <!-- 2. pointcut 설정 --> 
+      <!-- setProxyInterfaces(Class [] proxyInterfaces); -->
+      <property name="proxyInterfaces">
+        <list>
+          <value>aop.Calculator</value>
+        </list>
+      </property>
+      <!-- advice 등록  (5가지 종류) -->
+      <!-- setInterceptorNames(String [] interceptorNames); -->
+      <property name="interceptorNames">
+        <list>
+           <value>logPrintAroundAdvice</value>
+           <value>logPrintBeforeAdvice</value>
+             <value>logPrintAfterReturningAdvice</value>
+        </list>
+      </property>
+   </bean>
+   
+  
+</beans>
+
+
+
+
+
+
+
+
+
+
