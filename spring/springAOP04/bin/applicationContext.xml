@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+               http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd
+           ">
+
+    <context:component-scan base-package="aop" />
+
+    <aop:config>
+        <aop:aspect id="traceAspect" ref="logPrintProfiler">
+            <!-- <aop:around method="trace" pointcut="execution(수식어패턴? 리턴타입패턴  클래스이름 패턴? 메서드이름패턴(파라미터패턴))" /> -->
+<!-- method에는 함수이름을 적는다.  -->
+        <!-- aop패키지에 있는 모든 패키지안에 add함수를 모두 호출  -->
+            <aop:around method="trace" pointcut="execution(public * aop..*.*(*,*))"/>
+            <aop:before method="before" pointcut="execution(public * aop..*.*(*,*))"/>
+            <aop:after method="afterFinally" pointcut="execution(public * aop..*.*(*,*))"/>
+         
+<!--     같은경우의 pointcut을사용한다면
+<aop:pointcut expression="execution(public * aop..*.*(*,*))" id="publicMethod"/>
+<aop:around method="trace" pointcut-ref="publicMethod"/>
+<aop:before method="before" pointcut-ref="publicMethod"/>
+<aop:after method="afterFinally" pointcut-ref="publicMethod"/>
+
+  -->
+     
+        </aop:aspect>
+    </aop:config>
+    
+
+</beans>
