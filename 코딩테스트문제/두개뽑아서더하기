@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] numbers) {
+        int[] answer = {};
+        HashSet<Integer> hSet = new HashSet<Integer>();
+        //중복이 없고 오름차순이라 set 사용
+        for(int i=0; i<numbers.length; i++) {
+            for(int j=0; j<numbers.length; j++) {
+                if(i!=j) {
+                  hSet.add(numbers[i]+numbers[j]);
+                }
+            }
+        }
+        Iterator iterator = hSet.iterator();
+        answer = new int[hSet.size()];
+        for(int i=0; i<hSet.size(); i++) {
+          answer[i] = (int)iterator.next();
+        }
+        //정수 배열을 반환해야하므로 해쉬셋을 정수배열로 변환
+        return answer;
+    }
+}
