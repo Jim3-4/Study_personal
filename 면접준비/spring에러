@@ -1,0 +1,6 @@
+마지막 줄에 보면 제발 HttpSecurity 에서 [ restartedMain] o.s.s.c.a.web.builders.WebSecurity : You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@ad685b3. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+permitAll을 사용하라는 것인데, 처음에 WebSecurityCustomizer에서 ignoring을 사용해서 정적 요소를 전부 서큐리티가 무시를 하게 설정했었다.
+
+이렇게 해버리면 서큐리티에 관한 모든 서비스를 이용하지 않게 되는데, 물론 이렇게 해도 실행은 되지만, 만일 외부에서 각종 보안 위험이 닥쳐온다고 해도, 서큐리티가 무시를 하게 되기 때문에 보안 위험에 노출된다. 이것을 방지하기 위해 WebSecurityCustomizer에 ignore를 따로 작성하지 말고, securityFilterChain에 permitAll 을 작성해서 그런 위험을 미연에 방지해줘라 라는 뜻이다.
+
+authorizeHttpRequests안에 작성하면 csrf 관리하에 들어가고 스프링 서큐리티가 관리하고 있는 여러가지 보안 설정이 적용된다. 따라서 WebSecurityCustomizer는 제거 하고 SecurityFilterChain의 내용을 이렇게 변경해주면 된다.
